@@ -1,12 +1,11 @@
-.container {
-  padding: 5%;
-}
-
-.header {
+.header-name {
   font-family: Circe;
   font-style: normal;
   font-weight: bold;
-  font-size: 44px;
+  font-size: 16px;
   line-height: 130%;
 }
 
+.header-line {
+  padding: 2%;
+}

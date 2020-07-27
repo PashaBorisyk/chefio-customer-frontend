@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import {CategoryService} from '../../../shared/service/category.service';
+import {PositionGroup} from '../../../core/model/position-group';
 
 @Component({
   selector: 'app-category-list',
@@ -7,17 +9,12 @@ import { Component, OnInit } from '@angular/core';
 })
 export class CategoryListComponent implements OnInit {
 
-  categories = [
-    'Горячее',
-    'Супы',
-    'Салаты',
-    'Завтраки',
-    'Напитки'
-  ];
+  categories: PositionGroup[] = [];
 
-  constructor() { }
+  constructor(private categoryService: CategoryService) { }
 
   ngOnInit(): void {
+    this.categoryService.findAll().subscribe(data => this.categories = data);
   }
 
 }

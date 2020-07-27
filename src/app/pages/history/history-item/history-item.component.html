@@ -1,0 +1,83 @@
+<div fxLayout="row">
+  <div fxFlex="97" fxLayout="row" class="line">
+    <div fxFlex="10">
+      <div class="white line-text">
+        {{history.id}}
+      </div>
+      <div class="mt-2 white line-description">
+        {{history.date.toLocaleDateString()}}
+      </div>
+      <div class="white line-description">
+        {{history.date.toLocaleTimeString()}}
+      </div>
+    </div>
+    <div fxFlex="22">
+      <div class="white line-text">
+        {{history.client.username}}
+      </div>
+      <div class="white line-text">
+        {{history.client.phone}}
+      </div>
+      <div class="mt-2 white additional-text">
+        {{history.street}}
+      </div>
+    </div>
+    <div fxFlex="20">
+      <div class="white line-text">
+        {{history.manager.username}}
+      </div>
+      <div class="white line-text">
+        {{history.manager.phone}}
+      </div>
+    </div>
+    <div fxFlex="15">
+      <div class="white line-text">
+        {{history.positions.length}} позиции
+      </div>
+      <div class="mt-2 white line-description">
+        Доставил {{history.courier.username}}
+      </div>
+      <div class="white line-description">
+        {{history.courier.phone}}
+      </div>
+    </div>
+    <div fxFlex="15">
+      <div class="white line-text">
+        {{history.total}} byn
+      </div>
+      <div class="white mt-2 additional-text">
+        К оплате {{history.totalForPay}} byn
+      </div>
+    </div>
+    <div fxFlex="15">
+      <div [ngSwitch]="history.status">
+        <div *ngSwitchCase="0">
+          <div class="green status-text">
+            Доставлен
+          </div>
+          <div class="mt-2">
+            <app-button value="ОСТАВИТЬ ОТЗЫВ"></app-button>
+          </div>
+        </div>
+        <div *ngSwitchCase="1">
+          <div class="orange status-text">
+            Подтвержден
+          </div>
+        </div>
+        <div *ngSwitchCase="2">
+          <div class="red status-text">
+            Отменен
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div fxLayout="row" fxLayoutAlign="center center" fxFlex="3" class="rectangle">
+    <button (click)="showPosition = showPosition === false" mat-icon-button>
+      <mat-icon>{{ showPosition? 'keyboard_arrow_down': 'keyboard_arrow_up' }}</mat-icon>
+    </button>
+  </div>
+</div>
+<div *ngIf="showPosition" class="white">
+  Positions..
+</div>

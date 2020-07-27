@@ -10,8 +10,8 @@
   <app-link *ngIf="!user" value="КЛИЕНТЫ"></app-link>
   <app-link *ngIf="!user" value="МЕНЮ"></app-link>
 
-  <app-link *ngIf="user" value="МЕНЮ"></app-link>
-  <app-link *ngIf="user" value="ПОЛЬЗОВАТЕЛИ"></app-link>
+  <app-link routerLink="/" *ngIf="user" value="МЕНЮ"></app-link>
+  <app-link routerLink="/users" *ngIf="user" value="ПОЛЬЗОВАТЕЛИ"></app-link>
   <app-link routerLink="/feedback" *ngIf="user" value="ОБРАТНАЯ СВЯЗЬ"></app-link>
   <app-link routerLink="/history" *ngIf="user" value="ИСТОРИЯ ЗАКАЗОВ"></app-link>
   <app-bucket routerLink="/order" *ngIf="user"></app-bucket>

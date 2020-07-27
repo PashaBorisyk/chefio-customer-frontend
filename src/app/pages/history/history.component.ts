@@ -20,7 +20,31 @@ export class HistoryComponent implements OnInit {
       courier: {username: 'Ara Maga', phone: '137318239'},
       total: 20,
       totalForPay: 20.50,
+      status: OrderStatus.DONE
+    },
+    {
+      id: 1235,
+      date: new Date(),
+      client: {username: 'Ara Maga', phone: '137318239'},
+      street: 'Пушкина Калатушкина',
+      manager: {username: 'Ara Maga', phone: '137318239'},
+      positions: ['123', '1234'],
+      courier: {username: 'Ara Maga', phone: '137318239'},
+      total: 20,
+      totalForPay: 20.50,
       status: OrderStatus.ACCEPT
+    },
+    {
+      id: 1235,
+      date: new Date(),
+      client: {username: 'Ara Maga', phone: '137318239'},
+      street: 'Пушкина Калатушкина',
+      manager: {username: 'Ara Maga', phone: '137318239'},
+      positions: ['123', '1234'],
+      courier: {username: 'Ara Maga', phone: '137318239'},
+      total: 20,
+      totalForPay: 20.50,
+      status: OrderStatus.CANCELED
     }
   ];
 

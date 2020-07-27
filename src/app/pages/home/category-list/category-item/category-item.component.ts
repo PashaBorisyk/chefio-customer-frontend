@@ -1,4 +1,5 @@
 import {Component, Input, OnInit} from '@angular/core';
+import {PositionGroup} from '../../../../core/model/position-group';
 
 @Component({
   selector: 'app-category-item',
@@ -7,7 +8,7 @@ import {Component, Input, OnInit} from '@angular/core';
 })
 export class CategoryItemComponent implements OnInit {
 
-  @Input() value: string;
+  @Input() value: PositionGroup;
 
   constructor() { }
 

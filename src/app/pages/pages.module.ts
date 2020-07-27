@@ -38,6 +38,10 @@ import {MatSelectModule} from '@angular/material/select';
 import { FeedbackComponent } from './feedback/feedback.component';
 import {MatTooltipModule} from '@angular/material/tooltip';
 import { HistoryComponent } from './history/history.component';
+import { HistoryHeaderComponent } from './history/history-header/history-header.component';
+import { HistoryItemComponent } from './history/history-item/history-item.component';
+import { UsersComponent } from './users/users.component';
+import { ButtonReportComponent } from './users/button-report/button-report.component';
 
 
 @NgModule({
@@ -66,6 +70,10 @@ import { HistoryComponent } from './history/history.component';
       BasketComponent,
       FeedbackComponent,
       HistoryComponent,
+      HistoryHeaderComponent,
+      HistoryItemComponent,
+      UsersComponent,
+      ButtonReportComponent,
     ],
     imports: [
         CommonModule,

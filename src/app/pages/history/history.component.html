@@ -2,34 +2,8 @@
   <div class="header white">
     ИСТОРИЯ ЗАКАЗОВ
   </div>
-  <div class="header-line my-4" fxLayout="row">
-    <div fxFlex="10" class="white header-name">
-      ID заказа
-    </div>
-    <div fxFlex="10" class="white header-name">
-      Клиент
-    </div>
-    <div fxFlex="20" class="white header-name">
-      Менеджер
-    </div>
-    <div fxFlex="15" class="white header-name">
-      Блюда
-    </div>
-    <div fxFlex="15" class="white header-name">
-      Итого
-    </div>
-    <div fxFlex="20" class="white header-name">
-      Статус
-    </div>
-  </div>
-  <div fxLayout="row" class="line" *ngFor="let history of histories">
-    <div>
-      <div class="white line-text">
-        {{history.id}}
-      </div>
-      <div class="white line-description">
-        {{history.date.toLocaleDateString()}}
-      </div>
-    </div>
+  <app-history-header></app-history-header>
+  <div class="mb-1" *ngFor="let history of histories">
+    <app-history-item [history]="history"></app-history-item>
   </div>
 </div>

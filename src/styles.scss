@@ -13,6 +13,7 @@ $my-app-theme: mat-light-theme($my-app-primary, $my-app-accent);
 
 html, body { height: 100%; }
 body {
+  color: white;
   margin: 0;
   background: #030203;
   font-family: Roboto, "Helvetica Neue", sans-serif;
@@ -249,4 +250,8 @@ body {
 
 .orange {
   color: #EC9B25;
+}
+
+.red {
+  color: #EC3125;
 }

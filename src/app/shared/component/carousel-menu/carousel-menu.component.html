@@ -1,7 +1,9 @@
-<div class="item" *ngFor="let val of itemsActive">
-  <app-carousel-menu-item
-    [count]="items.length"
-    [position]="positionNow"
-    [positions]="pages"
-    (positionEvent)="go($event)"></app-carousel-menu-item>
+<div class="items">
+  <div class="item" *ngFor="let val of itemsActive">
+    <app-carousel-menu-item
+      [count]="items.length"
+      [position]="positionNow"
+      [positions]="pages"
+      (positionEvent)="go($event)"></app-carousel-menu-item>
+  </div>
 </div>

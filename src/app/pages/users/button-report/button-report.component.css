@@ -1,0 +1,15 @@
+.btn {
+  border: 1px solid #EC9B25;
+  padding: 2%;
+  width: 100%;
+  height: 56px;
+}
+
+.text {
+  color: #EC9B25;
+  font-family: Circe;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 14px;
+  line-height: 100%;
+}

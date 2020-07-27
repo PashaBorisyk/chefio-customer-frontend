@@ -11,6 +11,8 @@ import {UserProfileComponent} from './pages/user-profile/user-profile.component'
 import {BasketComponent} from './pages/basket/basket.component';
 import {FeedbackComponent} from './pages/feedback/feedback.component';
 import {HistoryComponent} from './pages/history/history.component';
+import {UsersComponent} from './pages/users/users.component';
+import {ManagerGuard} from './shared/helper/manager.guard';
 
 const routes: Routes = [
   { path: '', component: MainComponent, canActivate: [AuthGuard] },
@@ -19,6 +21,7 @@ const routes: Routes = [
   { path: 'order', component: BasketComponent, canActivate: [AuthGuard] },
   { path: 'feedback', component: FeedbackComponent, canActivate: [AuthGuard] },
   { path: 'history', component: HistoryComponent, canActivate: [AuthGuard] },
+  { path: 'users', component: UsersComponent, canActivate: [AuthGuard] },
   { path: 'login', component: LoginComponent },
   { path: 'registration', component: RegistrationComponent },
   { path: 'registration/success', component: RegistrationSuccessComponent }
