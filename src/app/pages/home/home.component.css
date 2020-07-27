@@ -1,0 +1,49 @@
+.container {
+  max-width: 100%;
+  padding: 10%;
+}
+
+.menu {
+  margin-top: 10%;
+}
+
+.menu-header {
+  font-family: Circe;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 44px;
+  line-height: 130%;
+  color: white;
+  margin-bottom: 62px;
+}
+
+.category {
+  margin-right: 10%;
+}
+
+/deep/ .mat-grid-tile .mat-figure {
+  display: block !important;
+  border-radius: 4px !important;
+}
+
+.info {
+  margin: 200px 0;
+}
+
+.partners {
+  margin: 200px 0;
+}
+
+.feedback-present {
+  margin-top: 200px;
+}
+
+.phone-btn {
+  position: fixed;
+  right: 50px;
+  bottom: 50px;
+}
+
+.calendar {
+  margin: 5% 0;
+}

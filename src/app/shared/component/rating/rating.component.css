@@ -1,0 +1,24 @@
+.text {
+  font-family: Circe;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 12px;
+  line-height: 130%;
+  color: white;
+  margin-left: 5px;
+  margin-top: 4px;
+}
+
+.chip {
+  cursor: pointer;
+  background: #EC9B25;
+}
+
+.full-rate {
+  display: none;
+  position: absolute;
+}
+
+.chip:hover ~ .full-rate {
+  display: block;
+}

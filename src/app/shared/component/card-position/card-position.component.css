@@ -1,0 +1,53 @@
+.name {
+  font-family: Circe;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 21px;
+  line-height: 100%;
+  color: #FFFFFF;
+}
+
+.rating {
+  background: #1CC186;
+  color: white;
+  cursor: pointer;
+}
+
+.text {
+  font-family: Circe;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 12px;
+  line-height: 130%;
+}
+
+.ingredients {
+  font-family: Circe;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 16px;
+  line-height: 130%;
+  color: #BDBDBD;
+}
+
+.weight {
+  font-family: Circe;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 12px;
+  line-height: 130%;
+  color: white;
+}
+
+.info {
+  font-family: Circe;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 12px;
+  line-height: 130%;
+  color: #808080;
+}
+
+.card {
+  max-width: 280px;
+}

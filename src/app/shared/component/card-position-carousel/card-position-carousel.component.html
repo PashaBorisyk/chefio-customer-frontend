@@ -1,0 +1,27 @@
+<div fxLayout="row" fxLayoutAlign="space-around center">
+  <div *ngIf="isPagination">
+    <button (click)="back()" mat-icon-button>
+      <mat-icon class="white">keyboard_arrow_left</mat-icon>
+    </button>
+  </div>
+  <div *ngFor="let position of positionsActive" class="card">
+    <app-card-position [position]="position"></app-card-position>
+  </div>
+  <div *ngIf="isPagination">
+    <button (click)="next()" mat-icon-button>
+      <mat-icon class="white">keyboard_arrow_right</mat-icon>
+    </button>
+  </div>
+</div>
+
+
+<div *ngIf="isPagination" class="mt-4" fxLayout="row" fxLayoutAlign="center center" fxLayoutGap="10px">
+  <div class="pointer" (click)="go(val)" *ngFor="let val of pages">
+    <svg *ngIf="positionNow == val - 1" width="28" height="5" viewBox="0 0 28 5" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <rect y="0.00012207" width="28" height="5" rx="2.5" fill="white"/>
+    </svg>
+    <svg *ngIf="positionNow != val - 1"  width="5" height="5" viewBox="0 0 5 5" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <rect opacity="0.5" y="0.00012207" width="5" height="5" rx="2.5" fill="white"/>
+    </svg>
+  </div>
+</div>

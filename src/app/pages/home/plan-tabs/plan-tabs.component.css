@@ -1,0 +1,67 @@
+.header-tab {
+  color: #EC9B25;
+  font-family: Montserrat;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 30px;
+  line-height: 130%;
+}
+
+.description-tab {
+  color: #FFFFFF;
+  font-family: Circe;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 14px;
+  line-height: 130%;
+}
+
+/deep/ .mat-tab-label .mat-tab-label-content {
+  display: block !important;
+}
+
+/deep/ .mat-tab-label {
+  height: 100% !important;
+  margin-bottom: 10px !important;
+}
+
+.description-plan {
+  font-family: Circe;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 14px;
+  line-height: 120%;
+  color: white;
+  margin-bottom: 40px;
+}
+
+.feature-name {
+  font-family: Circe;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 16px;
+  line-height: 130%;
+  color: white;
+}
+
+.add-info {
+  font-family: Circe;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 14px;
+  line-height: 140%;
+  color: white;
+  margin-bottom: 20px;
+}
+
+.info {
+  padding: 30px;
+}
+
+.feature-plan {
+  margin-bottom: 40px;
+}
+
+.btn {
+  max-width: 50%;
+}

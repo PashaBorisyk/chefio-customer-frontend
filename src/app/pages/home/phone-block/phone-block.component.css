@@ -1,0 +1,8 @@
+button, .mat-stroked-button {
+  background: #EC9B25;
+}
+
+.mat-icon-button {
+  width: 60px;
+  height: 60px;
+}

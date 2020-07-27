@@ -1,0 +1,10 @@
+.header {
+  position: relative;
+  background: #140f12;
+  padding: 1% 0;
+  margin: 0;
+}
+
+.icon {
+  cursor: pointer;
+}

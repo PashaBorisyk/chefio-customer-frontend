@@ -1,0 +1,71 @@
+<mat-tab-group>
+  <mat-tab>
+    <ng-template mat-tab-label>
+      <div class="header-tab">
+        Dzinner standard
+      </div>
+      <div class="description-tab">
+        Моя фирма не оплачивает сотрудникам еду
+      </div>
+    </ng-template>
+    <div fxLayout="row">
+      <div class="info">
+        <div class="description-plan">
+          Это решение идеально подойдет для организаций, которые не выделяют бюджета на питание своим сотрудникам. Наш курьер будет доставлять горячую еду в ваш офис каждый день как раз к обеду, а расчет будет производится с каждым сотрудником индивидуально. Сервис не потребует никаких специальных интеграций или обязательств со стороны вашей фирмы и не будет отвлекать руководство компании от работы.
+        </div>
+        <div class="feature-plan">
+          <div class="feature-name">
+            Фичи:
+            <div *ngFor="let feature of features">
+              <app-feature-plan [value]="feature"></app-feature-plan>
+            </div>
+          </div>
+        </div>
+        <div class="add-info">
+          Свяжитесь с нашим отделом продаж, чтобы узнать больше о Dzinner standard.
+        </div>
+        <div class="btn">
+          <app-button value="СВЯЗАТЬСЯ"></app-button>
+        </div>
+      </div>
+      <div>
+        <img src="assets/img/plan_1.png">
+      </div>
+    </div>
+  </mat-tab>
+
+  <mat-tab>
+    <ng-template mat-tab-label>
+      <div class="header-tab">
+        Dzinner premium
+      </div>
+      <div class="description-tab">
+        Моя фирма оплачивает сотрудникам еду
+      </div>
+    </ng-template>
+    <div fxLayout="row">
+      <div class="info">
+        <div class="description-plan">
+          Это решение идеально подойдет для организаций, которые не выделяют бюджета на питание своим сотрудникам. Наш курьер будет доставлять горячую еду в ваш офис каждый день как раз к обеду, а расчет будет производится с каждым сотрудником индивидуально. Сервис не потребует никаких специальных интеграций или обязательств со стороны вашей фирмы и не будет отвлекать руководство компании от работы.
+        </div>
+        <div class="feature-plan">
+          <div class="feature-name">
+            Фичи:
+            <div *ngFor="let feature of features">
+              <app-feature-plan [value]="feature"></app-feature-plan>
+            </div>
+          </div>
+        </div>
+        <div class="add-info">
+          Свяжитесь с нашим отделом продаж, чтобы узнать больше о Dzinner standard.
+        </div>
+        <div class="btn">
+          <app-button value="СВЯЗАТЬСЯ"></app-button>
+        </div>
+      </div>
+      <div>
+        <img src="assets/img/plan_1.png">
+      </div>
+    </div>
+  </mat-tab>
+</mat-tab-group>

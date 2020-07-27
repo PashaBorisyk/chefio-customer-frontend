@@ -1,0 +1,44 @@
+.carousel {
+  background: url("../../../../../assets/img/food_image.jpg") no-repeat center center;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+  padding: 10% 10% 5%;
+}
+
+.main-text {
+  font-family: Circe;
+  font-style: normal;
+  font-weight: 800;
+  font-size: 64px;
+  line-height: 110%;
+}
+
+.header-one {
+  color: white;
+}
+
+.header-two {
+  color: #4B7EFF;
+}
+
+.description-header {
+  font-family: Circe;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 24px;
+  line-height: 100%;
+  color: white;
+  margin-top: 3%;
+}
+
+.button-header {
+  margin-top: 5%;
+  max-width: 240px;
+}
+
+.slider {
+  margin-top: 10%;
+  margin-bottom: 10%;
+}

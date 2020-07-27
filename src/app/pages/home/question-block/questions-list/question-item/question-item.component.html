@@ -1,0 +1,14 @@
+<div>
+  <div>
+    <span class="point">
+      {{question.point}}
+    </span>
+    <button (click)="open()" mat-icon-button>
+      <mat-icon *ngIf="!isOpen">keyboard_arrow_down</mat-icon>
+      <mat-icon *ngIf="isOpen">keyboard_arrow_up</mat-icon>
+    </button>
+  </div>
+  <div *ngIf="isOpen" class="answer">
+    {{question.answer}}
+  </div>
+</div>

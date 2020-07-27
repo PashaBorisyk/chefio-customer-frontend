@@ -1,0 +1,13 @@
+button, .mat-stroked-button {
+  background: #EC9B25;
+  transform: rotate(-30deg);
+}
+
+.mat-icon-button {
+  width: 60px;
+  height: 60px;
+}
+
+.mat-icon {
+  font-size: 30px;
+}

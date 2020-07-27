@@ -1,0 +1,80 @@
+.footer {
+  background-color: #030203;
+  padding: 1% 10%;
+  max-width: 100%;
+}
+
+.accept-payment {
+  font-family: Circe;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 16px;
+  line-height: 100%;
+  color: white;
+}
+
+.type {
+  font-family: Circe;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 13px;
+  line-height: 100%;
+
+  text-transform: uppercase;
+  color: #999999;
+}
+
+.payment-type {
+  font-family: Circe;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 13px;
+  line-height: 100%;
+
+  text-transform: uppercase;
+  color: #FFFFFF;
+}
+
+.company {
+  font-family: Inter;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 12px;
+  line-height: 130%;
+
+  color: #797979;
+}
+
+.street {
+  font-family: Circe;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 14px;
+  line-height: 190%;
+  /* or 27px */
+
+  text-transform: uppercase;
+
+  color: #FFFFFF;
+}
+
+.email {
+  font-family: Circe;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 14px;
+  line-height: 190%;
+
+  color: #FFFFFF;
+}
+
+.phone {
+  font-family: Circe;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 14px;
+  line-height: 190%;
+
+
+  color: #FFFFFF;
+}

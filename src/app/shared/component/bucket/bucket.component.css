@@ -1,0 +1,17 @@
+.price {
+  font-family: Circe;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 14px;
+  line-height: 100%;
+  color: white;
+}
+
+.mat-icon {
+  color: white;
+}
+
+/deep/ .mat-badge-content {
+  color: white;
+  background: #EC9B25;
+}

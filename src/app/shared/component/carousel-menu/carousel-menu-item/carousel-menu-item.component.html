@@ -1,0 +1,24 @@
+<div class="carousel">
+  <div class="main-text header-one">
+    В августе у нас стало уже
+  </div>
+  <div class="main-text header-two">
+    +{{position}} клиентов
+  </div>
+  <div class="description-header">
+    Присоединяйтесь к сети обедов dziki
+  </div>
+  <div class="button-header">
+    <app-button color="orange" value="СТАТЬ КЛИЕНТОМ"></app-button>
+  </div>
+  <div class="mt-4 slider" fxLayout="row" fxLayoutAlign="center center" fxLayoutGap="10px">
+    <div class="pointer" (click)="go(value - 1)" *ngFor="let value of positions">
+      <svg *ngIf="position == value - 1" width="28" height="5" viewBox="0 0 28 5" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <rect y="0.00012207" width="28" height="5" rx="2.5" fill="white"/>
+      </svg>
+      <svg *ngIf="position != value - 1"  width="5" height="5" viewBox="0 0 5 5" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <rect opacity="0.5" y="0.00012207" width="5" height="5" rx="2.5" fill="white"/>
+      </svg>
+    </div>
+  </div>
+</div>

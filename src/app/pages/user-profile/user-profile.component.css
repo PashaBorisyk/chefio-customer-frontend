@@ -1,0 +1,32 @@
+.container {
+  padding: 5%;
+}
+
+.header {
+  font-family: Circe;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 44px;
+  line-height: 130%;
+}
+
+.header-block {
+  font-family: Circe;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 19px;
+  line-height: 100%;
+}
+
+/deep/ .mat-form-field {
+  width: 100%;
+}
+
+/deep/ .mat-checkbox {
+  color: white !important;
+}
+
+/deep/ .mat-checkbox-frame {
+  border: 1px solid white !important;
+  background: #201e20 !important;
+}

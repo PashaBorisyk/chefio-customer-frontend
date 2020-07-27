@@ -1,0 +1,80 @@
+<div class="container">
+  <div class="white header">
+    ЛИЧНЫЙ КАБИНЕТ
+  </div>
+  <div class="mt-4" fxLayout="row" fxLayoutAlign="space-between start">
+    <div fxFlex="25">
+      <div class="white header-block">
+        Контактные данные
+      </div>
+      <div class="mt-2 field">
+        <mat-form-field color="accent" class="input-field">
+          <mat-label>ФИО</mat-label>
+          <input  class="input-field" type="text" matInput>
+        </mat-form-field>
+      </div>
+      <div class="field">
+        <mat-form-field color="accent" class="input-field">
+          <mat-label>Email</mat-label>
+          <input  class="input-field" type="email" matInput>
+        </mat-form-field>
+      </div>
+      <div class="field">
+        <mat-form-field color="accent" class="input-field">
+          <mat-label>Телефон</mat-label>
+          <input  class="input-field" type="text" matInput>
+        </mat-form-field>
+      </div>
+      <div class="field">
+        <mat-form-field color="accent" class="input-field">
+          <mat-label>User name telegram</mat-label>
+          <input  class="input-field" type="text" matInput>
+        </mat-form-field>
+      </div>
+    </div>
+    <div fxFlex="25">
+      <div class="white header-block">
+        Адресс доставки,дата и время
+      </div>
+      <div class="mt-2" fxLayout="row" fxLayoutAlign="space-between start">
+        <div>
+          <mat-checkbox>
+            На дом
+          </mat-checkbox>
+        </div>
+        <div>
+          <mat-checkbox>
+            Бесконтактная
+          </mat-checkbox>
+        </div>
+      </div>
+      <div class="field">
+        <mat-form-field color="accent" class="input-field">
+          <mat-label>Адресс</mat-label>
+          <input  class="input-field" type="text" matInput>
+        </mat-form-field>
+      </div>
+    </div>
+    <div fxFlex="25">
+      <div class="white header-block">
+        Спобобы оплаты
+      </div>
+      <div class="mt-2" fxLayout="row" fxLayoutGap="15px">
+        <div>
+          <mat-checkbox>
+            Карта
+          </mat-checkbox>
+        </div>
+        <div>
+          <mat-checkbox>
+            Наличные
+          </mat-checkbox>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="mt-4 btn-group" fxLayout="row" fxLayoutAlign="end start" fxLayoutGap="20px">
+    <app-button value="СОХРАНИТЬ" fxFlex="20"></app-button>
+    <app-button color="grey" value="ОТМЕНИТЬ"></app-button>
+  </div>
+</div>

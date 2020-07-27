@@ -1,0 +1,14 @@
+.form-header {
+  font-family: Circe;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 24px;
+  line-height: 100%;
+  /* identical to box height, or 24px */
+
+  color: #FFFFFF;
+}
+
+.form {
+  margin-left: 100px;
+}

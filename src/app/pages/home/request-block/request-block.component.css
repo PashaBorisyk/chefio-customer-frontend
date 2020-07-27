@@ -1,0 +1,33 @@
+.request-info {
+  background: url("../../../../assets/img/request_image.png") no-repeat center center;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+  height: 700px;
+  width: 100%;
+}
+
+.request-header {
+  font-family: Circe;
+  font-style: normal;
+  font-weight: 800;
+  font-size: 39px;
+  line-height: 140%;
+
+  color: #FFFFFF;
+}
+
+.blue {
+  color: #4B7EFF;
+}
+
+.request-description {
+  font-family: Circe;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 19px;
+  line-height: 140%;
+
+  color: #FFFFFF;
+}

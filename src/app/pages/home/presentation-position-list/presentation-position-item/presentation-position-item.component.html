@@ -1,0 +1,35 @@
+<div class="card">
+  <img src="{{position.imageUrl}}">
+  <mat-chip-list class="md-1">
+    <div>
+      <app-rating [value]="position.rating"></app-rating>
+    </div>
+    <mat-chip class="rating" *ngIf="position.feature">
+      {{position.feature}}
+    </mat-chip>
+  </mat-chip-list>
+  <div class="md-2 name">
+    {{position.name}}
+  </div>
+  <div class="ingredients">
+    {{position.ingredients.join(', ')}}
+  </div>
+  <div class="md-2">
+    <app-card-price [value]="position.price"></app-card-price>
+  </div>
+  <div fxLayout="row" fxLayoutAlign="space-between center">
+    <div class="weight">{{position.weight}} гр.</div>
+    <svg width="1" height="16" viewBox="0 0 1 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <rect width="1" height="16" fill="#808080"/>
+    </svg>
+    <div class="info">{{position.squirrels}} Б</div>
+    <svg width="1" height="16" viewBox="0 0 1 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <rect width="1" height="16" fill="#808080"/>
+    </svg>
+    <div class="info">{{position.fats}} Ж</div>
+    <svg width="1" height="16" viewBox="0 0 1 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <rect width="1" height="16" fill="#808080"/>
+    </svg>
+    <div class="info">{{position.carbohydrates}} У</div>
+  </div>
+</div>

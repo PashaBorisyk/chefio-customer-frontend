@@ -1,0 +1,13 @@
+.text {
+  cursor: pointer;
+  font-family: Circe;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 12px;
+  line-height: 100%;
+  color: white;
+}
+
+.text:hover {
+  color: #bebebe;
+}

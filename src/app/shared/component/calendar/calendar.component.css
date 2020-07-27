@@ -1,0 +1,43 @@
+.month {
+  font-family: Circe;
+  font-style: normal;
+  font-weight: 800;
+  font-size: 38px;
+  line-height: 140%;
+  /* or 53px */
+
+  color: #A376E3;
+}
+
+.week {
+  font-family: Inter;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 16px;
+  line-height: 140%;
+  padding-left: 15px;
+}
+
+.day {
+  font-family: Inter;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 16px;
+  line-height: 140%;
+  padding: 15px 15px 10px;
+}
+
+.day-now {
+  background: white;
+  color: black;
+  border-radius: 50%;
+}
+
+.orange {
+  background: #EC9B25;
+  border-radius: 50%;
+}
+
+.disable {
+  opacity: 0.5;
+}

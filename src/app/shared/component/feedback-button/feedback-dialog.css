@@ -1,0 +1,32 @@
+.header {
+  font-family: Circe;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 19px;
+  line-height: 100%;
+}
+
+/deep/ .mat-dialog-container {
+  background: #000000;
+  width: 400px;
+  padding: 75px;
+}
+
+/deep/ .mat-form-field {
+  width: 100%;
+}
+
+.upload-text {
+  font-family: Inter;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 14px;
+  line-height: 100%;
+  color: #4B7EFF;
+}
+
+.upload {
+  padding: 5%;
+  border: 1px dashed #4B7EFF;
+  box-sizing: border-box;
+}

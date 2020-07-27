@@ -1,0 +1,68 @@
+.container {
+  padding: 5%;
+}
+
+/deep/ .mat-checkbox {
+  color: white !important;
+}
+
+/deep/ .mat-checkbox-frame {
+  border: 1px solid white !important;
+  background: #201e20 !important;
+}
+
+/deep/ .mat-form-field {
+  width: 100%;
+}
+
+.header-block {
+  font-family: Circe;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 19px;
+  line-height: 100%;
+}
+
+.date-info {
+  font-family: Circe;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 16px;
+  line-height: 140%;
+}
+
+.time-list {
+  border-radius: 2px;
+}
+
+.time {
+  background: #1A1A1A;
+  margin-bottom: 1px;
+  width: 150px;
+}
+
+.header {
+  font-family: Circe;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 24px;
+  line-height: 100%;
+}
+
+.clear {
+  font-family: Circe;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 13px;
+  line-height: 100%;
+
+  color: #878787;
+}
+
+.total-pay {
+  font-family: Circe;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 16px;
+  line-height: 100%;
+}
