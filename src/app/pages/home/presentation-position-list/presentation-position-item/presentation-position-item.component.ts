@@ -1,5 +1,6 @@
 import {Component, Input, OnInit} from '@angular/core';
 import {PresentationPosition} from '../../../../core/model/presentation-position';
+import {Position} from '../../../../core/model/position';
 
 @Component({
   selector: 'app-presentation-position-item',
@@ -8,7 +9,7 @@ import {PresentationPosition} from '../../../../core/model/presentation-position
 })
 export class PresentationPositionItemComponent implements OnInit {
 
-  @Input() position: PresentationPosition;
+  @Input() position: Position;
 
   constructor() { }
 

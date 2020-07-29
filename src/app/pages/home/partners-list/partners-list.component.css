@@ -3,3 +3,8 @@
   width: auto;
   white-space: nowrap;
 }
+
+::-webkit-scrollbar {
+  width: 0;
+  background: transparent;
+}

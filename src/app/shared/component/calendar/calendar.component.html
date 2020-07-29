@@ -16,7 +16,7 @@
     <ng-template #active>
       <div (click)="setChoiceDate(date)"
            class="day pointer mt-3 white
-         {{dateEquals(date, choiceDate) ? 'orange' : ''}}
+         {{dateEquals(date, choiceDate) ? 'orange-bkg' : ''}}
          {{dateEquals(date, now) ? 'day-now' : ''}}">
         <div fxLayout="column" fxLayoutAlign="space-around center">
           {{date.getDate()}}

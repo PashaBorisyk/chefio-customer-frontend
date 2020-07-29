@@ -12,4 +12,9 @@ export class PhoneBlockComponent implements OnInit {
   ngOnInit(): void {
   }
 
+  go(): void {
+    const a = document.createElement('a');
+    a.setAttribute('href', 'home#request');
+    a.click();
+  }
 }

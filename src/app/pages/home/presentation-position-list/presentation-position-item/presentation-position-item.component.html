@@ -1,20 +1,20 @@
 <div class="card">
-  <img src="{{position.imageUrl}}">
+  <img src='assets/img/example.png'>
   <mat-chip-list class="md-1">
     <div>
-      <app-rating [value]="position.rating"></app-rating>
+      <app-rating [value]="position.rate"></app-rating>
     </div>
-    <mat-chip class="rating" *ngIf="position.feature">
-      {{position.feature}}
+    <mat-chip class="rating" *ngIf="position.tag">
+      {{position.tag}}
     </mat-chip>
   </mat-chip-list>
-  <div class="md-2 name">
+  <div class="mt-4 name">
     {{position.name}}
   </div>
   <div class="ingredients">
-    {{position.ingredients.join(', ')}}
+    {{position.ingredients}}
   </div>
-  <div class="md-2">
+  <div class="mt-4">
     <app-card-price [value]="position.price"></app-card-price>
   </div>
   <div fxLayout="row" fxLayoutAlign="space-between center">
@@ -22,14 +22,14 @@
     <svg width="1" height="16" viewBox="0 0 1 16" fill="none" xmlns="http://www.w3.org/2000/svg">
       <rect width="1" height="16" fill="#808080"/>
     </svg>
-    <div class="info">{{position.squirrels}} Б</div>
+    <div class="info">22 Б</div>
     <svg width="1" height="16" viewBox="0 0 1 16" fill="none" xmlns="http://www.w3.org/2000/svg">
       <rect width="1" height="16" fill="#808080"/>
     </svg>
-    <div class="info">{{position.fats}} Ж</div>
+    <div class="info">22 Ж</div>
     <svg width="1" height="16" viewBox="0 0 1 16" fill="none" xmlns="http://www.w3.org/2000/svg">
       <rect width="1" height="16" fill="#808080"/>
     </svg>
-    <div class="info">{{position.carbohydrates}} У</div>
+    <div class="info">22 У</div>
   </div>
 </div>

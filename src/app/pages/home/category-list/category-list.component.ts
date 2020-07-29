@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, Input, OnInit} from '@angular/core';
 import {CategoryService} from '../../../shared/service/category.service';
 import {PositionGroup} from '../../../core/model/position-group';
 
@@ -9,12 +9,10 @@ import {PositionGroup} from '../../../core/model/position-group';
 })
 export class CategoryListComponent implements OnInit {
 
-  categories: PositionGroup[] = [];
+  @Input() categories: PositionGroup[] = [];
 
-  constructor(private categoryService: CategoryService) { }
+  constructor() { }
 
   ngOnInit(): void {
-    this.categoryService.findAll().subscribe(data => this.categories = data);
   }
-
 }

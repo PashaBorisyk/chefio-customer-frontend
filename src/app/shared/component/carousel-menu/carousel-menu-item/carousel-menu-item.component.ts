@@ -18,7 +18,7 @@ export class CarouselMenuItemComponent implements OnInit {
   constructor() { }
 
   ngOnInit(): void {
-    if (this.position % 2 === 0) {
+    if (this.position % 2 === 1) {
       this.image = '../../../../../assets/img/food_image_2.png';
     }
 

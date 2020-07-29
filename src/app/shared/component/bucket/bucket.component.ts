@@ -17,7 +17,6 @@ export class BucketComponent implements OnInit {
     this.bucketService.bucketInfoObserver.subscribe(data => {
       this.count = 0;
       this.price = 0;
-      console.log(data);
       if (data) {
         data.forEach(position => {
           this.count += position.count;

@@ -4,8 +4,9 @@
   -moz-background-size: cover;
   -o-background-size: cover;
   background-size: cover;
-  height: 700px;
+  min-height: 700px;
   width: 100%;
+  padding: 5%;
 }
 
 .request-header {

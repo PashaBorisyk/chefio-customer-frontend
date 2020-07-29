@@ -38,10 +38,20 @@ export class CalendarComponent implements OnInit {
       this.plusDay(this.now, TO_DATE_DAY));
 
     this.menuService.getMenuInDate(this.dates.map(it => it.toLocaleDateString())).subscribe(result => {
-      this.setChoiceDate(this.now);
       this.activeDates = result.map(val => new Date(val));
+      const activeDate = this.findDate();
+      this.setChoiceDate(activeDate);
       this.loader.changeLoaderState(false);
     });
+  }
+
+  findDate(): Date {
+    const date = this.activeDates.find(value => this.dateEquals(value, this.now));
+
+    if (date) {
+      return date;
+    }
+    return this.activeDates[this.activeDates.length - 1];
   }
 
   setChoiceDate(date: Date): void {

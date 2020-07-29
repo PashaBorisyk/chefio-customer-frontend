@@ -11,6 +11,9 @@ $my-app-theme: mat-light-theme($my-app-primary, $my-app-accent);
   outline: none;
 }
 
+html {
+  scroll-behavior: smooth;
+}
 html, body { height: 100%; }
 body {
   color: white;

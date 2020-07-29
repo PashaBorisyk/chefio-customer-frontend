@@ -1,9 +1,9 @@
 <div>
-  <div>
+  <div (click)="open()" class="pointer">
     <span class="point">
       {{question.point}}
     </span>
-    <button (click)="open()" mat-icon-button>
+    <button mat-icon-button>
       <mat-icon *ngIf="!isOpen">keyboard_arrow_down</mat-icon>
       <mat-icon *ngIf="isOpen">keyboard_arrow_up</mat-icon>
     </button>

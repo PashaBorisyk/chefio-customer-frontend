@@ -1,34 +1,34 @@
 <app-carousel-menu></app-carousel-menu>
+<div id="partners" class="partners">
+  <app-partners-list></app-partners-list>
+</div>
 <div class="phone-btn">
   <app-phone-block></app-phone-block>
 </div>
 <div class="container">
-  <div class="menu">
+  <div id="menu" class="menu">
     <div class="calendar">
       <app-calendar></app-calendar>
     </div>
     <div fxLayout="row">
       <div class="category">
-        <app-category-list></app-category-list>
+        <app-category-list [categories]="categories"></app-category-list>
       </div>
       <div>
-        <app-presentation-position-list></app-presentation-position-list>
+        <app-presentation-position-list [positions]="activePositions"></app-presentation-position-list>
       </div>
     </div>
   </div>
-  <div class="info">
+  <div id="about-us" class="info">
     <app-info-card></app-info-card>
   </div>
-  <div class="plan">
+  <div id="tarifs" class="plan">
     <app-plan-tabs></app-plan-tabs>
-  </div>
-  <div class="partners">
-    <app-partners-list></app-partners-list>
   </div>
   <div class="question">
     <app-question-block></app-question-block>
   </div>
-  <div>
+  <div id="request">
     <app-request-block></app-request-block>
   </div>
   <div class="feedback-present">

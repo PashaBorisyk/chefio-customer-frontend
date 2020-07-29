@@ -1,4 +1,10 @@
 import { Component, OnInit } from '@angular/core';
+import {MenuService} from '../../shared/service/menu.service';
+import {LoaderService} from '../../shared/service/loader.service';
+import {PositionGroup} from '../../core/model/position-group';
+import {PresentationPosition} from '../../core/model/presentation-position';
+import {Menu} from '../../core/model/menu';
+import {CategoryService} from '../../shared/service/category.service';
 
 @Component({
   selector: 'app-home',
@@ -7,10 +13,35 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HomeComponent implements OnInit {
 
+  categories: PositionGroup[] = [];
+  menu: Menu[] = [];
+  activePositions: Position[] = [];
 
-  constructor() { }
+  constructor(private menuService: MenuService,
+              private categoryService: CategoryService,
+              private loader: LoaderService) { }
 
   ngOnInit(): void {
+    this.loader.changeLoaderState(true);
+    this.menuService.menuDateObserver.subscribe(date => {
+      if (date) {
+        this.menuService.getMenuByDate(date).subscribe(result => {
+          this.categories = result.map(menu => menu.positionGroup);
+          this.menu = result;
+          const activeMenu: Menu = result.length > 0 ? result[0] : null;
+          if (activeMenu) {
+            this.activePositions = activeMenu.positions;
+            this.categoryService.changeActiveCategory(activeMenu.positionGroup);
+          }
+        });
+      }
+    });
+    this.categoryService.activeCategoryObserver.subscribe(result => {
+      if (result) {
+        this.menu
+          .filter(data => data.positionGroup === result)
+          .forEach(data => this.activePositions = (data.positions));
+      }
+    });
   }
-
 }

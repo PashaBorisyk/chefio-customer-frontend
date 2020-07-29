@@ -7,6 +7,8 @@ import { Component, OnInit } from '@angular/core';
 })
 export class PlanTabsComponent implements OnInit {
 
+  activeFirst = true;
+  selectedTabIndex = 0;
   features = [
     'Менеджер, который полностью сопровождает обслуживание вашей компании',
     'Менеджер контроля качества',
