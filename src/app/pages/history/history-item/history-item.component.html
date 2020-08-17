@@ -1,70 +1,74 @@
 <div fxLayout="row">
   <div fxFlex="97" fxLayout="row" class="line">
     <div fxFlex="10">
-      <div class="white line-text">
-        {{history.id}}
+      <div class="line-text">
+        #{{order.id}}
       </div>
-      <div class="mt-2 white line-description">
-        {{history.date.toLocaleDateString()}}
+      <div class="mt-2 line-description">
+        {{order.toDate}}
       </div>
-      <div class="white line-description">
-        {{history.date.toLocaleTimeString()}}
+      <div class="line-description">
+        {{order.toDate}}
       </div>
     </div>
     <div fxFlex="22">
-      <div class="white line-text">
-        {{history.client.username}}
+      <div class="line-text">
+        {{order.username}}
       </div>
-      <div class="white line-text">
-        {{history.client.phone}}
+      <div class="line-text">
+        {{order.phone}}
       </div>
-      <div class="mt-2 white additional-text">
-        {{history.street}}
+      <div class="mt-2 additional-text">
+        {{order.address?.street}}
       </div>
     </div>
     <div fxFlex="20">
-      <div class="white line-text">
-        {{history.manager.username}}
+      <div class="line-text">
+        Мага
+<!--        {{history.manager.username}}-->
       </div>
-      <div class="white line-text">
-        {{history.manager.phone}}
-      </div>
-    </div>
-    <div fxFlex="15">
-      <div class="white line-text">
-        {{history.positions.length}} позиции
-      </div>
-      <div class="mt-2 white line-description">
-        Доставил {{history.courier.username}}
-      </div>
-      <div class="white line-description">
-        {{history.courier.phone}}
+      <div class="line-text">
+        1234
+<!--        {{history.manager.phone}}-->
       </div>
     </div>
     <div fxFlex="15">
-      <div class="white line-text">
-        {{history.total}} byn
+      <div class="line-text">
+        {{order.positions.length}} позиции
       </div>
-      <div class="white mt-2 additional-text">
-        К оплате {{history.totalForPay}} byn
+      <div class="mt-2 line-description">
+        Доставил Мага
+<!--        {{history.courier.username}}-->
+      </div>
+      <div class="line-description">
+        213
+<!--        {{history.courier.phone}}-->
       </div>
     </div>
     <div fxFlex="15">
-      <div [ngSwitch]="history.status">
-        <div *ngSwitchCase="0">
+      <div class="line-text">
+        {{order.total}} byn
+      </div>
+      <div class="mt-2 additional-text">
+        К оплате {{order.totalForPay}} byn
+      </div>
+    </div>
+    <div fxFlex="15">
+      <div [ngSwitch]="order.state">
+        <div *ngSwitchCase="'CONFIRMED'">
           <div class="green status-text">
             Доставлен
           </div>
           <div class="mt-2">
-            <app-button value="ОСТАВИТЬ ОТЗЫВ"></app-button>
+            <app-button (click)="openDialog()" value="ОСТАВИТЬ ОТЗЫВ"></app-button>
           </div>
         </div>
-        <div *ngSwitchCase="1">
+        <div *ngSwitchCase="'IN_PROGRESS'">
           <div class="orange status-text">
             Подтвержден
           </div>
         </div>
-        <div *ngSwitchCase="2">
+        <div *ngSwitchCase="'DECLINED'">
           <div class="red status-text">
             Отменен
           </div>
@@ -78,6 +82,6 @@
     </button>
   </div>
 </div>
-<div *ngIf="showPosition" class="white">
-  Positions..
+<div *ngIf="showPosition" class="my-2 mx-3">
+  <app-history-card-position-list [positions]="order.positions"></app-history-card-position-list>
 </div>

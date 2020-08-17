@@ -9,3 +9,28 @@
   font-size: 44px;
   line-height: 130%;
 }
+
+.header-list {
+  font-family: Circe;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 16px;
+  line-height: 130%;
+}
+
+.header-line {
+  padding: 2%;
+}
+
+.search {
+  border: 1px solid #3D3D3D;
+  background: #202020;
+  font-family: Circe;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 14px;
+  line-height: 100%;
+  color: #707070;
+  padding: 20px;
+  height: 56px;
+}

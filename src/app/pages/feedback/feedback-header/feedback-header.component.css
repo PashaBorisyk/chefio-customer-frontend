@@ -1,0 +1,11 @@
+.header-line {
+  padding: 2%;
+}
+
+.header-list {
+  font-family: Circe;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 16px;
+  line-height: 130%;
+}

@@ -1,8 +1,9 @@
 import {FeedbackStatus} from './feedback-status';
 
-export interface FeedbackResponse {
-  date: string;
-  topic: string;
-  comment: string;
-  status: FeedbackStatus;
+export class FeedbackResponse {
+  email = '';
+  createdAt: Date = null;
+  topic = '';
+  comment = '';
+  status: FeedbackStatus = FeedbackStatus.IN_REVIEW;
 }

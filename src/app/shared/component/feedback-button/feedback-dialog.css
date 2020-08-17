@@ -30,3 +30,7 @@
   border: 1px dashed #4B7EFF;
   box-sizing: border-box;
 }
+
+.disabled {
+  cursor: not-allowed;
+}

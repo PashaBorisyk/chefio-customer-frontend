@@ -3,36 +3,29 @@
   <div class="mt-2">
     <mat-form-field class="input-field">
       <mat-label>Email</mat-label>
-      <input type="email" matInput>
-      <!--    <mat-error *ngIf="loginForm.controls.username.hasError('required')">-->
-      <!--      Поле должно быть заполненым-->
-      <!--    </mat-error>-->
+      <input [(ngModel)]="feedback.email" type="email" matInput disabled>
     </mat-form-field>
   </div>
   <div class="mt-2">
     <mat-form-field class="input-field">
       <mat-label>Тема</mat-label>
-      <input type="email" matInput>
-      <!--    <mat-error *ngIf="loginForm.controls.username.hasError('required')">-->
-      <!--      Поле должно быть заполненым-->
-      <!--    </mat-error>-->
+      <input [(ngModel)]="feedback.topic" value="Доставка" type="text" matInput required>
     </mat-form-field>
   </div>
   <div class="mt-2">
     <mat-form-field class="input-field">
       <mat-label>Комментарий</mat-label>
-      <input type="email" matInput>
-      <!--    <mat-error *ngIf="loginForm.controls.username.hasError('required')">-->
-      <!--      Поле должно быть заполненым-->
-      <!--    </mat-error>-->
+      <input [(ngModel)]="feedback.comment" type="text" matInput>
     </mat-form-field>
   </div>
-  <div class="upload my-2">
-    <div class="upload-text center">
+  <div class="upload my-2 pointer">
+    <div (click)="fileInput.click()" class="upload-text center">
       Загрузите или перетяните файл который хотите отправить
     </div>
+    <input #fileInput hidden type="file" (change)="handleFileInput($event.target.files)" >
   </div>
   <div class="mt-2">
-    <app-button color="orange" value="ОТПРАВИТЬ"></app-button>
+    <app-button *ngIf="!saving" (click)="send()" color="orange" value="ОТПРАВИТЬ"></app-button>
+    <app-button *ngIf="saving" color="grey" disable="true" value="ОТПРАВИТЬ"></app-button>
   </div>
 </div>

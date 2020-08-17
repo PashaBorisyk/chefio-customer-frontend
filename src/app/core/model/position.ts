@@ -10,4 +10,5 @@ export interface Position {
   ingredients: string;
   positionGroup: PositionGroup;
   weight: number;
+  totalProduced: number;
 }

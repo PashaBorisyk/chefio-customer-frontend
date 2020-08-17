@@ -17,6 +17,7 @@ import {MatCommonModule} from '@angular/material/core';
 import {MatChipsModule} from '@angular/material/chips';
 import {MatSnackBarModule} from '@angular/material/snack-bar';
 import {MatFormFieldModule} from '@angular/material/form-field';
+import {DatePipe} from '@angular/common';
 
 @NgModule({
   declarations: [
@@ -53,7 +54,8 @@ import {MatFormFieldModule} from '@angular/material/form-field';
       useFactory: initApp,
       multi: true,
       deps: [AuthService]
-    }
+    },
+    DatePipe
   ],
   bootstrap: [AppComponent]
 })

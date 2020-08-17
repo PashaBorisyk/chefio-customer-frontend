@@ -14,7 +14,7 @@ export class LoaderService {
     return this.loaderState.asObservable();
   }
 
-  changeLoaderState(data: boolean) {
+  changeLoaderState(data: boolean): void {
     this.loaderState.next(data);
   }
 }

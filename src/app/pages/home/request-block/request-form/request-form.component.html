@@ -6,30 +6,30 @@
   <form>
     <mat-form-field color="accent" class="input-field">
       <mat-label>ФИО</mat-label>
-      <input matInput>
+      <input [(ngModel)]="clientRequest.username" name="username" type="text" matInput required>
     </mat-form-field>
     <mat-form-field color="accent" class="input-field">
       <mat-label>Email</mat-label>
-      <input matInput>
+      <input [(ngModel)]="clientRequest.email" name="email" type="email" matInput required>
     </mat-form-field>
     <mat-form-field color="accent" class="input-field">
       <mat-label>Название компании</mat-label>
-      <input matInput>
+      <input [(ngModel)]="clientRequest.companyName" name="companyName" type="text" matInput required>
     </mat-form-field>
     <mat-form-field color="accent" class="input-field">
       <mat-label>Должность</mat-label>
-      <input matInput>
+      <input [(ngModel)]="clientRequest.position" name="position" type="text" matInput required>
     </mat-form-field>
     <mat-form-field color="accent" class="input-field">
       <mat-label>Количество человек в компании</mat-label>
-      <input matInput>
+      <input [(ngModel)]="clientRequest.companySize" name="companySize" (keypress)="numberOnly($event)" matInput>
     </mat-form-field>
     <mat-form-field color="accent" class="input-field">
       <mat-label>Комментарий</mat-label>
-      <input matInput>
+      <input [(ngModel)]="clientRequest.comment" name="comment" type="text" matInput>
     </mat-form-field>
     <div>
-      <app-button value="ОТПРАВИТЬ"></app-button>
+      <app-button (click)="save()" value="ОТПРАВИТЬ"></app-button>
     </div>
   </form>
 </div>

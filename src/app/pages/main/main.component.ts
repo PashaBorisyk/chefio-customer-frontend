@@ -6,6 +6,7 @@ import { Menu } from 'src/app/core/model/menu';
 import {HotOffersService} from '../../shared/service/hot-offers.service';
 import {HotOffers} from '../../core/model/hot-offers';
 import {Position} from '../../core/model/position';
+import {DateService} from '../../shared/service/date.service';
 
 @Component({
   selector: 'app-main',
@@ -19,6 +20,7 @@ export class MainComponent implements OnInit {
 
   constructor(private menuService: MenuService,
               private hotOffersService: HotOffersService,
+              private dateService: DateService,
               private loader: LoaderService) { }
 
   ngOnInit(): void {
@@ -27,12 +29,15 @@ export class MainComponent implements OnInit {
 
     this.menuService.menuDateObserver.subscribe(date => {
         if (!date) {
+          this.loader.changeLoaderState(false);
           return;
         }
-        this.menuService.getMenuByDate(date).subscribe(result => {
+        this.menuService.getMenuByDate(this.dateService.convertToBackendFormat(date)).subscribe(result => {
           this.menu = result.filter(data => data.positions.length !== 0);
           this.loader.changeLoaderState(false);
-        });
+        },
+          () => this.loader.changeLoaderState(false)
+        );
       });
   }
 

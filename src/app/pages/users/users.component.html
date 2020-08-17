@@ -2,12 +2,45 @@
   <div class="header">
     ПОЛЬЗОВАТЕЛИ
   </div>
-  <div fxLayout="row" fxLayoutGap="10px" class="mt-5">
+  <div fxLayout="row" fxLayoutGap="10px" class="my-4">
     <div fxFlex="20">
       <app-button color="orange" value="СОЗДАТЬ ПОЛЬЗОВАТЕЛЯ"></app-button>
     </div>
     <div fxFlex="20">
       <app-button-report></app-button-report>
     </div>
+    <div fxFlex="25">
+
+    </div>
+    <div fxFlex="35" fxLayout="row">
+      <input placeholder="Поиск по базе" class="search" fxFlex="80" type="text">
+      <app-button color="blue" fxFlex="20" value="Поиск"></app-button>
+    </div>
+  </div>
+  <div class="header-line" fxLayout="row">
+    <div fxFlex="5" class="white header-list">
+      №
+    </div>
+    <div fxFlex="21" class="white header-list">
+      Имя
+    </div>
+    <div fxFlex="21" class="white header-list">
+      Роль
+    </div>
+    <div fxFlex="20" class="white header-list">
+      Электронная почта
+    </div>
+    <div fxFlex="15" class="white header-list">
+      Телефон
+    </div>
+    <div fxFlex="15" class="white header-list">
+      Статус
+    </div>
+  </div>
+  <div *ngFor="let customer of customers">
+    <app-users-item [number]="getNumber(customer)" [customer]="customer"></app-users-item>
+  </div>
+  <div fxLayoutAlign="end end" *ngIf="isDataLoaded" class="mt-5">
+    <app-pagination [pageNow]="page + 1" (changePage)="loadPage($event)" [pageSize]="pageSize" [count]="count"></app-pagination>
   </div>
 </div>

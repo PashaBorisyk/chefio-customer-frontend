@@ -1,0 +1,19 @@
+.square {
+  background: #1C1C1C;
+  border-radius: 1px;
+  width: 24px;
+  height: 24px;
+  font-family: Inter;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 14px;
+  line-height: 130%;
+}
+
+.page {
+  margin: 0 2px;
+}
+
+.disable {
+  opacity: 0.5;
+}

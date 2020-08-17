@@ -1,5 +1,9 @@
 @import '~@angular/material/theming';
 @include mat-core();
+@font-face {
+  font-family: Circe;
+  src: url(assets/font/circe.otf) format("opentype");
+}
 
 $my-app-primary: mat-palette($mat-yellow);
 $my-app-accent: mat-palette($mat-gray);
@@ -135,6 +139,31 @@ body {
   margin-bottom: 25px;
 }
 
+.mx-1 {
+  margin-left: 5px;
+  margin-right: 5px;
+}
+
+.mx-2 {
+  margin-left: 10px;
+  margin-right: 10px;
+}
+
+.mx-3 {
+  margin-left: 15px;
+  margin-right: 15px;
+}
+
+.mx-4 {
+  margin-left: 20px;
+  margin-right: 20px;
+}
+
+.mx-5 {
+  margin-left: 25px;
+  margin-right: 25px;
+}
+
 .mt-1 {
   margin-top: 5px;
 }
@@ -185,6 +214,27 @@ body {
 
 .ml-3 {
   margin-left: 15px;
+}
+
+
+.mr-1 {
+  margin-right: 5px;
+}
+
+.mr-2 {
+  margin-right: 10px;
+}
+
+.mr-3 {
+  margin-right: 15px;
+}
+
+.mr-4 {
+  margin-right: 20px;
+}
+
+.mr-5 {
+  margin-right: 25px;
 }
 
 .pt-1 {
@@ -257,4 +307,17 @@ body {
 
 .red {
   color: #EC3125;
+}
+
+
+.blue {
+  color: #4B7EFF;
+}
+
+.mat-placeholder-required {
+  color: #F2B20B !important;
+}
+
+.mat-radio-outer-circle {
+  border-color: #9e9e9e !important;
 }

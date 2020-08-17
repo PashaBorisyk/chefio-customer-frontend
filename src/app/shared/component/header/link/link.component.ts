@@ -1,4 +1,5 @@
 import {Component, Input, OnInit} from '@angular/core';
+import {Router} from '@angular/router';
 
 @Component({
   selector: 'app-link',
@@ -10,7 +11,7 @@ export class LinkComponent implements OnInit {
   @Input() value: string;
   @Input() link: string;
 
-  constructor() { }
+  constructor(private router: Router) { }
 
   ngOnInit(): void {
   }

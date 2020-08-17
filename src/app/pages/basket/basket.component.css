@@ -31,16 +31,6 @@
   line-height: 140%;
 }
 
-.time-list {
-  border-radius: 2px;
-}
-
-.time {
-  background: #1A1A1A;
-  margin-bottom: 1px;
-  width: 150px;
-}
-
 .header {
   font-family: Circe;
   font-style: normal;

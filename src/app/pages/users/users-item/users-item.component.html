@@ -1,0 +1,57 @@
+<div class="header-line" fxLayout="row">
+  <div fxFlex="2"></div>
+  <div fxFlex="5" class="header-list">
+    {{number}}
+  </div>
+  <div fxFlex="20" class="header-list">
+    {{customer.username}}
+  </div>
+  <div fxFlex="20" class="header-list">
+    {{customer.position}}
+  </div>
+  <div fxFlex="19" class="header-list">
+    {{customer.email}}
+  </div>
+  <div fxFlex="14" class="header-list">
+    {{customer.phone}}
+  </div>
+  <div fxLayout="row" fxLayoutAlign="center center" fxFlex="14" class="header-list-status" fxFlexAlign="stretch">
+    <div [ngSwitch]="customer.status">
+      <div class="green pointer" *ngSwitchCase="'ACTIVE'">
+        Активный
+      </div>
+      <div matTooltip="Почта не подтверждена" class="orange pointer" *ngSwitchCase="'IN_ACTIVE'">
+        Активный
+      </div>
+      <div class="red pointer" *ngSwitchCase="'BLOCKED'">
+        Неактивный
+      </div>
+    </div>
+    <div>
+      <button [id]="number" mat-icon-button (click)="openMenuStatus = true">
+        <mat-icon [id]="number">keyboard_arrow_down</mat-icon>
+      </button>
+      <div class="item-status-list" *ngIf="openMenuStatus">
+        <div (click)="updateStatus('BLOCKED')" *ngIf="this.customer.status == 'ACTIVE' || this.customer.status == 'IN_ACTIVE'" class="red item pointer">
+          Заблокировать
+        </div>
+        <div (click)="updateStatus('ACTIVE')" *ngIf="this.customer.status == 'BLOCKED'" class="green item pointer">
+          Активировать
+        </div>
+      </div>
+    </div>
+  </div>
+  <div fxFlex="6" fxLayout="row" fxLayoutAlign="center center">
+    <button [id]="number" (click)="openMenuAction = true" mat-icon-button>
+      <mat-icon [id]="number">more_vert</mat-icon>
+    </button>
+    <div class="item-list" *ngIf="openMenuAction">
+      <div class="item pointer">
+        Редактировать
+      </div>
+      <div (click)="deleteUser()" class="item pointer">
+        Удалить
+      </div>
+    </div>
+  </div>
+</div>

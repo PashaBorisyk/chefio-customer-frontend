@@ -1,15 +1,12 @@
-<div [ngStyle]="itemStyle" class="carousel">
-  <div class="main-text header-one">
-    В августе у нас стало уже
+<div fxLayout="column" [ngStyle]="itemStyle" class="carousel">
+  <div fxFlex="20" [innerHTML]="header" class="main-text header-one"></div>
+  <div fxFlex="20" class="description-header">
+    {{item.content}}
   </div>
-  <div class="main-text header-two">
-    +{{position}} клиентов
-  </div>
-  <div class="description-header">
-    Присоединяйтесь к сети обедов dziki
-  </div>
-  <div class="button-header">
-    <app-button color="orange" value="СТАТЬ КЛИЕНТОМ"></app-button>
+  <div fxFlex="50">
+    <div  *ngIf="item.hasButton" class="button-header">
+      <app-button (click)="goToLink()" color="orange" [value]="item.valueButton"></app-button>
+    </div>
   </div>
   <div class="mt-4 slider" fxLayout="row" fxLayoutAlign="center center" fxLayoutGap="10px">
     <div class="pointer" (click)="go(value - 1)" *ngFor="let value of positions">

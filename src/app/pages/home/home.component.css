@@ -3,8 +3,8 @@
   padding: 10%;
 }
 
-.menu {
-  margin-top: 10%;
+.side {
+  margin: 10% 0;
 }
 
 .menu-header {
@@ -26,17 +26,17 @@
   border-radius: 4px !important;
 }
 
-.info {
-  margin: 200px 0;
-}
+/*.info {*/
+/*  margin: 200px 0;*/
+/*}*/
 
-.partners {
-  margin: 200px 0;
-}
+/*.partners {*/
+/*  margin: 200px 0;*/
+/*}*/
 
-.feedback-present {
-  margin-top: 200px;
-}
+/*.feedback-present {*/
+/*  margin-top: 200px;*/
+/*}*/
 
 .phone-btn {
   position: fixed;

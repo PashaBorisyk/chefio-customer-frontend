@@ -1,5 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import {BucketService} from '../../service/bucket.service';
+import {MenuService} from '../../service/menu.service';
+import {DatePipe} from '@angular/common';
+import {DateService} from '../../service/date.service';
 
 @Component({
   selector: 'app-bucket',
@@ -8,28 +11,38 @@ import {BucketService} from '../../service/bucket.service';
 })
 export class BucketComponent implements OnInit {
 
-  count: number;
-  price: number;
+  count = 0;
+  price = 0;
 
-  constructor(private bucketService: BucketService) { }
+  constructor(private bucketService: BucketService,
+              private dateService: DateService,
+              private menuService: MenuService) { }
 
   ngOnInit(): void {
-    this.bucketService.bucketInfoObserver.subscribe(data => {
-      this.count = 0;
-      this.price = 0;
-      if (data) {
-        data.forEach(position => {
-          this.count += position.count;
-          this.price += (position.count * position.price);
-        });
-      } else {
-        this.bucketService.getBucketInfo()
-          .forEach(position => {
-            this.count += position.count;
-            this.price += (position.count * position.price);
+    this.menuService.menuDateObserver.subscribe(active => {
+      if (active) {
+        const localDateString = this.dateService.convertToLocalDateString(active);
+        this.bucketService.bucketInfoObserver.subscribe(data => {
+          this.count = 0;
+          this.price = 0;
+          if (data) {
+            data.forEach(position => {
+              if (position.menuDate === localDateString) {
+                this.count += position.count;
+                this.price += (position.count * position.price);
+              }
+            });
+          } else {
+            this.bucketService.getBucketInfo()
+              .forEach(position => {
+                if (position.menuDate === localDateString) {
+                  this.count += position.count;
+                  this.price += (position.count * position.price);
+                }
+              });
+          }
         });
       }
     });
   }
-
 }

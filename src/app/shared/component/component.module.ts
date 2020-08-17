@@ -32,6 +32,9 @@ import {MatFormFieldModule} from '@angular/material/form-field';
 import {MatInputModule} from '@angular/material/input';
 import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
+import { CardPositionListComponent } from './card-position-list/card-position-list.component';
+import {MatRippleModule} from '@angular/material/core';
+import { PaginationComponent } from './pagination/pagination.component';
 
 
 
@@ -57,7 +60,9 @@ import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
       CarouselMenuComponent,
       CarouselMenuItemComponent,
       BucketActionComponent,
-      FeedbackDialog
+      FeedbackDialog,
+      CardPositionListComponent,
+      PaginationComponent
     ],
     exports: [
         HeaderComponent,
@@ -71,7 +76,10 @@ import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
         CardPositionComponent,
         CardPositionCarouselComponent,
         FeedbackButtonComponent,
-        CarouselMenuComponent
+        CarouselMenuComponent,
+        CardPositionListComponent,
+        RatingFullComponent,
+        PaginationComponent
     ],
   imports: [
     CommonModule,
@@ -87,7 +95,8 @@ import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
     MatInputModule,
     FormsModule,
     ReactiveFormsModule,
-    BrowserAnimationsModule
+    BrowserAnimationsModule,
+    MatRippleModule
   ]
 })
 export class ComponentModule { }

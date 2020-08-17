@@ -7,11 +7,11 @@
       <div fxFlex="50">
         <mat-form-field color="accent" class="input-field">
           <mat-label>Ваш вопрос</mat-label>
-          <input matInput>
+          <input [(ngModel)]="question.value" type="text" maxlength="120" matInput>
         </mat-form-field>
       </div>
       <div fxFlex="40">
-        <app-button value="ОТПРАВИТЬ"></app-button>
+        <app-button (click)="save()" value="ОТПРАВИТЬ"></app-button>
       </div>
     </div>
   </div>

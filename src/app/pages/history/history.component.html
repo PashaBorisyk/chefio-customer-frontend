@@ -3,7 +3,10 @@
     ИСТОРИЯ ЗАКАЗОВ
   </div>
   <app-history-header></app-history-header>
-  <div class="mb-1" *ngFor="let history of histories">
-    <app-history-item [history]="history"></app-history-item>
+  <div class="mb-1" *ngFor="let order of orders">
+    <app-history-item [order]="order"></app-history-item>
+  </div>
+  <div fxLayoutAlign="end end" *ngIf="isDataLoaded" class="mt-5">
+    <app-pagination [pageNow]="page + 1" (changePage)="loadPage($event)" [pageSize]="pageSize" [count]="count"></app-pagination>
   </div>
 </div>

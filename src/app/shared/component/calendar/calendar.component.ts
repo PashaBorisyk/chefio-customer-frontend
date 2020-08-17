@@ -2,9 +2,10 @@ import { Component, OnInit } from '@angular/core';
 import {DateRange} from '@angular/material/datepicker';
 import {MenuService} from '../../service/menu.service';
 import {LoaderService} from '../../service/loader.service';
+import {OrderService} from '../../service/order.service';
+import {DatePipe} from '@angular/common';
+import {AuthService} from '../../service/auth.service';
 
-const FROM_DATE_DAY = 10;
-const TO_DATE_DAY = 10;
 
 @Component({
   selector: 'app-calendar',
@@ -23,59 +24,54 @@ export class CalendarComponent implements OnInit {
     'Сб',
   ];
 
+  MONTH_NAME = [
+    'Январь',
+    'Февраль',
+    'Март',
+    'Апрель',
+    'Май',
+    'Июнь',
+    'Июль',
+    'Август',
+    'Сентябрь',
+    'Октябрь',
+    'Ноябрь',
+    'Декабрь',
+  ];
+
   now = new Date();
-  choiceDate;
+  choiceDate = new Date();
   dates: Date[] = [];
   activeDates: Date[] = [];
+  orderDates: string[] = [];
 
   constructor(private menuService: MenuService,
-              private loader: LoaderService) { }
+              private datePipe: DatePipe,
+              private authService: AuthService,
+              private orderService: OrderService) { }
 
   ngOnInit(): void {
-    this.loader.changeLoaderState(true);
-    this.dates = this.getDates(
-      this.minusDay(this.now, FROM_DATE_DAY),
-      this.plusDay(this.now, TO_DATE_DAY));
-
-    this.menuService.getMenuInDate(this.dates.map(it => it.toLocaleDateString())).subscribe(result => {
-      this.activeDates = result.map(val => new Date(val));
-      const activeDate = this.findDate();
-      this.setChoiceDate(activeDate);
-      this.loader.changeLoaderState(false);
-    });
+    this.menuService.menuDateInitObserver.subscribe(
+      result => {
+        if (result) {
+          this.dates = result.dates;
+          this.activeDates = result.activeDates;
+          this.setChoiceDate(result.activeDate);
+          if (this.authService.userValue) {
+            console.log('dates: ' + result.activeDates);
+            this.orderService.orderDates(this.activeDates).subscribe(
+              dates => {
+                this.orderDates = dates;
+              });
+          }
+        }
+      });
   }
 
-  findDate(): Date {
-    const date = this.activeDates.find(value => this.dateEquals(value, this.now));
-
-    if (date) {
-      return date;
-    }
-    return this.activeDates[this.activeDates.length - 1];
-  }
 
   setChoiceDate(date: Date): void {
     this.choiceDate = date;
-    this.menuService.changeMenuDate(date.toLocaleDateString());
-  }
-
-  getDates(from: Date, to: Date): Date[] {
-    const dateArray = Array();
-    let currentDate = from;
-    let day = 1;
-    while (currentDate.valueOf() < to.valueOf()) {
-        currentDate = this.plusDay(from, day++);
-        dateArray.push(currentDate);
-    }
-    return dateArray;
-  }
-
-  plusDay(date: Date, value: number): Date {
-    return new Date(new Date().setDate(date.getDate() + value));
-  }
-
-  minusDay(date: Date, value: number): Date {
-    return new Date(new Date().setDate(date.getDate() - value));
+    this.menuService.changeMenuDate(date);
   }
 
   dateEquals(d1: Date, d2: Date): boolean {
@@ -92,6 +88,21 @@ export class CalendarComponent implements OnInit {
 
     for (const d2 of this.activeDates) {
       if (this.dateEquals(d1, d2)) {
+        return true;
+      }
+    }
+
+    return false;
+  }
+
+  inOrderActiveDates(d1: Date): boolean {
+    const date = this.datePipe.transform(d1, 'yyyy-MM-dd');
+    if (this.orderDates.length === 0) {
+      return false;
+    }
+
+    for (const d2 of this.orderDates) {
+      if (d2 == date) {
         return true;
       }
     }

@@ -1,5 +1,5 @@
 <div class="card">
-  <img src="assets/img/example.png">
+  <img class="img-card" src="assets/img/food_3.png">
   <mat-chip-list class="mt-2">
     <div>
       <app-rating [value]="position.rate"></app-rating>
@@ -23,7 +23,7 @@
       <app-card-price [value]="position.price"></app-card-price>
     </div>
     <div fxLayout="row" fxLayoutAlign="space-between center">
-      <div class="weight">{{position.weight}} гр.</div>
+      <div class="weight">{{position.weight * 1000}} гр.</div>
       <svg width="1" height="16" viewBox="0 0 1 16" fill="none" xmlns="http://www.w3.org/2000/svg">
         <rect width="1" height="16" fill="#808080"/>
       </svg>

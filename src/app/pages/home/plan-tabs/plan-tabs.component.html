@@ -1,10 +1,4 @@
-<div
-  data-aos="flip-up"
-  data-aos-delay="50"
-  data-aos-easing="ease-in-out"
-  data-aos-mirror="true"
-  data-aos-once="false"
-  data-aos-duration="1000">
+<div>
   <mat-tab-group [(selectedIndex)]="selectedTabIndex">
     <mat-tab >
       <ng-template mat-tab-label>
@@ -32,7 +26,7 @@
             Свяжитесь с нашим отделом продаж, чтобы узнать больше о Dzinner standard.
           </div>
           <div class="btn">
-            <app-button value="СВЯЗАТЬСЯ"></app-button>
+            <app-button (click)="go()" value="СВЯЗАТЬСЯ"></app-button>
           </div>
         </div>
         <div>
@@ -67,7 +61,7 @@
             Свяжитесь с нашим отделом продаж, чтобы узнать больше о Dzinner standard.
           </div>
           <div class="btn">
-            <app-button value="СВЯЗАТЬСЯ"></app-button>
+            <app-button (click)="go()" value="СВЯЗАТЬСЯ"></app-button>
           </div>
         </div>
         <div>

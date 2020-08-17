@@ -1,6 +1,7 @@
 import {Component, Input, OnInit} from '@angular/core';
 import {MenuService} from '../../../service/menu.service';
 import {BucketService} from '../../../service/bucket.service';
+import {DateService} from '../../../service/date.service';
 
 @Component({
   selector: 'app-bucket-action',
@@ -16,11 +17,12 @@ export class BucketActionComponent implements OnInit {
 
 
   constructor(private menuService: MenuService,
+              private dateService: DateService,
               private bucketService: BucketService) { }
 
   ngOnInit(): void {
     this.menuService.menuDateObserver.subscribe(date => {
-      this.menuDate = date;
+      this.menuDate = this.dateService.convertToLocalDateString(date);
       const tempCount = this.bucketService.findBucketInfo(this.id, this.menuDate);
       if (tempCount) {
         this.count = tempCount.count;

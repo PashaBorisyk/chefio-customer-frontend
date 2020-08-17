@@ -1,0 +1,13 @@
+/deep/ .mat-dialog-container {
+  background: #000000;
+  padding: 75px;
+}
+
+.header {
+  font-family: Circe;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 19px;
+  line-height: 100%;
+  color: white;
+}

@@ -1,0 +1,17 @@
+<div fxLayout="row">
+  <div (click)="back()" matRipple fxLayoutAlign="center center" class="mr-1 square pointer">
+    <svg width="8" height="14" viewBox="0 0 8 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <path d="M8 13.3L1.45455 7L8 0.7L7.27273 0L0 7L7.27273 14L8 13.3Z" fill="white"/>
+    </svg>
+  </div>
+  <div (click)="goTo(page)" matRipple fxLayoutAlign="center center" class="page square pointer" *ngFor="let page of pages">
+    <div class="{{page != pageNow ? 'disable' : ''}}">
+      {{page}}
+    </div>
+  </div>
+  <div (click)="next()" matRipple fxLayoutAlign="center center" class="ml-1 square pointer">
+    <svg width="8" height="14" viewBox="0 0 8 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <path d="M0 0.699999L6.54545 7L0 13.3L0.727273 14L8 7L0.727273 0L0 0.699999Z" fill="white"/>
+    </svg>
+  </div>
+</div>

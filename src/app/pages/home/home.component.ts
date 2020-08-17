@@ -5,6 +5,7 @@ import {PositionGroup} from '../../core/model/position-group';
 import {PresentationPosition} from '../../core/model/presentation-position';
 import {Menu} from '../../core/model/menu';
 import {CategoryService} from '../../shared/service/category.service';
+import {DateService} from '../../shared/service/date.service';
 
 @Component({
   selector: 'app-home',
@@ -19,13 +20,14 @@ export class HomeComponent implements OnInit {
 
   constructor(private menuService: MenuService,
               private categoryService: CategoryService,
+              private dateService: DateService,
               private loader: LoaderService) { }
 
   ngOnInit(): void {
     this.loader.changeLoaderState(true);
     this.menuService.menuDateObserver.subscribe(date => {
       if (date) {
-        this.menuService.getMenuByDate(date).subscribe(result => {
+        this.menuService.getMenuByDate(this.dateService.convertToBackendFormat(date)).subscribe(result => {
           this.categories = result.map(menu => menu.positionGroup);
           this.menu = result;
           const activeMenu: Menu = result.length > 0 ? result[0] : null;
@@ -33,7 +35,13 @@ export class HomeComponent implements OnInit {
             this.activePositions = activeMenu.positions;
             this.categoryService.changeActiveCategory(activeMenu.positionGroup);
           }
-        });
+          this.loader.changeLoaderState(false);
+        },
+          () => this.loader.changeLoaderState(false)
+
+        );
+      } else {
+        this.loader.changeLoaderState(false);
       }
     });
     this.categoryService.activeCategoryObserver.subscribe(result => {

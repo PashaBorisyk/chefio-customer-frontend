@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import {PositionBucketInfo} from '../../core/model/position-bucket-info';
 import {BehaviorSubject} from 'rxjs';
+import {BucketInfo} from '../../core/model/bucket-info';
 
 const BUCKET_STORAGE_NAME = 'bucket';
 
@@ -9,7 +10,7 @@ const BUCKET_STORAGE_NAME = 'bucket';
 })
 export class BucketService {
 
-  private bucketInfoSubject = new BehaviorSubject(null);
+  private bucketInfoSubject = new BehaviorSubject<PositionBucketInfo[]>(null);
   bucketInfoObserver = this.bucketInfoSubject.asObservable();
 
 
@@ -70,5 +71,20 @@ export class BucketService {
       }
     }
     this.bucketInfoSubject.next(bucket);
+  }
+
+  removeAll(bucketInfos: BucketInfo[]): void {
+    let bucket = this.getBucketInfo();
+    if (bucket) {
+      bucket = bucket.filter(data => !this.inBucket(data, bucketInfos));
+      localStorage.setItem(BUCKET_STORAGE_NAME, JSON.stringify(bucket));
+    }
+    this.bucketInfoSubject.next(bucket);
+  }
+
+  private inBucket(position: PositionBucketInfo, bucketInfos: BucketInfo[]): boolean {
+    const index = bucketInfos.findIndex(it => it.id === position.id && position.menuDate === it.date);
+
+    return index > -1;
   }
 }

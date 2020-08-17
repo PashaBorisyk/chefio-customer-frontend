@@ -1,0 +1,56 @@
+.header-list {
+  font-style: normal;
+  font-weight: normal;
+  font-size: 14px;
+  line-height: 130%;
+  margin: 2% 0;
+}
+
+.header-line {
+  background: #121212;
+  margin: 2px 0;
+}
+
+.header-list-status {
+  background-color: rgba(255, 255, 255, 0.05);
+  font-style: normal;
+  font-weight: normal;
+  font-size: 14px;
+  line-height: 130%;
+}
+
+.menu-item {
+  font-family: Circe;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 14px;
+  line-height: 100%;
+  color: white;
+}
+
+.item-list {
+  position: absolute;
+  transform: translate(-50%, 50%);
+}
+
+.item-status-list {
+  position: absolute;
+  transform: translate(-80%, 0%);
+}
+
+.item {
+  z-index: 1000;
+  background: black;
+  padding: 10px;
+  margin-bottom: 1px;
+  border-radius: 2px;
+  font-family: Circe;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 14px;
+  line-height: 100%;
+}
+
+.item:hover {
+  background: rgba(59, 58, 58, 1);
+}

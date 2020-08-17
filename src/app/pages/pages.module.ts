@@ -42,6 +42,16 @@ import { HistoryHeaderComponent } from './history/history-header/history-header.
 import { HistoryItemComponent } from './history/history-item/history-item.component';
 import { UsersComponent } from './users/users.component';
 import { ButtonReportComponent } from './users/button-report/button-report.component';
+import {MatAutocompleteModule} from '@angular/material/autocomplete';
+import {MatRadioModule} from '@angular/material/radio';
+import { ChoiceTimeComponent } from './basket/choice-time/choice-time.component';
+import { HistoryCardPositionListComponent } from './history/history-item/history-card-position-list/history-card-position-list.component';
+import { HistoryCardPositionItemComponent } from './history/history-item/history-card-position-list/history-card-position-item/history-card-position-item.component';
+import {DeleteUserDialog, UsersItemComponent} from './users/users-item/users-item.component';
+import { MenuActionComponent } from './users/menu-action/menu-action.component';
+import {MatMenuModule} from '@angular/material/menu';
+import { FeedbackItemComponent } from './feedback/feedback-item/feedback-item.component';
+import { FeedbackHeaderComponent } from './feedback/feedback-header/feedback-header.component';
 
 
 @NgModule({
@@ -74,6 +84,14 @@ import { ButtonReportComponent } from './users/button-report/button-report.compo
       HistoryItemComponent,
       UsersComponent,
       ButtonReportComponent,
+      ChoiceTimeComponent,
+      HistoryCardPositionListComponent,
+      HistoryCardPositionItemComponent,
+      UsersItemComponent,
+      MenuActionComponent,
+      DeleteUserDialog,
+      FeedbackItemComponent,
+      FeedbackHeaderComponent
     ],
     imports: [
         CommonModule,
@@ -91,7 +109,10 @@ import { ButtonReportComponent } from './users/button-report/button-report.compo
         MatInputModule,
         MatCheckboxModule,
         MatSelectModule,
-        MatTooltipModule
+        MatTooltipModule,
+        MatAutocompleteModule,
+        MatRadioModule,
+        MatMenuModule
     ]
 })
 export class PagesModule { }
