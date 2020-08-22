@@ -32,3 +32,19 @@
 
   color: #FFFFFF;
 }
+
+@media only screen and (max-width: 600px) {
+  .request-header {
+    font-size: 18px;
+  }
+
+  .request-info {
+    min-height: 0;
+
+    padding: 30px;
+  }
+
+  .request-description {
+    font-size: 14px;
+  }
+}

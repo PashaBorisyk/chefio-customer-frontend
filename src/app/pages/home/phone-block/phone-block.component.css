@@ -1,8 +1,24 @@
 button, .mat-stroked-button {
   background: #EC9B25;
+  z-index: 1200;
 }
 
 .mat-icon-button {
   width: 60px;
   height: 60px;
+}
+
+@media only screen and (max-width: 600px) {
+  .mat-icon-button {
+    width: 45px;
+    height: 45px;
+  }
+
+  /deep/.mat-icon-button i, .mat-icon-button, .mat-icon .mat-button, .mat-icon-button, .mat-stroked-button, .mat-flat-button{
+    line-height: 0;
+  }
+
+  /deep/ .material-icons {
+    font-size: 20px;
+  }
 }

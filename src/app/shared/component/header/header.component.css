@@ -8,3 +8,21 @@
 .icon {
   cursor: pointer;
 }
+
+.link-item-mob {
+  display: none;
+}
+
+@media only screen and (max-width: 600px) {
+  .link-item {
+    display: none;
+  }
+
+  .link-item-mob {
+    display: block;
+  }
+
+  .header {
+    padding: 10px;
+  }
+}

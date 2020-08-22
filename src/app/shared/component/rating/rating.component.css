@@ -5,7 +5,6 @@
   font-size: 12px;
   line-height: 130%;
   color: white;
-  margin-left: 5px;
   margin-top: 4px;
 }
 
@@ -21,4 +20,29 @@
 
 .chip:hover ~ .full-rate {
   display: block;
+}
+
+/deep/ .mat-standard-chip {
+  padding: 10px;
+  min-height: 0;
+  height: 16px;
+}
+
+@media only screen and (max-width: 600px) {
+
+  .icon {
+    width: 6px;
+    height: 5px;
+  }
+
+  .text {
+    font-size: 6px;
+    margin-top: 2px;
+  }
+
+  /deep/ .mat-standard-chip {
+    padding: 2px 3px;
+    min-height: 0;
+    height: 16px;
+  }
 }

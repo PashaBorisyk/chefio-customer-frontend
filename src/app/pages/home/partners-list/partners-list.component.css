@@ -13,3 +13,10 @@ img {
   max-width: 250px;
   height: 70px;
 }
+
+@media only screen and (max-width: 600px) {
+  img {
+    max-width: 125px;
+    height: 35px;
+  }
+}

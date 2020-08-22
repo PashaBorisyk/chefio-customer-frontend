@@ -76,3 +76,42 @@
 .btn {
   max-width: 50%;
 }
+
+.image-xs {
+  display: none;
+}
+
+@media only screen and (max-width: 600px) {
+  .header-tab {
+    font-size: 15px;
+  }
+
+  .active-header-tab {
+    font-size: 15px;
+  }
+
+  .description-tab {
+    font-size: 9px;
+  }
+
+  .description-plan {
+    font-size: 12px;
+  }
+
+  .image-xl {
+    display: none;
+  }
+
+  .image-xs {
+    display: block;
+    max-width: 300px;
+    max-height: 200px;
+  }
+
+  /deep/.mat-tab-label, /deep/.mat-tab-label-active{
+    min-width: 0!important;
+    padding: 3px!important;
+    margin: 3px!important;
+  }
+
+}

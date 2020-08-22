@@ -54,8 +54,6 @@
   /* or 27px */
 
   text-transform: uppercase;
-
-  color: #FFFFFF;
 }
 
 .email {
@@ -64,8 +62,6 @@
   font-weight: normal;
   font-size: 14px;
   line-height: 190%;
-
-  color: #FFFFFF;
 }
 
 .phone {
@@ -74,7 +70,64 @@
   font-weight: normal;
   font-size: 14px;
   line-height: 190%;
+}
 
 
-  color: #FFFFFF;
+@media only screen and (max-width: 600px) {
+  .main-icon {
+    width: 100px;
+    height: 12px;
+  }
+
+  .icon {
+    width: 10px;
+    height: 10px;
+  }
+
+  .accept-payment {
+    font-size: 8px;
+  }
+
+  .type {
+    font-size: 6px;
+  }
+
+  .mastercard {
+    width: 20px;
+    height: 12px;
+  }
+
+  .visa {
+    width: 20px;
+    height: 6px;
+  }
+
+  .payment-type {
+    font-size: 6px;
+  }
+
+  .company {
+    font-size: 6px;
+  }
+
+  .street {
+    font-size: 7px;
+  }
+
+  .email {
+    font-size: 7px;
+  }
+
+  .phone {
+    font-size: 7px;
+  }
+
+  .contact-icon {
+    width: 12px;
+    height: 12px;
+  }
+
+  .footer {
+    padding: 5%;
+  }
 }

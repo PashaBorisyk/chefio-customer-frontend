@@ -1,14 +1,14 @@
 <div fxLayout="row" fxLayoutAlign="start center">
-  <div fxFlex="5">
-    <button *ngIf="isPagination" (click)="back()" mat-icon-button>
+  <div *ngIf="isPagination" fxFlex="5">
+    <button (click)="back()" mat-icon-button>
       <mat-icon class="white">keyboard_arrow_left</mat-icon>
     </button>
   </div>
   <div fxLayout="row" fxFlex="90" *ngFor="let position of positionsActive" class="card">
     <app-card-position [position]="position"></app-card-position>
   </div>
-  <div fxFlex="5">
-    <button *ngIf="isPagination" (click)="next()" mat-icon-button>
+  <div *ngIf="isPagination" fxFlex="5">
+    <button (click)="next()" mat-icon-button>
       <mat-icon class="white">keyboard_arrow_right</mat-icon>
     </button>
   </div>

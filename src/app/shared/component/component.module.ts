@@ -35,6 +35,7 @@ import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import { CardPositionListComponent } from './card-position-list/card-position-list.component';
 import {MatRippleModule} from '@angular/material/core';
 import { PaginationComponent } from './pagination/pagination.component';
+import { MobileInfoCardComponent } from './info-card/mobile-info-card/mobile-info-card.component';
 
 
 
@@ -62,7 +63,8 @@ import { PaginationComponent } from './pagination/pagination.component';
       BucketActionComponent,
       FeedbackDialog,
       CardPositionListComponent,
-      PaginationComponent
+      PaginationComponent,
+      MobileInfoCardComponent
     ],
     exports: [
         HeaderComponent,

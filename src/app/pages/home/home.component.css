@@ -1,6 +1,6 @@
 .container {
   max-width: 100%;
-  padding: 10%;
+  padding: 2% 10% 10%;;
 }
 
 .side {
@@ -26,18 +26,6 @@
   border-radius: 4px !important;
 }
 
-/*.info {*/
-/*  margin: 200px 0;*/
-/*}*/
-
-/*.partners {*/
-/*  margin: 200px 0;*/
-/*}*/
-
-/*.feedback-present {*/
-/*  margin-top: 200px;*/
-/*}*/
-
 .phone-btn {
   position: fixed;
   right: 50px;
@@ -45,5 +33,13 @@
 }
 
 .calendar {
-  margin: 5% 0;
+  margin-bottom: 5%;
+}
+
+
+@media only screen and (max-width: 600px) {
+
+.container {
+  padding: 2%;
+}
 }

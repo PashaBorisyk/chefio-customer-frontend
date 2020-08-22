@@ -10,6 +10,7 @@ import {User} from '../../../core/model/user';
 export class HeaderComponent implements OnInit {
 
   user: User;
+  openMenu = false;
 
   constructor(private authService: AuthService) { }
 

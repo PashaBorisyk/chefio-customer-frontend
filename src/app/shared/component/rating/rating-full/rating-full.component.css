@@ -4,3 +4,11 @@
   border-radius: 95px;
   padding: 10%;
 }
+
+@media only screen and (max-width: 600px) {
+
+  .icon {
+    width: 6px;
+    height: 5px;
+  }
+}

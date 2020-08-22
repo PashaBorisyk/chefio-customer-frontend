@@ -10,9 +10,23 @@
 }
 
 .form {
-  margin-left: 100px;
+  /*margin-left: 100px;*/
 }
 
 .input-field {
   margin-top: 5px;
+}
+
+@media only screen and (max-width: 600px) {
+  .form-header {
+    font-size: 19px;
+  }
+
+  .form {
+    padding: 0 10%;
+  }
+
+  .input-field {
+    font-size: 12px;
+  }
 }

@@ -19,3 +19,13 @@
 /deep/ .mat-icon-button {
   color: white;
 }
+
+@media only screen and (max-width: 600px) {
+  .point {
+    font-size: 11px;
+  }
+
+  .answer {
+    font-size: 10px;
+  }
+}

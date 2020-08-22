@@ -1,3 +1,18 @@
 .text {
+  font-family: Circe;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 14px;
+  line-height: 130%;
+}
 
+@media only screen and (max-width: 600px) {
+  .icon {
+    width: 12px;
+    height: 12px;
+  }
+
+  .text {
+    font-size: 9px;
+  }
 }
