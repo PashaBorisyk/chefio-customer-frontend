@@ -52,6 +52,8 @@ import { MenuActionComponent } from './users/menu-action/menu-action.component';
 import {MatMenuModule} from '@angular/material/menu';
 import { FeedbackItemComponent } from './feedback/feedback-item/feedback-item.component';
 import { FeedbackHeaderComponent } from './feedback/feedback-header/feedback-header.component';
+import { NewUserComponent } from './users/new-user/new-user.component';
+import { EditUserComponent } from './users/edit-user/edit-user.component';
 
 
 @NgModule({
@@ -91,7 +93,9 @@ import { FeedbackHeaderComponent } from './feedback/feedback-header/feedback-hea
       MenuActionComponent,
       DeleteUserDialog,
       FeedbackItemComponent,
-      FeedbackHeaderComponent
+      FeedbackHeaderComponent,
+      NewUserComponent,
+      EditUserComponent
     ],
     imports: [
         CommonModule,

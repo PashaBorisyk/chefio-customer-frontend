@@ -4,7 +4,7 @@
   </div>
   <div fxLayout="row" fxLayoutGap="10px" class="my-4">
     <div fxFlex="20">
-      <app-button color="orange" value="СОЗДАТЬ ПОЛЬЗОВАТЕЛЯ"></app-button>
+      <app-button (click)="newUser = true" color="orange" value="СОЗДАТЬ ПОЛЬЗОВАТЕЛЯ"></app-button>
     </div>
     <div fxFlex="20">
       <app-button-report></app-button-report>
@@ -13,8 +13,8 @@
 
     </div>
     <div fxFlex="35" fxLayout="row">
-      <input placeholder="Поиск по базе" class="search" fxFlex="80" type="text">
-      <app-button color="blue" fxFlex="20" value="Поиск"></app-button>
+      <input (keydown.enter)="onSearch()" [(ngModel)]="searchValue" placeholder="Поиск по базе" class="search" fxFlex="80" type="text">
+      <app-button (click)="onSearch()" color="blue" fxFlex="20" value="Поиск"></app-button>
     </div>
   </div>
   <div class="header-line" fxLayout="row">
@@ -39,6 +39,9 @@
   </div>
   <div *ngFor="let customer of customers">
     <app-users-item [number]="getNumber(customer)" [customer]="customer"></app-users-item>
+  </div>
+  <div *ngIf="newUser">
+    <app-new-user (closeEvent)="closeEvent()"></app-new-user>
   </div>
   <div fxLayoutAlign="end end" *ngIf="isDataLoaded" class="mt-5">
     <app-pagination [pageNow]="page + 1" (changePage)="loadPage($event)" [pageSize]="pageSize" [count]="count"></app-pagination>

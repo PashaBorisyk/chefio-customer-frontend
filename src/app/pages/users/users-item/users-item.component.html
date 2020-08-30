@@ -1,4 +1,4 @@
-<div class="header-line" fxLayout="row">
+<div *ngIf="!editCustomer" class="header-line" fxLayout="row">
   <div fxFlex="2"></div>
   <div fxFlex="5" class="header-list">
     {{number}}
@@ -46,7 +46,7 @@
       <mat-icon [id]="number">more_vert</mat-icon>
     </button>
     <div class="item-list" *ngIf="openMenuAction">
-      <div class="item pointer">
+      <div (click)="editCustomer = true" class="item pointer">
         Редактировать
       </div>
       <div (click)="deleteUser()" class="item pointer">
@@ -54,4 +54,7 @@
       </div>
     </div>
   </div>
+</div>
+<div *ngIf="editCustomer">
+  <app-edit-user (closeEvent)="editCustomer = false" [customerInfo]="customer" [number]="number"></app-edit-user>
 </div>

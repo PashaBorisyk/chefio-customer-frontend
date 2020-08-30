@@ -5,10 +5,14 @@ export interface Position {
   name: string;
   rate: number;
   price: number;
-  tag: string;
+  categories: Category[];
   imageUrl: string;
   ingredients: string;
   positionGroup: PositionGroup;
   weight: number;
   totalProduced: number;
+}
+
+export interface Category {
+  name: string;
 }

@@ -1,0 +1,43 @@
+<div class="header-line" fxLayout="row">
+  <div fxFlex="2"></div>
+  <div fxLayout="row" fxLayoutAlign="start center" fxFlex="5" class="header-list">
+    <div>
+      #
+    </div>
+  </div>
+  <div fxFlex="20" class="header-list">
+    <mat-form-field color="accent" class="input-field">
+      <mat-label>Имя</mat-label>
+      <input [(ngModel)]="customerInfo.username" class="input-field" type="text" matInput>
+    </mat-form-field>
+  </div>
+  <div fxFlex="20" class="header-list">
+    <mat-form-field color="accent" class="input-field">
+      <mat-label>Позиция</mat-label>
+      <input [(ngModel)]="customerInfo.position" class="input-field" type="text" matInput>
+    </mat-form-field>
+  </div>
+  <div fxFlex="19" class="header-list">
+    <mat-form-field color="accent" class="input-field">
+      <mat-label>Почта</mat-label>
+      <input [(ngModel)]="customerInfo.email" class="input-field" type="text" matInput>
+    </mat-form-field>
+  </div>
+  <div fxFlex="14" class="header-list">
+    <mat-form-field color="accent" class="input-field">
+      <mat-label>Телефон</mat-label>
+      <input [(ngModel)]="customerInfo.phone" class="input-field" type="text" matInput>
+    </mat-form-field>
+  </div>
+  <div fxFlex="5"></div>
+  <div fxLayout="row" fxLayoutAlign="start center" fxFlex="5">
+    <button (click)="onSave()" mat-icon-button>
+      <mat-icon>done</mat-icon>
+    </button>
+  </div>
+  <div fxLayout="row" fxLayoutAlign="start center" fxFlex="5">
+    <button (click)="onClose()" mat-icon-button>
+      <mat-icon>close</mat-icon>
+    </button>
+  </div>
+</div>

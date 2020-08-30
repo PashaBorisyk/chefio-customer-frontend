@@ -31,17 +31,17 @@
 @media only screen and (max-width: 600px) {
 
   .icon {
-    width: 6px;
-    height: 5px;
+    width: 9px;
+    height: 8px;
   }
 
   .text {
-    font-size: 6px;
-    margin-top: 2px;
+    font-size: 10px;
+    margin-top: 4px;
   }
 
   /deep/ .mat-standard-chip {
-    padding: 2px 3px;
+    padding: 4px 6px;
     min-height: 0;
     height: 16px;
   }

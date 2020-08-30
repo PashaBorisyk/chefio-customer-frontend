@@ -4,6 +4,8 @@ import {HttpClient} from '@angular/common/http';
 import {BehaviorSubject, Observable} from 'rxjs';
 import {UserDto} from '../../core/model/user-dto';
 import {CustomerInfo} from '../../core/model/customer-info';
+import {PageCustomer} from '../../core/dto/page-customer';
+import {UserRequest} from '../../pages/users/users.component';
 
 @Injectable({
   providedIn: 'root'
@@ -25,9 +27,9 @@ export class UserService {
     return this.http.post(link, user);
   }
 
-  getTeammates(page: number, size: number): Observable<CustomerInfo[]> {
-    const link = this.url + 'customers/teammates?page=' + page + '&size=' + size;
-    return this.http.get<CustomerInfo[]>(link);
+  getTeammates(userRequest: UserRequest): Observable<PageCustomer> {
+    const link = this.url + 'customers/teammates';
+    return this.http.post<PageCustomer>(link, userRequest);
   }
 
   getCountTeammates(): Observable<number> {
@@ -51,5 +53,10 @@ export class UserService {
 
   reloadUsersList(): void {
     this.usersListSubject.next(true);
+  }
+
+  createNewUser(customerInfo: CustomerInfo): Observable<any> {
+    const link = this.url + 'customers/save';
+    return this.http.post(link, customerInfo);
   }
 }

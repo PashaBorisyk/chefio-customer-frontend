@@ -16,25 +16,22 @@ export class UsersComponent implements OnInit {
   pageSize = 10;
   count = 0;
   isDataLoaded = false;
+  searchValue = '';
+  newUser = false;
 
   constructor(private userService: UserService,
               private loader: LoaderService) { }
 
   ngOnInit(): void {
     this.loader.changeLoaderState(true);
-    this.userService.getTeammates(this.page, this.pageSize).subscribe(
+    this.userService.getTeammates(this.preRequest()).subscribe(
       result => {
-        this.customers = result;
-        this.userService.getCountTeammates().subscribe(
-          data => {
-            this.count = data;
-            this.loadNumbers();
-            this.isDataLoaded = true;
-            this.loader.changeLoaderState(false);
-          },
-          () => {
-            this.loader.changeLoaderState(false);
-          });
+        this.customers = result.content;
+        this.count = result.totalElements;
+        console.log(result);
+        this.loadNumbers();
+        this.isDataLoaded = true;
+        this.loader.changeLoaderState(false);
       },
       () => {
         this.loader.changeLoaderState(false);
@@ -60,27 +57,45 @@ export class UsersComponent implements OnInit {
     this.loadTeammates();
   }
 
+  preRequest(): UserRequest {
+    const search = this.searchValue.length > 0 ? this.searchValue : null;
+    return {
+      page: this.page,
+      size: this.pageSize,
+      search
+    };
+  }
+
   loadTeammates(): void {
     this.loader.changeLoaderState(true);
     this.isDataLoaded = false;
-    this.userService.getTeammates(this.page, this.pageSize).subscribe(
+    this.userService.getTeammates(this.preRequest()).subscribe(
       data => {
-        this.userService.getCountTeammates().subscribe(
-          count => {
-            this.count = count;
-            this.customers = data;
-            this.loadNumbers();
-            this.isDataLoaded = true;
-            this.loader.changeLoaderState(false);
-          },
-          () => {
-            this.isDataLoaded = true;
-            this.loader.changeLoaderState(false);
-          });
+        this.customers = data.content;
+        this.count = data.totalElements;
+        this.loadNumbers();
+        this.isDataLoaded = true;
+        this.loader.changeLoaderState(false);
       },
       () => {
         this.isDataLoaded = true;
         this.loader.changeLoaderState(false);
       });
   }
+
+  onSearch(): void {
+    this.page = 0;
+    this.loadTeammates();
+  }
+
+  closeEvent(): void {
+    this.newUser = false;
+    this.loadTeammates();
+  }
+}
+
+export interface UserRequest {
+  page: number;
+  size: number;
+  search: string;
 }

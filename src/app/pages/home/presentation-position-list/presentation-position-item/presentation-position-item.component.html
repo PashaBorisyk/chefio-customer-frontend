@@ -1,16 +1,16 @@
 <div fxLayout="column" fxLayoutGap="20px" fxLayoutGap.xs="10px" class="card">
-  <div fxFlex="30">
+  <div>
     <img class="image" src='assets/img/example.png'>
     <mat-chip-list class="mb-1">
       <div>
         <app-rating [value]="position.rate"></app-rating>
       </div>
-      <mat-chip class="rating" *ngIf="position.tag">
-        {{position.tag}}
+      <mat-chip class="rating" *ngFor="let category of position.categories">
+        {{category.name}}
       </mat-chip>
     </mat-chip-list>
   </div>
-  <div fxFlex="20">
+  <div class="info-block">
     <div class="name">
       {{position.name}}
     </div>
@@ -18,7 +18,7 @@
       {{position.ingredients}}
     </div>
   </div>
-  <div fxFlex="10">
+  <div>
     <app-card-price [value]="position.price"></app-card-price>
   </div>
   <div fxLayout="row" fxLayoutAlign="space-between center">

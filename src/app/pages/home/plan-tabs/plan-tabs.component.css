@@ -1,6 +1,6 @@
 .header-tab {
   color: #B2B2B2;
-  font-family: Montserrat;
+  font-family: Circe;
   font-style: normal;
   font-weight: bold;
   font-size: 30px;
@@ -8,7 +8,7 @@
 }
 
 .active-header-tab {
-  font-family: Montserrat;
+  font-family: Circe;
   font-style: normal;
   font-weight: bold;
   font-size: 30px;

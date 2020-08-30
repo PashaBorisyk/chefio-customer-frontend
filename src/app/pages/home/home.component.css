@@ -39,7 +39,12 @@
 
 @media only screen and (max-width: 600px) {
 
-.container {
-  padding: 2%;
-}
+  .phone-btn {
+    right: 15px;
+    bottom: 15px;
+  }
+
+  .container {
+    padding: 2%;
+  }
 }

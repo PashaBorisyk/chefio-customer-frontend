@@ -17,6 +17,7 @@ export class UsersItemComponent implements OnInit {
   @Input() number: number;
   openMenuAction = false;
   openMenuStatus = false;
+  editCustomer = false;
 
   constructor(private subscriber: SubscribeService,
               private userService: UserService,

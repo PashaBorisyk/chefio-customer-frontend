@@ -14,6 +14,7 @@
 .rating {
   background: #1CC186;
   cursor: pointer;
+  color: white;
 }
 
 .text {
@@ -50,29 +51,33 @@
   color: #808080;
 }
 
+.info-block {
+  height: 60px;
+}
+
 @media only screen and (max-width: 600px) {
   .card {
     max-width: 190px;
   }
 
   .name {
-    font-size: 13px;
+    font-size: 15px;
   }
 
   .text {
-    font-size: 7px;
+    font-size: 9px;
   }
 
   .ingredients {
-    font-size: 10px;
+    font-size: 12px;
   }
 
   .weight {
-    font-size: 8px;
+    font-size: 10px;
   }
 
   .info {
-    font-size: 9px;
+    font-size: 11px;
   }
 
   .image {
@@ -80,6 +85,14 @@
   }
 
   .icon {
-    height: 8px;
+    height: 10px;
+  }
+
+  .info-block {
+    height: 30px;
+  }
+
+  .rating {
+    padding: 7px;
   }
 }

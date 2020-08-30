@@ -1,0 +1,12 @@
+.header-list {
+  font-style: normal;
+  font-weight: normal;
+  font-size: 14px;
+  line-height: 130%;
+  margin: 0.5% 0;
+}
+
+.header-line {
+  background: #121212;
+  margin: 2px 0;
+}
