@@ -1,6 +1,6 @@
 <div fxLayout="column" fxLayoutGap="20px" fxLayoutGap.xs="10px" class="card">
   <div>
-    <img class="image" src='assets/img/example.png'>
+    <img class="image" src="{{position.imageUrl != null ? position.imageUrl : 'assets/img/example.png'}}">
     <mat-chip-list class="mb-1">
       <div>
         <app-rating [value]="position.rate"></app-rating>
@@ -23,17 +23,25 @@
   </div>
   <div fxLayout="row" fxLayoutAlign="space-between center">
     <div class="weight">{{position.weight * 1000}} гр.</div>
-    <svg class="icon" width="1" height="16" viewBox="0 0 1 16" fill="none" xmlns="http://www.w3.org/2000/svg">
-      <rect width="1" height="16" fill="#808080"/>
-    </svg>
-    <div class="info">22 Б</div>
-    <svg class="icon" width="1" height="16" viewBox="0 0 1 16" fill="none" xmlns="http://www.w3.org/2000/svg">
-      <rect width="1" height="16" fill="#808080"/>
-    </svg>
-    <div class="info">22 Ж</div>
-    <svg class="icon" width="1" height="16" viewBox="0 0 1 16" fill="none" xmlns="http://www.w3.org/2000/svg">
-      <rect width="1" height="16" fill="#808080"/>
-    </svg>
-    <div class="info">22 У</div>
+    <div fxLayout="row" fxLayoutAlign="space-between center" *ngIf="position.proteins != null">
+      <svg class="icon" width="1" height="16" viewBox="0 0 1 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <rect width="1" height="16" fill="#808080"/>
+      </svg>
+      <div class="info ml-2">{{position.proteins}} Б</div>
+    </div>
+    <div fxLayout="row" fxLayoutAlign="space-between center" *ngIf="position.fat != null">
+      <div>
+        <svg class="icon" width="1" height="16" viewBox="0 0 1 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <rect width="1" height="16" fill="#808080"/>
+        </svg>
+      </div>
+      <div class="info ml-2">{{position.fat}} Ж</div>
+    </div>
+    <div fxLayout="row" fxLayoutAlign="space-between center" *ngIf="position.carbohydrate">
+      <svg class="icon" width="1" height="16" viewBox="0 0 1 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <rect width="1" height="16" fill="#808080"/>
+      </svg>
+      <div class="info ml-2">{{position.carbohydrate}} У</div>
+    </div>
   </div>
 </div>

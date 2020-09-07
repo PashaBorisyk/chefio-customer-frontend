@@ -52,6 +52,10 @@ export class AuthService {
     this.alertService.success('Успешный выход с аккаунта');
   }
 
+  confirm(token: string): Observable<boolean> {
+    return this.http.get<boolean>(this.url + 'customers/confirm?token=' + token);
+  }
+
   init(): Observable<User> {
     const link = this.url + 'init';
     return this.http.get<User>(link);

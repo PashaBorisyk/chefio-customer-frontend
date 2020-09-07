@@ -13,6 +13,7 @@ import {FeedbackComponent} from './pages/feedback/feedback.component';
 import {HistoryComponent} from './pages/history/history.component';
 import {UsersComponent} from './pages/users/users.component';
 import {ManagerGuard} from './shared/helper/manager.guard';
+import {ConfirmComponent} from './pages/confirm/confirm.component';
 
 const routes: Routes = [
   { path: '', component: MainComponent, canActivate: [AuthGuard] },
@@ -24,6 +25,7 @@ const routes: Routes = [
   { path: 'users', component: UsersComponent, canActivate: [AuthGuard] },
   { path: 'login', component: LoginComponent },
   { path: 'registration', component: RegistrationComponent },
+  { path: 'confirm/:id', component: ConfirmComponent },
   { path: 'registration/success', component: RegistrationSuccessComponent }
 ];
 

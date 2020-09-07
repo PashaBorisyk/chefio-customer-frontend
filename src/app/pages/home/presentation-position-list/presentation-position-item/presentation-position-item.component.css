@@ -1,5 +1,6 @@
 .card {
   max-width: 250px;
+  min-width: 200px;
 }
 
 .name {
@@ -53,6 +54,11 @@
 
 .info-block {
   height: 60px;
+}
+
+.image {
+  max-width: 170px;
+  height: 140px;
 }
 
 @media only screen and (max-width: 600px) {

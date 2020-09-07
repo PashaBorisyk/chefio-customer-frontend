@@ -11,6 +11,9 @@ export interface Position {
   positionGroup: PositionGroup;
   weight: number;
   totalProduced: number;
+  proteins: number;
+  fat: number;
+  carbohydrate: number;
 }
 
 export interface Category {

@@ -54,6 +54,7 @@ import { FeedbackItemComponent } from './feedback/feedback-item/feedback-item.co
 import { FeedbackHeaderComponent } from './feedback/feedback-header/feedback-header.component';
 import { NewUserComponent } from './users/new-user/new-user.component';
 import { EditUserComponent } from './users/edit-user/edit-user.component';
+import { ConfirmComponent } from './confirm/confirm.component';
 
 
 @NgModule({
@@ -95,7 +96,8 @@ import { EditUserComponent } from './users/edit-user/edit-user.component';
       FeedbackItemComponent,
       FeedbackHeaderComponent,
       NewUserComponent,
-      EditUserComponent
+      EditUserComponent,
+      ConfirmComponent
     ],
     imports: [
         CommonModule,
