@@ -6,7 +6,7 @@ import {Position} from './position';
 export class Order {
   id: number = null;
   username: string = null;
-  address: Address = new Address();
+  address = new Address();
   toDate: string = null;
   channel = 'WEB';
   contactless = false;
