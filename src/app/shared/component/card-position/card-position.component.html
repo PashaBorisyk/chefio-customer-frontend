@@ -8,12 +8,12 @@
       Вегетырянское
     </mat-chip>
   </mat-chip-list>
-  <div class="mt-2">
+  <div class="info-block mt-2">
     <div class="name">
-      {{position.name}}
+      {{position?.name.length > 40 ? position?.name.substring(0, 40) + '...' : position.name}}
     </div>
     <div class="ingredients">
-      {{position.ingredients}}
+      {{position?.ingredients.length > 30 ? position?.ingredients.substring(0, 30) + '...' : position.ingredients}}
     </div>
   </div>
 

@@ -50,9 +50,14 @@
 
 .card {
   max-width: 280px;
+  min-width: 200px;
 }
 
 .img-card {
-  max-width: 208px;
-  max-height: 140px;
+  max-width: 170px;
+  height: 140px;
+}
+
+.info-block {
+  height: 60px;
 }
