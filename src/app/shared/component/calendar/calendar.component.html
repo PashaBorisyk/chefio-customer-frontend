@@ -3,13 +3,13 @@
     {{MONTH_NAME[choiceDate.getMonth()]}}
   </div>
   <div fxLayout="row" fxLayoutAlign="space-between start" class="dates">
-    <div *ngFor="let date of dates">
+    <div *ngFor="let date of dates" style="margin-right: 1%">
       <div class="
              {{inActiveDates(date) ? '' : 'disable'}}
              week">
         {{WEEK_NAME[date.getDay()]}}
       </div>
-      <div *ngIf="!inActiveDates(date); else active" class="mt-3 day disable">
+      <div *ngIf="!inActiveDates(date); else active" class="mt-3 day disable" style="width: 30%;">
         <div fxLayout="column" fxLayoutAlign="space-around center">
           <div class="day-value">
             {{date.getDate()}}
@@ -20,7 +20,7 @@
         <div (click)="setChoiceDate(date)"
              class="day pointer mt-3 white
          {{dateEquals(date, choiceDate) ? 'orange-bkg' : ''}}
-         {{dateEquals(date, now) ? 'day-now' : ''}}">
+         {{dateEquals(date, now) ? 'day-now' : ''}}" style="width: 30%;">
           <div fxLayout="column" fxLayoutAlign="space-around center">
             <div class="day-value">
               {{date.getDate()}}
