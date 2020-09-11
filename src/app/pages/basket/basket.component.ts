@@ -30,6 +30,7 @@ export class BasketComponent implements OnInit {
   totalForPay = 0;
   comment = '';
   activeTime = '';
+  address = '';
 
   constructor(private customerContactService: CustomerContactService,
               private loader: LoaderService,
@@ -128,10 +129,13 @@ export class BasketComponent implements OnInit {
   }
 
   get order(): Order {
+    console.log(this.address);
+    const addr = new Address();
+    addr.street = this.address;
     const order = new Order();
     order.username = this.contactInfo.username;
     order.email = this.contactInfo.email;
-    order.address = this.contactInfo.address;
+    order.address = addr;
     order.toDate = this.dateForBackend;
     order.contactless = this.contactInfo.contactless;
     order.forHome = this.contactInfo.forHome;

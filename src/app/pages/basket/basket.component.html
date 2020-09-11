@@ -19,7 +19,7 @@
       <div class="field">
         <mat-form-field color="accent" class="input-field">
           <mat-label>Адресс</mat-label>
-          <input (ngModelChange)="contactInfo.address.street = $event" [ngModel]="contactInfo.address?.street" class="input-field" type="text" matInput required>
+          <input (ngModelChange)="address = $event" [ngModel]="contactInfo?.address?.street" class="input-field" type="text" matInput required>
         </mat-form-field>
       </div>
     </div>

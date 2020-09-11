@@ -56,7 +56,7 @@
             [matAutocomplete]="auto"
             [formControl]="addressFormControl"
             (input)="findAddress()"
-            [value]="contactInfo.address.street"
+            [value]="contactInfo?.address?.street"
             class="input-field" type="text" matInput>
           <mat-autocomplete #auto="matAutocomplete">
             <mat-option *ngFor="let value of addresses" [value]="value">
