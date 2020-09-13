@@ -27,6 +27,11 @@ export class UserService {
     return this.http.post(link, user);
   }
 
+  getLimit(): Observable<number> {
+    const link = this.url + 'customers/limit';
+    return this.http.get<number>(link);
+  }
+
   getTeammates(userRequest: UserRequest): Observable<PageCustomer> {
     const link = this.url + 'customers/teammates';
     return this.http.post<PageCustomer>(link, userRequest);

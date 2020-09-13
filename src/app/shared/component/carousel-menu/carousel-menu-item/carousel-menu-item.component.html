@@ -3,12 +3,12 @@
   <div fxFlex="20" class="description-header">
     {{item.content}}
   </div>
-  <div fxFlex="50">
+  <div fxFlex="55">
     <div  *ngIf="item.hasButton" class="button-header">
       <app-button (click)="goToLink()" color="orange" [value]="item.valueButton"></app-button>
     </div>
   </div>
-  <div class="mt-4 slider" fxLayout="row" fxLayoutAlign="center center" fxLayoutGap="10px">
+  <div fxFlex="5" class="mt-4 slider" fxLayout="row" fxLayoutAlign="center center" fxLayoutGap="10px">
     <div class="pointer" (click)="go(value - 1)" *ngFor="let value of positions">
       <svg *ngIf="position == value - 1" width="28" height="5" viewBox="0 0 28 5" fill="none" xmlns="http://www.w3.org/2000/svg">
         <rect y="0.00012207" width="28" height="5" rx="2.5" fill="white"/>

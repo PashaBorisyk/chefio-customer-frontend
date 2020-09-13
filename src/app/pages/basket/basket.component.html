@@ -19,7 +19,19 @@
       <div class="field">
         <mat-form-field color="accent" class="input-field">
           <mat-label>Адресс</mat-label>
-          <input (ngModelChange)="address = $event" [ngModel]="contactInfo?.address?.street" class="input-field" type="text" matInput required>
+          <input (ngModelChange)="address.street = $event" [ngModel]="contactInfo?.address?.street" class="input-field" type="text" matInput required>
+        </mat-form-field>
+      </div>
+      <div class="field">
+        <mat-form-field color="accent" class="input-field">
+          <mat-label>Квартира/Номер комнаты</mat-label>
+          <input (ngModelChange)="address.room = $event" [ngModel]="contactInfo?.address?.room" class="input-field" type="text" matInput>
+        </mat-form-field>
+      </div>
+      <div class="field">
+        <mat-form-field color="accent" class="input-field">
+          <mat-label>Подъезд</mat-label>
+          <input (ngModelChange)="address.building = $event" [ngModel]="contactInfo?.address?.building" class="input-field" type="text" matInput>
         </mat-form-field>
       </div>
     </div>

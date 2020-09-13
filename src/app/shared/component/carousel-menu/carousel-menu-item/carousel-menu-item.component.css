@@ -4,7 +4,8 @@
   -moz-background-size: cover;
   -o-background-size: cover;
   background-size: cover;
-  padding: 10% 10% 5%;
+  padding: 10% 10% 2%;
+  min-height: 600px;
 }
 
 .main-text {
@@ -31,7 +32,6 @@
 
 .slider {
   margin-top: 10%;
-  margin-bottom: 10%;
 }
 
 @media only screen and (max-width: 600px) {
@@ -45,5 +45,9 @@
 
   .button-header {
     max-width: 120px;
+  }
+
+  .carousel {
+    min-height: 300px;
   }
 }

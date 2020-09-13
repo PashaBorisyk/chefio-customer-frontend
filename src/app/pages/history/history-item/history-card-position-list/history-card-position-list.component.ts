@@ -12,6 +12,7 @@ export class HistoryCardPositionListComponent implements OnInit {
   constructor() { }
 
   ngOnInit(): void {
+    console.log(this.positions);
   }
 
 }

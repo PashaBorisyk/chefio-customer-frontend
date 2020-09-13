@@ -18,6 +18,10 @@ export class HeaderComponent implements OnInit {
     this.authService.user.subscribe(data => this.user = data);
   }
 
+  isAdmin(): boolean {
+    return this.user.role === 'ROLE_CUSTOMER_ADMIN';
+  }
+
   logout(): void {
     this.authService.logout();
   }

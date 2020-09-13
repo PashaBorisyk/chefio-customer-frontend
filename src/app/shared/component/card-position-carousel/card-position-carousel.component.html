@@ -1,14 +1,16 @@
 <div fxLayout="row" fxLayoutAlign="start center">
-  <div *ngIf="isPagination" fxFlex="5">
-    <button (click)="back()" mat-icon-button>
+  <div fxFlex="5">
+    <button *ngIf="isPagination" (click)="back()" mat-icon-button>
       <mat-icon class="white">keyboard_arrow_left</mat-icon>
     </button>
   </div>
-  <div fxLayout="row" fxFlex="90" *ngFor="let position of positionsActive" class="card">
-    <app-card-position [position]="position"></app-card-position>
+  <div fxLayout="row" fxFlex="90" id="card-carousel" fxLayoutGap="10px">
+    <div fxFlex="33" *ngFor="let position of positionsActive" class="card fadeOutLeft">
+      <app-card-position [position]="position"></app-card-position>
+    </div>
   </div>
-  <div *ngIf="isPagination" fxFlex="5">
-    <button (click)="next()" mat-icon-button>
+  <div fxFlex="5">
+    <button *ngIf="isPagination" (click)="next()" mat-icon-button>
       <mat-icon class="white">keyboard_arrow_right</mat-icon>
     </button>
   </div>

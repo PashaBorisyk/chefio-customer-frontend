@@ -16,7 +16,7 @@ export class ManagerGuard implements CanActivate {
     next: ActivatedRouteSnapshot,
     state: RouterStateSnapshot): Observable<boolean | UrlTree> | Promise<boolean | UrlTree> | boolean | UrlTree {
     const user = this.authService.userValue;
-    if (user && user.role === 'ROLE_ADMIN') {
+    if (user && user.role === 'ROLE_CUSTOMER_ADMIN') {
       return true;
     } else {
       this.router.navigate(['/']);

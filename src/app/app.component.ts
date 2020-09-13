@@ -79,11 +79,13 @@ export class AppComponent implements OnInit, AfterViewChecked {
 
   findDateActiveDate(activeDates: Date[]): Date {
     const now = new Date();
-    const date = activeDates.find(value => this.dateEquals(value, now));
 
-    if (date) {
-      return date;
-    }
+    // Date today
+    // const date = activeDates.find(value => this.dateEquals(value, now));
+    //
+    // if (date) {
+    //   return date;
+    // }
 
     activeDates.forEach(value => {
       if (value > now) {
