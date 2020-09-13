@@ -58,7 +58,6 @@ export class CalendarComponent implements OnInit {
           this.activeDates = result.activeDates;
           this.setChoiceDate(result.activeDate);
           if (this.authService.userValue) {
-            console.log('dates: ' + result.activeDates);
             this.orderService.orderDates(this.activeDates).subscribe(
               dates => {
                 this.orderDates = dates;

@@ -63,7 +63,7 @@
 
 @media only screen and (max-width: 600px) {
   .card {
-    max-width: 190px;
+    max-width: 170px;
   }
 
   .name {
@@ -87,7 +87,8 @@
   }
 
   .image {
-    width: 100%;
+    max-width: 170px;
+    height: 140px;
   }
 
   .icon {

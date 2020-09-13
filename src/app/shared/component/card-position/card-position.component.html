@@ -1,12 +1,14 @@
 <div class="card">
   <img class="img-card" src="assets/img/food_3.png">
   <mat-chip-list class="mt-2">
-    <div>
+    <div *ngIf="false">
       <app-rating [value]="position.rate"></app-rating>
     </div>
-    <mat-chip class="rating" *ngIf="true">
-      Вегетырянское
-    </mat-chip>
+    <div *ngIf="position.categories != null && position.categories.length > 0">
+      <mat-chip *ngFor="let cat of position.categories" class="rating" >
+        {{cat.name}}
+      </mat-chip>
+    </div>
   </mat-chip-list>
   <div class="info-block mt-2">
     <div class="name">

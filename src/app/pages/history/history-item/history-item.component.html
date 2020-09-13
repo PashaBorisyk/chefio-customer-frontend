@@ -13,7 +13,7 @@
     </div>
     <div fxFlex="22">
       <div class="line-text">
-        {{order.username}}
+        {{order.username == null ? '-' : order.username}}
       </div>
       <div class="line-text">
         {{order.phone}}
@@ -24,11 +24,10 @@
     </div>
     <div fxFlex="20">
       <div class="line-text">
-        Мага
+        -
 <!--        {{history.manager.username}}-->
       </div>
       <div class="line-text">
-        1234
 <!--        {{history.manager.phone}}-->
       </div>
     </div>
@@ -37,11 +36,11 @@
         {{order.positions.length}} позиции
       </div>
       <div class="mt-2 line-description">
-        Доставил Мага
+        Доставил Иванов.А.С
 <!--        {{history.courier.username}}-->
       </div>
       <div class="line-description">
-        213
+        +375333905077
 <!--        {{history.courier.phone}}-->
       </div>
     </div>
@@ -65,10 +64,30 @@
         </div>
         <div *ngSwitchCase="'IN_PROGRESS'">
           <div class="orange status-text">
+            В процессе обработки
+          </div>
+        </div>
+        <div *ngSwitchCase="'PACKED'">
+          <div class="orange status-text">
+            Упакован
+          </div>
+        </div>
+        <div *ngSwitchCase="'IN_WAY'">
+          <div class="orange status-text">
+            В пути
+          </div>
+        </div>
+        <div *ngSwitchCase="'CONFIRMED'">
+          <div class="orange status-text">
             Подтвержден
           </div>
         </div>
-        <div *ngSwitchCase="'DECLINED'">
+        <div *ngSwitchCase="'DELIVERED'">
+          <div class="green status-text">
+            Доставлен
+          </div>
+        </div>
+        <div *ngSwitchDefault>
           <div class="red status-text">
             Отменен
           </div>

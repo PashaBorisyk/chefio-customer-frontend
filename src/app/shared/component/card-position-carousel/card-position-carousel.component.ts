@@ -36,6 +36,7 @@ export class CardPositionCarouselComponent implements OnInit {
     if (this.positionNow > this.pageSize - 1) {
       this.positionNow = 0;
     }
+    const element = document.getElementById('card-carousel').classList.add('fadeOutLeft');
     this.init();
   }
 

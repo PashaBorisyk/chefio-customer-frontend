@@ -22,7 +22,7 @@ const routes: Routes = [
   { path: 'order', component: BasketComponent, canActivate: [AuthGuard] },
   { path: 'feedback', component: FeedbackComponent, canActivate: [AuthGuard] },
   { path: 'history', component: HistoryComponent, canActivate: [AuthGuard] },
-  { path: 'users', component: UsersComponent, canActivate: [AuthGuard] },
+  { path: 'users', component: UsersComponent, canActivate: [AuthGuard, ManagerGuard] },
   { path: 'login', component: LoginComponent },
   { path: 'registration', component: RegistrationComponent },
   { path: 'confirm/:id', component: ConfirmComponent },

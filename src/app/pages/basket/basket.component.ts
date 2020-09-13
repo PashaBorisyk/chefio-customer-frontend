@@ -14,6 +14,7 @@ import {Order} from '../../core/model/order';
 import {Address} from '../../core/model/address';
 import {Router} from '@angular/router';
 import {DateService} from '../../shared/service/date.service';
+import {UserService} from '../../shared/service/user.service';
 
 @Component({
   selector: 'app-basket',
@@ -30,7 +31,8 @@ export class BasketComponent implements OnInit {
   totalForPay = 0;
   comment = '';
   activeTime = '';
-  address = '';
+  address = new Address();
+  limit = 0;
 
   constructor(private customerContactService: CustomerContactService,
               private loader: LoaderService,
@@ -40,6 +42,7 @@ export class BasketComponent implements OnInit {
               private orderService: OrderService,
               private router: Router,
               private dateService: DateService,
+              private userService: UserService,
               private alertService: AlertService) { }
 
   ngOnInit(): void {
@@ -70,10 +73,13 @@ export class BasketComponent implements OnInit {
               }
             }
           );
-          this.totalForPay = this.total;
           this.positionService.findByIdsIn(ids).subscribe(
             positions => {
               this.positions = positions;
+              this.userService.getLimit().subscribe(result => {
+                this.limit = result;
+                this.totalForPay = this.calculateTotalForPay();
+              });
             }
           );
         }
@@ -84,6 +90,7 @@ export class BasketComponent implements OnInit {
         this.changePositions(result);
       }
     });
+
   }
 
 
@@ -128,14 +135,16 @@ export class BasketComponent implements OnInit {
     }
   }
 
+  calculateTotalForPay(): number {
+    const result = this.total - this.limit;
+    return result > 0 ? result : 0;
+  }
+
   get order(): Order {
-    console.log(this.address);
-    const addr = new Address();
-    addr.street = this.address;
     const order = new Order();
     order.username = this.contactInfo.username;
     order.email = this.contactInfo.email;
-    order.address = addr;
+    order.address = this.address;
     order.toDate = this.dateForBackend;
     order.contactless = this.contactInfo.contactless;
     order.forHome = this.contactInfo.forHome;

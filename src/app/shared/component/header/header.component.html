@@ -15,7 +15,7 @@
   <app-link class="link-item" link="/home#partners" *ngIf="!user" value="КЛИЕНТЫ"></app-link>
 
   <app-link class="link-item" routerLink="/" *ngIf="user" value="МЕНЮ"></app-link>
-  <app-link class="link-item" routerLink="/users" *ngIf="user" value="ПОЛЬЗОВАТЕЛИ"></app-link>
+  <app-link class="link-item" routerLink="/users" *ngIf="user && isAdmin()" value="ПОЛЬЗОВАТЕЛИ"></app-link>
   <app-link class="link-item" routerLink="/feedback" *ngIf="user" value="ОБРАТНАЯ СВЯЗЬ"></app-link>
   <app-link class="link-item" routerLink="/history" *ngIf="user" value="ИСТОРИЯ ЗАКАЗОВ"></app-link>
   <app-bucket class="link-item" routerLink="/order" *ngIf="user"></app-bucket>
@@ -62,7 +62,7 @@
   <app-link (click)="openMenu = false == openMenu" fxFlexAlign="center" class="link-item-mob" link="/login" *ngIf="!user" value="ВОЙТИ"></app-link>
 
   <app-link (click)="openMenu = false == openMenu" fxFlexAlign="center" class="link-item-mob" routerLink="/" *ngIf="user" value="МЕНЮ"></app-link>
-  <app-link (click)="openMenu = false == openMenu" fxFlexAlign="center" class="link-item-mob" routerLink="/users" *ngIf="user" value="ПОЛЬЗОВАТЕЛИ"></app-link>
+  <app-link (click)="openMenu = false == openMenu" fxFlexAlign="center" class="link-item-mob" routerLink="/users" *ngIf="user && isAdmin()" value="ПОЛЬЗОВАТЕЛИ"></app-link>
   <app-link (click)="openMenu = false == openMenu" fxFlexAlign="center" class="link-item-mob" routerLink="/feedback" *ngIf="user" value="ОБРАТНАЯ СВЯЗЬ"></app-link>
   <app-link (click)="openMenu = false == openMenu" fxFlexAlign="center" class="link-item-mob" routerLink="/history" *ngIf="user" value="ИСТОРИЯ ЗАКАЗОВ"></app-link>
   <app-bucket (click)="openMenu = false == openMenu" fxFlexAlign="center" class="link-item-mob" routerLink="/order" *ngIf="user"></app-bucket>
