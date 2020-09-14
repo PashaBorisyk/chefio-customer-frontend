@@ -1,15 +1,16 @@
-<div fxLayout="row" fxLayoutAlign="space-between start">
-  <div class="month mr-2">
+<div fxLayout="row" fxLayoutAlign="start start">
+  <div class="month mr-4">
     {{MONTH_NAME[choiceDate.getMonth()]}}
   </div>
   <div fxLayout="row" fxLayoutAlign="space-between start" class="dates">
     <div *ngFor="let date of dates" style="margin-right: 1%">
       <div class="
              {{inActiveDates(date) ? '' : 'disable'}}
+             pointer
              week">
         {{WEEK_NAME[date.getDay()]}}
       </div>
-      <div *ngIf="!inActiveDates(date); else active" class="mt-3 day disable" style="width: 30%;">
+      <div *ngIf="!inActiveDates(date); else active" class="mt-3 pointer day disable" style="width: 30%;">
         <div fxLayout="column" fxLayoutAlign="space-around center">
           <div class="day-value">
             {{date.getDate()}}

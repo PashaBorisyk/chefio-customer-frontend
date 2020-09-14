@@ -2,7 +2,7 @@
   <div>
     <img class="image" src="{{position.imageUrl != null ? position.imageUrl : 'assets/img/example.png'}}">
     <mat-chip-list class="mb-1">
-      <div>
+      <div *ngIf="false">
         <app-rating [value]="position.rate"></app-rating>
       </div>
       <mat-chip class="rating" *ngFor="let category of position.categories">
@@ -21,7 +21,7 @@
   <div>
     <app-card-price [value]="position.price"></app-card-price>
   </div>
-  <div fxLayout="row" fxLayoutAlign="space-between center">
+  <div fxLayout="row" fxLayoutAlign="start center" fxLayoutGap="10px">
     <div class="weight">{{position.weight * 1000}} гр.</div>
     <div fxLayout="row" fxLayoutAlign="space-between center" *ngIf="position.proteins != null">
       <svg class="icon" width="1" height="16" viewBox="0 0 1 16" fill="none" xmlns="http://www.w3.org/2000/svg">

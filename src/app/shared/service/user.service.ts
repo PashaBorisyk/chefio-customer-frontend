@@ -6,6 +6,7 @@ import {UserDto} from '../../core/model/user-dto';
 import {CustomerInfo} from '../../core/model/customer-info';
 import {PageCustomer} from '../../core/dto/page-customer';
 import {UserRequest} from '../../pages/users/users.component';
+import {CompanyInfo} from '../../core/model/company-info';
 
 @Injectable({
   providedIn: 'root'
@@ -19,17 +20,23 @@ export class UserService {
   private usersListSubject = new BehaviorSubject(false);
   usersListObserver = this.usersListSubject.asObservable();
 
+  private orderActiveTimesSubject = new BehaviorSubject(null);
+  orderActiveTimesObserver = this.orderActiveTimesSubject.asObservable();
+
   constructor(private http: HttpClient) { }
 
+  nextActiveTimes(value: string[]): void {
+    this.orderActiveTimesSubject.next(value);
+  }
 
   registration(user: UserDto): Observable<any> {
     const link = this.url + 'customers';
     return this.http.post(link, user);
   }
 
-  getLimit(): Observable<number> {
-    const link = this.url + 'customers/limit';
-    return this.http.get<number>(link);
+  getInfo(): Observable<CompanyInfo> {
+    const link = this.url + 'customers/info/company';
+    return this.http.get<CompanyInfo>(link);
   }
 
   getTeammates(userRequest: UserRequest): Observable<PageCustomer> {

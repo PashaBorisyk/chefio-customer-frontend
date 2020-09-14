@@ -1,5 +1,8 @@
 export enum OrderState {
   CONFIRMED,
   IN_PROGRESS,
-  DECLINED
+  DECLINED,
+  PACKED,
+  IN_WAY,
+  DELIVERED
 }

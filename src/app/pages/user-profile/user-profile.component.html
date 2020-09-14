@@ -56,7 +56,7 @@
             [matAutocomplete]="auto"
             [formControl]="addressFormControl"
             (input)="findAddress()"
-            [value]="contactInfo?.address?.street"
+            [(ngModel)]="contactInfo?.address.street"
             class="input-field" type="text" matInput>
           <mat-autocomplete #auto="matAutocomplete">
             <mat-option *ngFor="let value of addresses" [value]="value">
@@ -65,12 +65,18 @@
           </mat-autocomplete>
         </mat-form-field>
       </div>
-<!--      <div class="field">-->
-<!--        <mat-form-field color="accent" class="input-field">-->
-<!--          <mat-label>Квартира/Номер комнаты</mat-label>-->
-<!--          <input [(ngModel)]="contactInfo?.address?.room" class="input-field" type="text" matInput>-->
-<!--        </mat-form-field>-->
-<!--      </div>-->
+      <div class="field">
+        <mat-form-field color="accent" class="input-field">
+          <mat-label>Квартира/Номер комнаты</mat-label>
+          <input [(ngModel)]="contactInfo.address.room" class="input-field" type="text" matInput>
+        </mat-form-field>
+      </div>
+      <div class="field">
+        <mat-form-field color="accent" class="input-field">
+          <mat-label>Подъезд</mat-label>
+          <input [(ngModel)]="contactInfo.address.building" class="input-field" type="text" matInput>
+        </mat-form-field>
+      </div>
     </div>
     <div fxFlex="25">
       <div class="white header-block">
@@ -87,5 +93,6 @@
   <div class="mt-4 btn-group" fxLayout="row" fxLayoutAlign="end start" fxLayoutGap="20px">
     <app-button (click)="save()" value="СОХРАНИТЬ" fxFlex="20"></app-button>
     <app-button fxFlex="15" color="grey" value="ОТМЕНИТЬ"></app-button>
+    <app-button (click)="logout()" fxFlex="15" color="red" value="ВЫХОД"></app-button>
   </div>
 </div>

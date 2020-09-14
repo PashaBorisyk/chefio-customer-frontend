@@ -56,3 +56,7 @@
   font-size: 16px;
   line-height: 100%;
 }
+
+::ng-deep.mat-radio-button.mat-radio-disabled .mat-radio-label-content {
+  color: white;
+}

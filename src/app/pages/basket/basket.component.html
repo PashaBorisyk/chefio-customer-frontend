@@ -19,19 +19,19 @@
       <div class="field">
         <mat-form-field color="accent" class="input-field">
           <mat-label>Адресс</mat-label>
-          <input (ngModelChange)="address.street = $event" [ngModel]="contactInfo?.address?.street" class="input-field" type="text" matInput required>
+          <input [disabled]="!contactInfo.forHome" [(ngModel)]="contactInfo.forHome ? contactInfo.address.street : companyAddress.street" class="input-field" type="text" matInput required>
         </mat-form-field>
       </div>
       <div class="field">
         <mat-form-field color="accent" class="input-field">
           <mat-label>Квартира/Номер комнаты</mat-label>
-          <input (ngModelChange)="address.room = $event" [ngModel]="contactInfo?.address?.room" class="input-field" type="text" matInput>
+          <input [disabled]="!contactInfo.forHome" [(ngModel)]="contactInfo.forHome ? contactInfo.address.room : companyAddress.room" class="input-field" type="text" matInput required>
         </mat-form-field>
       </div>
       <div class="field">
         <mat-form-field color="accent" class="input-field">
           <mat-label>Подъезд</mat-label>
-          <input (ngModelChange)="address.building = $event" [ngModel]="contactInfo?.address?.building" class="input-field" type="text" matInput>
+          <input [disabled]="!contactInfo.forHome" [(ngModel)]="contactInfo.forHome ? contactInfo.address.building : companyAddress.building" class="input-field" type="text" matInput>
         </mat-form-field>
       </div>
     </div>
@@ -46,7 +46,7 @@
           </mat-checkbox>
         </div>
         <div>
-          <mat-checkbox [(ngModel)]="contactInfo.forHome">
+          <mat-checkbox (change)="setActiveTimeRange()" [(ngModel)]="contactInfo.forHome">
             На дом
           </mat-checkbox>
         </div>
@@ -64,8 +64,8 @@
       </div>
       <div class="mt-2">
         <mat-radio-group [(ngModel)]="contactInfo.paymentMethod">
-          <mat-radio-button class="mr-4" value="CARD">Карта</mat-radio-button>
-          <mat-radio-button value="CASH">Наличные</mat-radio-button>
+          <mat-radio-button class="mr-4" value="CARD" [disabled]="disablePaymentType">Карта</mat-radio-button>
+          <mat-radio-button value="CASH" [disabled]="disablePaymentType">Наличные</mat-radio-button>
         </mat-radio-group>
       </div>
       <div class="mt-2 field">

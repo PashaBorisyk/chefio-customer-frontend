@@ -8,6 +8,7 @@ import {Observable} from 'rxjs';
 import {map, startWith} from 'rxjs/operators';
 import {Address} from '../../core/model/address';
 import {AlertService} from '../../shared/service/alert.service';
+import {AuthService} from '../../shared/service/auth.service';
 
 @Component({
   selector: 'app-user-profile',
@@ -26,6 +27,7 @@ export class UserProfileComponent implements OnInit {
   constructor(private customerContactService: CustomerContactService,
               private addressService: AddressService,
               private alertService: AlertService,
+              private authService: AuthService,
               private loader: LoaderService) { }
 
   ngOnInit(): void {
@@ -34,6 +36,9 @@ export class UserProfileComponent implements OnInit {
     this.customerContactService.getContactInfo().subscribe(
       result => {
         this.contactInfo = result;
+        if (!result.address) {
+          this.contactInfo.address = new Address();
+        }
         this.loader.changeLoaderState(false);
       },
       () => {
@@ -65,12 +70,6 @@ export class UserProfileComponent implements OnInit {
 
   save(): void {
     this.loader.changeLoaderState(true);
-    console.log(this.addressFormControl.value);
-    if (this.addressFormControl.value) {
-      const address = new Address();
-      address.street = this.addressFormControl.value;
-      this.contactInfo.address = address;
-    }
     this.customerContactService.save(this.contactInfo).subscribe(
       () => {
         this.alertService.success('Данные успешно изменены');
@@ -79,7 +78,11 @@ export class UserProfileComponent implements OnInit {
       () => {
         this.loader.changeLoaderState(false);
       }
-    )
+    );
+  }
+
+  logout(): void {
+    this.authService.logout();
   }
 
   private _filter(value: string): string[] {

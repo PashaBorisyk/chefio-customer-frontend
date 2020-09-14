@@ -1,5 +1,6 @@
-import {Component, OnInit, Output} from '@angular/core';
+import {Component, Input, OnInit, Output} from '@angular/core';
 import { EventEmitter } from '@angular/core';
+import {UserService} from '../../../shared/service/user.service';
 
 @Component({
   selector: 'app-choice-time',
@@ -9,23 +10,24 @@ import { EventEmitter } from '@angular/core';
 export class ChoiceTimeComponent implements OnInit {
 
   open = false;
-  times = [
-    '11:00-11:30',
-    '11:30-12:00',
-    '12:00-12:30'
-  ];
+  times = [];
 
   activeTime = '';
   listTimes = [];
 
   @Output() notifyActiveTime = new EventEmitter();
 
-  constructor() { }
+  constructor(private userService: UserService) { }
 
   ngOnInit(): void {
-    this.activeTime = this.times[0];
-    this.listTimes = this.times.filter(it => it !== this.activeTime);
-    this.notify();
+    this.userService.orderActiveTimesObserver.subscribe( result => {
+      if (result) {
+        this.times = result;
+        this.activeTime = this.times[0];
+        this.listTimes = this.times.filter(it => it !== this.activeTime);
+        this.notify();
+      }
+    });
   }
 
 

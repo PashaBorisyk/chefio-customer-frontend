@@ -61,3 +61,7 @@
 .info-block {
   height: 60px;
 }
+
+.mat-standard-chip {
+  min-height: 20px;
+}

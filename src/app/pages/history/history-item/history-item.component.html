@@ -54,7 +54,7 @@
     </div>
     <div fxFlex="15">
       <div [ngSwitch]="order.state">
-        <div *ngSwitchCase="'CONFIRMED'">
+        <div *ngSwitchCase="'DELIVERED'">
           <div class="green status-text">
             Доставлен
           </div>
@@ -80,11 +80,6 @@
         <div *ngSwitchCase="'CONFIRMED'">
           <div class="orange status-text">
             Подтвержден
-          </div>
-        </div>
-        <div *ngSwitchCase="'DELIVERED'">
-          <div class="green status-text">
-            Доставлен
           </div>
         </div>
         <div *ngSwitchDefault>

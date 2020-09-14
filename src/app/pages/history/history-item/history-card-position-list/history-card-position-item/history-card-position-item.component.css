@@ -64,3 +64,8 @@
   font-size: 21px;
   line-height: 100%;
 }
+
+.mat-standard-chip {
+  min-height: 20px;
+}
+

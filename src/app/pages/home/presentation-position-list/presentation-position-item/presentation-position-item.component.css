@@ -61,6 +61,11 @@
   height: 140px;
 }
 
+.mat-standard-chip {
+  min-height: 20px;
+}
+
+
 @media only screen and (max-width: 600px) {
   .card {
     max-width: 170px;
