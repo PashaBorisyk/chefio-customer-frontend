@@ -54,3 +54,22 @@
 .item:hover {
   background: rgba(59, 58, 58, 1);
 }
+
+@media only screen and (max-width: 600px) {
+  .header-list {
+    font-size: 9px;
+  }
+
+  .header-list-status {
+    font-size: 9px;
+    background: none;
+  }
+
+  .pv {
+    display: none !important;
+  }
+
+  .header-list-status {
+    font-size: 9px;
+  }
+  }

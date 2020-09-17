@@ -36,6 +36,7 @@ import { CardPositionListComponent } from './card-position-list/card-position-li
 import {MatRippleModule} from '@angular/material/core';
 import { PaginationComponent } from './pagination/pagination.component';
 import { MobileInfoCardComponent } from './info-card/mobile-info-card/mobile-info-card.component';
+import { CardPositionDetailsDialogComponent } from './card-position/card-position-details-dialog/card-position-details-dialog.component';
 
 
 
@@ -64,7 +65,8 @@ import { MobileInfoCardComponent } from './info-card/mobile-info-card/mobile-inf
       FeedbackDialog,
       CardPositionListComponent,
       PaginationComponent,
-      MobileInfoCardComponent
+      MobileInfoCardComponent,
+      CardPositionDetailsDialogComponent
     ],
     exports: [
         HeaderComponent,

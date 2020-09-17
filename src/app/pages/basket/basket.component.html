@@ -39,7 +39,7 @@
       <div class="white header-block">
         Дата и время
       </div>
-      <div class="mt-2" fxLayout="row" fxLayoutAlign="start start">
+      <div class="mt-2" fxLayout.xs="column" fxLayout="row" fxLayoutAlign="start start">
         <div class="mr-4">
           <mat-checkbox [(ngModel)]="contactInfo.contactless">
             Бесконтактная
@@ -85,16 +85,16 @@
       Очистить все
     </div>
   </div>
-  <div class="my-4 white header">
+  <div class="my-4 white">
     <app-card-position-list [positions]="positions"></app-card-position-list>
   </div>
   <div class="mt-5" fxLayout="row" fxLayoutAlign="start center" fxLayoutGap="20px">
     <div>
       <div class="white header-block">
-        Итого: {{total.toFixed(2)}} byn
+        Итого: {{calculateSale(total)}} byn
       </div>
       <div class="total-pay white mt-2">
-        К оплате: {{totalForPay.toFixed(2)}} byn
+        К оплате: {{totalForPay}} byn
       </div>
     </div>
     <div fxFlex="15">

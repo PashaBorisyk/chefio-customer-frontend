@@ -16,6 +16,8 @@ import {Router} from '@angular/router';
 import {DateService} from '../../shared/service/date.service';
 import {UserService} from '../../shared/service/user.service';
 import {finalize} from 'rxjs/operators';
+import {AuthService} from '../../shared/service/auth.service';
+import {User} from '../../core/model/user';
 
 @Component({
   selector: 'app-basket',
@@ -44,6 +46,7 @@ export class BasketComponent implements OnInit {
   ];
   activeTimes = this.forHomeDeliveryTime;
   companyAddress = new Address();
+  user: User;
 
   constructor(private customerContactService: CustomerContactService,
               private loader: LoaderService,
@@ -52,12 +55,16 @@ export class BasketComponent implements OnInit {
               private bucketService: BucketService,
               private orderService: OrderService,
               private router: Router,
+              private authService: AuthService,
               private dateService: DateService,
               private userService: UserService,
               private alertService: AlertService) { }
 
   ngOnInit(): void {
     this.loader.changeLoaderState(true);
+    this.authService.user.subscribe(data => {
+      this.user = data;
+    });
     this.customerContactService.getContactInfo()
       .pipe(
         finalize(() => this.loader.changeLoaderState(false)))
@@ -81,7 +88,7 @@ export class BasketComponent implements OnInit {
           this.bucketService.getBucketInfo().forEach(
             position => {
               if (position.menuDate === localDateString) {
-                this.total += position.price;
+                this.total += (position.price * position.count);
                 ids.push(position.id);
               }
             }
@@ -150,12 +157,18 @@ export class BasketComponent implements OnInit {
     }
   }
 
+  calculateSale(value: number): number {
+    if (this.user != null && this.user.sale != null) {
+      return +(value - (value / 100 * this.user.sale)).toFixed(2);
+    }
+    return value;
+  }
+
   calculateTotalForPay(): number {
-    const result = this.total - this.limit;
+    const result = this.calculateSale(this.total) - this.limit;
     const returnResult = result > 0 ? result : 0;
 
     this.disablePaymentType = returnResult === 0;
-
     return returnResult;
   }
 
@@ -180,7 +193,7 @@ export class BasketComponent implements OnInit {
     order.paymentMethod = this.disablePaymentType ? null : this.contactInfo.paymentMethod;
     order.comment = this.comment;
     order.deliveryPeriod = this.activeTime;
-    order.total = this.total;
+    order.total = this.calculateSale(this.total);
     order.totalForPay = this.totalForPay;
     order.positions = this.positions;
     order.phone = this.contactInfo.phone;

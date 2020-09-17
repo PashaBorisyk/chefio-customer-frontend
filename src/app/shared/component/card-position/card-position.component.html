@@ -10,7 +10,7 @@
       </mat-chip>
     </div>
   </mat-chip-list>
-  <div class="info-block mt-2">
+  <div class="info-block mt-2" fxLayout.xs="column" fxLayoutGap.xs="5px">
     <div class="name">
       {{position?.name?.length > 40 ? position?.name?.substring(0, 40) + '...' : position.name}}
     </div>
@@ -18,33 +18,48 @@
       {{position?.ingredients?.length > 30 ? position?.ingredients?.substring(0, 30) + '...' : position.ingredients}}
     </div>
   </div>
-
-
   <div class="mt-2">
-    <div>
-      <app-card-price [value]="position.price"></app-card-price>
+    <div fxLayout="row" fxLayoutAlign="start center">
+      <div fxFlex="60">
+        <app-card-price [value]="position.price"></app-card-price>
+      </div>
+      <div>
+        <button (click)="openDialog()" mat-icon-button>
+          <mat-icon>visibility</mat-icon>
+        </button>
+      </div>
     </div>
-    <div fxLayout="row" fxLayoutAlign="start center" fxLayoutGap="10px">
-      <div class="weight">{{position.weight * 1000}} гр.</div>
-      <div fxLayout="row" fxLayoutAlign="space-between center" *ngIf="position.proteins != null">
+<div class="dv">
+  <div fxLayout="row" fxLayoutAlign="start center" fxLayoutGap="10px">
+    <div class="weight">{{position.weight * 1000}} гр.</div>
+    <div fxLayout="row" fxLayoutAlign="space-between center" *ngIf="position.proteins != null">
+      <svg class="icon" width="1" height="16" viewBox="0 0 1 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <rect width="1" height="16" fill="#808080"/>
+      </svg>
+      <div class="info ml-2">{{position.proteins}} Б</div>
+    </div>
+    <div fxLayout="row" fxLayoutAlign="space-between center" *ngIf="position.fat != null">
+      <div>
         <svg class="icon" width="1" height="16" viewBox="0 0 1 16" fill="none" xmlns="http://www.w3.org/2000/svg">
           <rect width="1" height="16" fill="#808080"/>
         </svg>
-        <div class="info ml-2">{{position.proteins}} Б</div>
       </div>
-      <div fxLayout="row" fxLayoutAlign="space-between center" *ngIf="position.fat != null">
-        <div>
-          <svg class="icon" width="1" height="16" viewBox="0 0 1 16" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <rect width="1" height="16" fill="#808080"/>
-          </svg>
-        </div>
-        <div class="info ml-2">{{position.fat}} Ж</div>
-      </div>
-      <div fxLayout="row" fxLayoutAlign="space-between center" *ngIf="position.carbohydrate">
-        <svg class="icon" width="1" height="16" viewBox="0 0 1 16" fill="none" xmlns="http://www.w3.org/2000/svg">
-          <rect width="1" height="16" fill="#808080"/>
-        </svg>
-        <div class="info ml-2">{{position.carbohydrate}} У</div>
+      <div class="info ml-2">{{position.fat}} Ж</div>
+    </div>
+    <div fxLayout="row" fxLayoutAlign="space-between center" *ngIf="position.carbohydrate">
+      <svg class="icon" width="1" height="16" viewBox="0 0 1 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <rect width="1" height="16" fill="#808080"/>
+      </svg>
+      <div class="info ml-2">{{position.carbohydrate}} У</div>
+    </div>
+  </div>
+</div>
+    <div class="mv">
+      <div fxLayout="row" fxLayoutAlign="start center" fxLayoutGap="2px">
+        <div class="weight">{{position.weight * 1000}} гр.</div>
+        <div class="info"  *ngIf="position.proteins != null">{{position.proteins}} Б</div>
+        <div class="info"  *ngIf="position.fat != null">{{position.fat}} Ж</div>
+        <div class="info"  *ngIf="position.carbohydrate != null">{{position.carbohydrate}} У</div>
       </div>
     </div>
   </div>

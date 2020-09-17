@@ -35,3 +35,18 @@
 .item-list {
   position: absolute;
 }
+
+@media only screen and (max-width: 600px) {
+  .time-icon {
+    width: 15px;
+    height: 15px;
+  }
+
+  .time-data {
+    font-size: 12px;
+  }
+
+  .item {
+    font-size: 12px;
+  }
+}

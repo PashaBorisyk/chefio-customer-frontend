@@ -1,0 +1,59 @@
+/*::ng-deep .container {*/
+/*  -webkit-filter: blur(1px);*/
+/*  -moz-filter: blur(1px);*/
+/*  -o-filter: blur(1px);*/
+/*  -ms-filter: blur(1px);*/
+/*  filter: blur(1px);*/
+/*}*/
+
+img {
+  width: 100%;
+  height: 100%;
+}
+
+.ingredients {
+  font-family: Circe;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 16px;
+  line-height: 130%;
+  color: #BDBDBD;
+}
+
+.weight {
+  font-family: Circe;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 12px;
+  line-height: 130%;
+}
+
+.info {
+  font-family: Circe;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 12px;
+  line-height: 130%;
+  color: #808080;
+}
+
+.name {
+  font-family: Circe;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 21px;
+  line-height: 100%;
+}
+
+.green {
+  background: #1CC186;
+  color: white !important;
+}
+
+::ng-deep .mat-dialog-container {
+  background: #030203;
+}
+
+.image {
+  max-height: 400px;
+}

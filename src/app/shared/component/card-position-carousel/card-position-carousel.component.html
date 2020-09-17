@@ -1,15 +1,15 @@
-<div fxLayout="row" fxLayoutAlign="start center">
-  <div fxFlex="5">
+<div fxLayout="row" fxLayoutAlign.xs="center center" fxLayoutAlign="start center">
+  <div fxFlex.gt-sm="5">
     <button *ngIf="isPagination" (click)="back()" mat-icon-button>
       <mat-icon class="white">keyboard_arrow_left</mat-icon>
     </button>
   </div>
-  <div fxLayout="row" fxFlex="90" id="card-carousel" fxLayoutGap="10px">
+  <div fxLayout="row" fxFlex="90" id="card-carousel" fxLayoutGap="10px" fxLayoutGap.xs="2px">
     <div fxFlex="33" *ngFor="let position of positionsActive" class="card fadeOutLeft">
       <app-card-position [position]="position"></app-card-position>
     </div>
   </div>
-  <div fxFlex="5">
+  <div fxFlex.gt-sm="5">
     <button *ngIf="isPagination" (click)="next()" mat-icon-button>
       <mat-icon class="white">keyboard_arrow_right</mat-icon>
     </button>

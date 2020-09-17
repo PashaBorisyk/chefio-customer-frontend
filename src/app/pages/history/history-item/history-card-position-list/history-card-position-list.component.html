@@ -1,5 +1,5 @@
-<div fxLayout="row wrap" fxLayoutGap="20px" fxLayoutAlign="start center">
-  <div fxFlex="22" *ngFor="let position of positions">
+<div fxLayoutAlign.xs="center center" fxLayout="row wrap" fxLayoutGap.xs="5px" fxLayoutGap="20px" fxLayoutAlign="start center">
+  <div fxFlex.xs="30" fxFlex="22" *ngFor="let position of positions">
     <app-history-card-position-item [position]="position"></app-history-card-position-item>
   </div>
 </div>

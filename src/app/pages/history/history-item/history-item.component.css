@@ -45,3 +45,22 @@
 .mat-icon {
   color: white;
 }
+
+@media only screen and (max-width: 600px) {
+  .line-text {
+    font-size: 9px;
+  }
+
+  .line-description {
+    font-size: 7px;
+  }
+
+  .additional-text {
+    font-size: 7px;
+  }
+
+  .status-text {
+    font-size: 8px;
+  }
+
+}

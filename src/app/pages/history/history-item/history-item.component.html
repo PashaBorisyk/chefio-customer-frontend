@@ -1,5 +1,5 @@
 <div fxLayout="row">
-  <div fxFlex="97" fxLayout="row" class="line">
+  <div fxFlex.xs="90" fxFlex="97" fxLayout="row" class="line" fxLayoutGap.xs="5px">
     <div fxFlex="10">
       <div class="line-text">
         #{{order.id}}
@@ -90,7 +90,7 @@
       </div>
     </div>
   </div>
-  <div fxLayout="row" fxLayoutAlign="center center" fxFlex="3" class="rectangle">
+  <div fxLayout="row" fxLayoutAlign="center center" fxFlex.xs="10" fxFlex="3" class="rectangle">
     <button (click)="showPosition = showPosition === false" mat-icon-button>
       <mat-icon>{{ showPosition? 'keyboard_arrow_down': 'keyboard_arrow_up' }}</mat-icon>
     </button>

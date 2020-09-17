@@ -18,8 +18,15 @@
       {{position?.ingredients?.length > 30 ? position?.ingredients?.substring(0, 30) + '...' : position.ingredients}}
     </div>
   </div>
-  <div>
-    <app-card-price [value]="position.price"></app-card-price>
+  <div fxLayout="row" fxLayoutAlign="start center">
+    <div fxFlex="60">
+      <app-card-price [value]="position.price"></app-card-price>
+    </div>
+    <div>
+      <button (click)="openDialog()" mat-icon-button>
+        <mat-icon>visibility</mat-icon>
+      </button>
+    </div>
   </div>
   <div fxLayout="row" fxLayoutAlign="start center" fxLayoutGap="10px">
     <div class="weight">{{position.weight * 1000}} гр.</div>

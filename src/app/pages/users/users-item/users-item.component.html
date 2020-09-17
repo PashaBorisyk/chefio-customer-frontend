@@ -1,4 +1,4 @@
-<div *ngIf="!editCustomer" class="header-line" fxLayout="row">
+<div *ngIf="!editCustomer" class="header-line" fxLayout="row" fxLayoutGap.xs="5px">
   <div fxFlex="2"></div>
   <div fxFlex="5" class="header-list">
     {{number}}
@@ -12,7 +12,7 @@
   <div fxFlex="19" class="header-list">
     {{customer.email}}
   </div>
-  <div fxFlex="14" class="header-list">
+  <div fxFlex.xs="20" fxFlex="14" class="header-list">
     {{customer.phone}}
   </div>
   <div fxLayout="row" fxLayoutAlign="center center" fxFlex="14" class="header-list-status" fxFlexAlign="stretch">
@@ -27,7 +27,7 @@
         Неактивный
       </div>
     </div>
-    <div>
+    <div class="pv">
       <button [id]="number" mat-icon-button (click)="openMenuStatus = true">
         <mat-icon [id]="number">keyboard_arrow_down</mat-icon>
       </button>
@@ -41,7 +41,7 @@
       </div>
     </div>
   </div>
-  <div fxFlex="6" fxLayout="row" fxLayoutAlign="center center">
+  <div fxFlex.xs="0" class="pv" fxFlex="6" fxLayout="row" fxLayoutAlign="center center">
     <button [id]="number" (click)="openMenuAction = true" mat-icon-button>
       <mat-icon [id]="number">more_vert</mat-icon>
     </button>
@@ -55,6 +55,6 @@
     </div>
   </div>
 </div>
-<div *ngIf="editCustomer">
+<div class="pv" *ngIf="editCustomer">
   <app-edit-user (closeEvent)="editCustomer = false" [customerInfo]="customer" [number]="number"></app-edit-user>
 </div>
