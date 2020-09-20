@@ -14,6 +14,7 @@ export interface Position {
   proteins: number;
   fat: number;
   carbohydrate: number;
+  description: string;
 }
 
 export interface Category {

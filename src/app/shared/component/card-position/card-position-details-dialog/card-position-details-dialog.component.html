@@ -13,6 +13,7 @@
         </mat-chip>
       </mat-chip-list>
     </div>
+    <div [innerHTML]="data.description" *ngIf="data.description" class="ingredients"></div>
     <div class="ingredients">
       {{data.ingredients}}
     </div>

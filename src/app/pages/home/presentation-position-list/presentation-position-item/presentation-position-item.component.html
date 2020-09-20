@@ -14,7 +14,8 @@
     <div class="name">
       {{position?.name?.length > 40 ? position?.name?.substring(0, 40) + '...' : position.name}}
     </div>
-    <div class="ingredients">
+    <div [innerHTML]="position.description.substring(0, 30)" *ngIf="position.description" class="ingredients"></div>
+    <div *ngIf="position.ingredients" class="ingredients">
       {{position?.ingredients?.length > 30 ? position?.ingredients?.substring(0, 30) + '...' : position.ingredients}}
     </div>
   </div>

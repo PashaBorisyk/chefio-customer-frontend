@@ -16,6 +16,7 @@ export class PresentationPositionItemComponent implements OnInit {
   constructor(private dialog: MatDialog) { }
 
   ngOnInit(): void {
+    console.log(this.position);
   }
 
   openDialog(): void {
