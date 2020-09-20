@@ -24,7 +24,7 @@ export class CarouselMenuItemComponent implements OnInit {
   ngOnInit(): void {
     console.log(this.positions);
     if (this.position % 2 === 1) {
-      this.image = '../../../../../assets/img/food_image_2.png';
+      this.image = '../../../../../assets/img/ex2.jpg';
     }
     this.header = this.sanitizer.bypassSecurityTrustHtml(this.item.header);
     this.itemStyle = {

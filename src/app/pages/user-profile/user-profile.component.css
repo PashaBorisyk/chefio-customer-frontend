@@ -30,3 +30,40 @@
   border: 1px solid white !important;
   background: #201e20 !important;
 }
+
+@media only screen and (max-width: 600px) {
+  .header {
+    font-size: 20px;
+  }
+
+  .header-block {
+    font-size: 16px;
+  }
+
+  .mat-form-field {
+    font-size: 12px;
+  }
+
+  mat-checkbox ::ng-deep .mat-checkbox-inner-container {width: 10px;height: 10px;}
+  ::ng-deep .mat-checkbox-layout .mat-checkbox-label {
+    font-size: 10px;
+  }
+  ::ng-deep .mat-radio-label-content {
+    width: 10px;height: 10px;
+    font-size: 10px;
+  }
+
+  :host ::ng-deep .mat-radio-container{
+    height: 15px;
+    width: 15px;
+  }
+  :host ::ng-deep .mat-radio-outer-circle{
+    height: 15px;
+    width: 15px;
+  }
+  :host ::ng-deep .mat-radio-inner-circle{
+    height: 15px;
+    width: 15px;
+  }
+
+}

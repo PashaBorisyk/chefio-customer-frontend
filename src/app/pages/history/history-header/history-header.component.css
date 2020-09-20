@@ -9,3 +9,9 @@
 .header-line {
   padding: 2%;
 }
+
+@media only screen and (max-width: 600px) {
+  .header-name {
+    font-size: 14px;
+  }
+}

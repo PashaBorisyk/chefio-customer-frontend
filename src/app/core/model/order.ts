@@ -16,7 +16,7 @@ export class Order {
   deliveryPeriod: string = null;
   total = 0;
   totalForPay = 0;
-  state = OrderState.IN_PROGRESS;
+  state = OrderState.CONFIRMED;
   positions: Position[] = [];
   email: string = null;
   phone: string = null;

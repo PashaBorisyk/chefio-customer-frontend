@@ -14,3 +14,9 @@
 .calendar {
   margin-bottom: 3%;
 }
+
+@media only screen and (max-width: 600px) {
+  .container {
+    padding: 2%;
+  }
+}

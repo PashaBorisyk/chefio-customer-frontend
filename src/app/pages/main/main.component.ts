@@ -17,6 +17,7 @@ export class MainComponent implements OnInit {
 
   menu: Menu[] = [];
   hotOffers: Position[];
+  date: string;
 
   constructor(private menuService: MenuService,
               private hotOffersService: HotOffersService,
@@ -28,10 +29,11 @@ export class MainComponent implements OnInit {
     this.hotOffersService.getHotOffers().subscribe(result => this.hotOffers = result);
 
     this.menuService.menuDateObserver.subscribe(date => {
-        if (!date) {
+        if (!date || this.dateService.convertToBackendFormat(date) == this.date) {
           this.loader.changeLoaderState(false);
           return;
         }
+        this.date = this.dateService.convertToBackendFormat(date);
         this.menuService.getMenuByDate(this.dateService.convertToBackendFormat(date)).subscribe(result => {
           this.menu = result.filter(data => data.positions.length !== 0);
           this.loader.changeLoaderState(false);

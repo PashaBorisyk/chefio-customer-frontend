@@ -13,3 +13,21 @@
   font-size: 14px;
   line-height: 100%;
 }
+
+@media only screen and (max-width: 600px) {
+  .btn {
+    height: 28px;
+    font-size: 8px;
+    margin-top: 2px;
+    margin-left: 5px;
+  }
+
+  .text {
+    font-size: 10px;
+  }
+
+  .icon {
+    width: 12px;
+    height: 12px;
+  }
+}

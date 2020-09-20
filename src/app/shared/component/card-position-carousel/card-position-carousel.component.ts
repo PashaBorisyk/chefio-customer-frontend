@@ -23,7 +23,6 @@ export class CardPositionCarouselComponent implements OnInit {
   constructor(private loader: LoaderService) { }
 
   ngOnInit(): void {
-    console.log(this.positions);
     this.pageSize = Math.ceil(this.positions.length / this.countSide);
     this.isPagination = this.pageSize > 1;
     this.init();

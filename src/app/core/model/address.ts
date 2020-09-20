@@ -1,6 +1,6 @@
 export class Address {
   city: string = null;
-  street: string = '';
+  street = '';
   building: string = null;
   room: string = null;
   lat: number = null;

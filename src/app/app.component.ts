@@ -39,11 +39,15 @@ export class AppComponent implements OnInit, AfterViewChecked {
     this.menuService.getMenuInDate(dates).subscribe(
       result => {
         console.log(result);
-        const activeDates = result.map(it => new Date(it));
-        const activeDate = this.findDateActiveDate(activeDates);
-
-        this.menuService.changeMenuDate(activeDate);
-        this.menuService.changeMenuDateInit(new MenuDate(dates, activeDates, activeDate));
+        if (result && result.length > 0) {
+          const activeDates = result.map(it => new Date(it));
+          const activeDate = this.findDateActiveDate(activeDates);
+          this.menuService.changeMenuDate(activeDate);
+          this.menuService.changeMenuDateInit(new MenuDate(dates, activeDates, activeDate));
+        } else {
+          this.menuService.changeMenuDate(new Date());
+          this.menuService.changeMenuDateInit(new MenuDate(dates, [], new Date()));
+        }
       }
     );
   }

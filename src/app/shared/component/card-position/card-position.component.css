@@ -61,3 +61,76 @@
 .info-block {
   height: 60px;
 }
+
+.mat-standard-chip {
+  min-height: 20px;
+}
+
+.mv {
+  display: none;
+}
+
+.mat-icon {
+  color: #EC9B25;
+}
+
+@media only screen and (max-width: 600px) {
+
+  .mat-chip.mat-standard-chip {
+    font-size: 10px;
+  }
+
+  .card {
+    max-width: 80px;
+    min-width: 0;
+  }
+
+  .mat-standard-chip {
+    min-height: 0;
+  }
+
+  .name {
+    font-size: 11px;
+  }
+
+  .text {
+    font-size: 9px;
+  }
+
+  .ingredients {
+    font-size: 9px;
+  }
+
+  .weight {
+    font-size: 9px;
+  }
+
+  .info {
+    font-size: 8px;
+  }
+
+  .image {
+    max-width: 170px;
+    height: 140px;
+  }
+
+  .icon {
+    height: 9px;
+  }
+
+  .info-block {
+    min-height: 30px;
+  }
+
+  .rating {
+    padding: 12px;
+  }
+
+  .dv {
+    display: none;
+  }
+
+  .mv {
+    display: block;
+  }
+}

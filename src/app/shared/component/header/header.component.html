@@ -59,11 +59,12 @@
   <app-link (click)="openMenu = false == openMenu" fxFlexAlign="center" class="link-item-mob" link="/home#about-us" *ngIf="!user" value="О НАС"></app-link>
   <app-link (click)="openMenu = false == openMenu" fxFlexAlign="center" class="link-item-mob" link="/home#tarifs" *ngIf="!user" value="ТАРИФЫ"></app-link>
   <app-link (click)="openMenu = false == openMenu" fxFlexAlign="center" class="link-item-mob" link="/home#partners" *ngIf="!user" value="КЛИЕНТЫ"></app-link>
-  <app-link (click)="openMenu = false == openMenu" fxFlexAlign="center" class="link-item-mob" link="/login" *ngIf="!user" value="ВОЙТИ"></app-link>
+  <app-link (click)="openMenu = false == openMenu" fxFlexAlign="center" class="link-item-mob" routerLink="/login" *ngIf="!user" value="ВОЙТИ"></app-link>
 
   <app-link (click)="openMenu = false == openMenu" fxFlexAlign="center" class="link-item-mob" routerLink="/" *ngIf="user" value="МЕНЮ"></app-link>
   <app-link (click)="openMenu = false == openMenu" fxFlexAlign="center" class="link-item-mob" routerLink="/users" *ngIf="user && isAdmin()" value="ПОЛЬЗОВАТЕЛИ"></app-link>
   <app-link (click)="openMenu = false == openMenu" fxFlexAlign="center" class="link-item-mob" routerLink="/feedback" *ngIf="user" value="ОБРАТНАЯ СВЯЗЬ"></app-link>
   <app-link (click)="openMenu = false == openMenu" fxFlexAlign="center" class="link-item-mob" routerLink="/history" *ngIf="user" value="ИСТОРИЯ ЗАКАЗОВ"></app-link>
+  <app-link (click)="openMenu = false == openMenu" fxFlexAlign="center" class="link-item-mob" routerLink="/profile" *ngIf="user" value="ЛИЧНЫЙ КАБИНЕТ"></app-link>
   <app-bucket (click)="openMenu = false == openMenu" fxFlexAlign="center" class="link-item-mob" routerLink="/order" *ngIf="user"></app-bucket>
 </div>

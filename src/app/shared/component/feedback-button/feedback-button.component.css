@@ -11,3 +11,18 @@ button, .mat-stroked-button {
 .mat-icon {
   font-size: 30px;
 }
+
+@media only screen and (max-width: 600px) {
+  .mat-icon-button {
+    width: 45px;
+    height: 45px;
+  }
+
+  /deep/.mat-icon-button i, .mat-icon-button, .mat-icon .mat-button, .mat-icon-button, .mat-stroked-button, .mat-flat-button{
+    line-height: 0;
+  }
+
+  /deep/ .material-icons {
+    font-size: 20px;
+  }
+}

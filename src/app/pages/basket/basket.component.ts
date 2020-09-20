@@ -15,6 +15,9 @@ import {Address} from '../../core/model/address';
 import {Router} from '@angular/router';
 import {DateService} from '../../shared/service/date.service';
 import {UserService} from '../../shared/service/user.service';
+import {finalize} from 'rxjs/operators';
+import {AuthService} from '../../shared/service/auth.service';
+import {User} from '../../core/model/user';
 
 @Component({
   selector: 'app-basket',
@@ -31,8 +34,19 @@ export class BasketComponent implements OnInit {
   totalForPay = 0;
   comment = '';
   activeTime = '';
-  address = new Address();
   limit = 0;
+  disablePaymentType = false;
+  companyDeliveryTime = [];
+  forHomeDeliveryTime = [
+    '11:30-12:30',
+    '12:00-13:00',
+    '13:30-14:30',
+    '13:00-14:00',
+    '14:00-15:00'
+  ];
+  activeTimes = this.forHomeDeliveryTime;
+  companyAddress = new Address();
+  user: User;
 
   constructor(private customerContactService: CustomerContactService,
               private loader: LoaderService,
@@ -41,19 +55,25 @@ export class BasketComponent implements OnInit {
               private bucketService: BucketService,
               private orderService: OrderService,
               private router: Router,
+              private authService: AuthService,
               private dateService: DateService,
               private userService: UserService,
               private alertService: AlertService) { }
 
   ngOnInit(): void {
     this.loader.changeLoaderState(true);
-    this.customerContactService.getContactInfo().subscribe(
+    this.authService.user.subscribe(data => {
+      this.user = data;
+    });
+    this.customerContactService.getContactInfo()
+      .pipe(
+        finalize(() => this.loader.changeLoaderState(false)))
+      .subscribe(
       result => {
         this.contactInfo = result;
-        this.loader.changeLoaderState(false);
-      },
-      () => {
-        this.loader.changeLoaderState(false);
+        if (!result.address) {
+          this.contactInfo.address = new Address();
+        }
       }
     );
 
@@ -68,7 +88,7 @@ export class BasketComponent implements OnInit {
           this.bucketService.getBucketInfo().forEach(
             position => {
               if (position.menuDate === localDateString) {
-                this.total += position.price;
+                this.total += (position.price * position.count);
                 ids.push(position.id);
               }
             }
@@ -76,8 +96,11 @@ export class BasketComponent implements OnInit {
           this.positionService.findByIdsIn(ids).subscribe(
             positions => {
               this.positions = positions;
-              this.userService.getLimit().subscribe(result => {
-                this.limit = result;
+              this.userService.getInfo().subscribe(result => {
+                this.limit = result.limit;
+                this.companyDeliveryTime = [result.deliveryTime];
+                this.companyAddress = result.address == null ? new Address() : result.address;
+                this.setActiveTimeRange();
                 this.totalForPay = this.calculateTotalForPay();
               });
             }
@@ -108,7 +131,6 @@ export class BasketComponent implements OnInit {
     if (this.order.positions.length > 0) {
       this.loader.changeLoaderState(true);
       const order = this.order;
-
       this.bucketService.getBucketInfo().forEach(data => {
         if (data.menuDate === this.date) {
           this.positions.forEach(pos => {
@@ -135,23 +157,43 @@ export class BasketComponent implements OnInit {
     }
   }
 
+  calculateSale(value: number): number {
+    if (this.user != null && this.user.sale != null) {
+      return +(value - (value / 100 * this.user.sale)).toFixed(2);
+    }
+    return value;
+  }
+
   calculateTotalForPay(): number {
-    const result = this.total - this.limit;
-    return result > 0 ? result : 0;
+    const result = this.calculateSale(this.total) - this.limit;
+    const returnResult = result > 0 ? result : 0;
+
+    this.disablePaymentType = returnResult === 0;
+    return returnResult;
+  }
+
+  setActiveTimeRange(): void {
+    if (this.contactInfo.forHome) {
+      this.activeTimes = this.forHomeDeliveryTime;
+    } else {
+      this.activeTimes = this.companyDeliveryTime;
+    }
+
+    this.userService.nextActiveTimes(this.activeTimes);
   }
 
   get order(): Order {
     const order = new Order();
     order.username = this.contactInfo.username;
     order.email = this.contactInfo.email;
-    order.address = this.address;
+    order.address = this.contactInfo.forHome ? this.contactInfo.address : this.companyAddress;
     order.toDate = this.dateForBackend;
     order.contactless = this.contactInfo.contactless;
     order.forHome = this.contactInfo.forHome;
-    order.paymentMethod = this.contactInfo.paymentMethod;
+    order.paymentMethod = this.disablePaymentType ? null : this.contactInfo.paymentMethod;
     order.comment = this.comment;
     order.deliveryPeriod = this.activeTime;
-    order.total = this.total;
+    order.total = this.calculateSale(this.total);
     order.totalForPay = this.totalForPay;
     order.positions = this.positions;
     order.phone = this.contactInfo.phone;
@@ -181,6 +223,6 @@ export class BasketComponent implements OnInit {
         this.positions.splice(index, 1);
       }
     });
-    this.totalForPay = this.total;
+    this.totalForPay = this.calculateTotalForPay();
   }
 }

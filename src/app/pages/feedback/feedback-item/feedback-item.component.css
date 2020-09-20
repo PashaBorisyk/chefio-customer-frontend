@@ -16,3 +16,17 @@
   font-size: 12px;
   line-height: 130%;
 }
+
+@media only screen and (max-width: 600px) {
+  .line {
+    font-size: 10px;
+  }
+
+  .status {
+    font-size: 9px;
+  }
+
+  .pv {
+    display: none;
+  }
+}

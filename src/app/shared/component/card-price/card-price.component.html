@@ -1,3 +1,15 @@
-<span class="price">
-  {{value}} byn
-</span>
+<div>
+  <div *ngIf="user == null || user.sale == null;else sale" class="price">
+    {{value}} byn
+  </div>
+  <ng-template #sale>
+    <div fxLayoutAlign="start center" fxLayout="row" fxLayoutGap="5px">
+      <div class="price">
+        {{calculateSale()}} byn
+      </div>
+      <div class="old-price">
+        {{value}} byn
+      </div>
+    </div>
+  </ng-template>
+</div>

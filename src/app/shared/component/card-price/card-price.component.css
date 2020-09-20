@@ -7,9 +7,19 @@
   color: #EC9B25;
 }
 
+.old-price {
+  font-family: Circe;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 12px;
+  line-height: 130%;
+  color: #808080;
+  text-decoration: line-through;
+}
+
 
 @media only screen and (max-width: 600px) {
   .price {
-    font-size: 13px;
+    font-size: 10px;
   }
 }

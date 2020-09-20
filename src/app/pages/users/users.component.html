@@ -2,7 +2,7 @@
   <div class="header">
     ПОЛЬЗОВАТЕЛИ
   </div>
-  <div fxLayout="row" fxLayoutGap="10px" class="my-4">
+  <div fxLayoutAlign.xs="start center" fxLayout="row" fxLayoutGap="10px" class="my-4">
     <div fxFlex="20">
       <app-button (click)="newUser = true" color="orange" value="СОЗДАТЬ ПОЛЬЗОВАТЕЛЯ"></app-button>
     </div>
@@ -17,23 +17,23 @@
       <app-button (click)="onSearch()" color="blue" fxFlex="20" value="Поиск"></app-button>
     </div>
   </div>
-  <div class="header-line" fxLayout="row">
-    <div fxFlex="5" class="white header-list">
+  <div fxLayout.xs="5px" class="header-line" fxLayout="row">
+    <div fxFlex="5" class="header-list">
       №
     </div>
-    <div fxFlex="21" class="white header-list">
+    <div fxFlex="21" class=" header-list">
       Имя
     </div>
-    <div fxFlex="21" class="white header-list">
+    <div fxFlex="21" class=" header-list">
       Роль
     </div>
-    <div fxFlex="20" class="white header-list">
+    <div fxFlex="20" class=" header-list">
       Электронная почта
     </div>
-    <div fxFlex="15" class="white header-list">
+    <div fxFlex.xs="20" fxFlex="15" class=" header-list">
       Телефон
     </div>
-    <div fxFlex="15" class="white header-list">
+    <div fxFlex="15" class=" header-list">
       Статус
     </div>
   </div>
