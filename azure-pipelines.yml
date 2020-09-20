@@ -4,6 +4,7 @@
 
 trigger:
 - master
+- dev
 
 resources:
 - repo: self
@@ -11,7 +12,7 @@ resources:
 variables:
   # Container registry service connection established during pipeline creation
   dockerRegistryServiceConnection: 'a2b50b21-3745-47af-991c-33a0fe7f245e'
-  imageRepository: 'dzinnerwebclient'
+  imageRepository: 'dzinnerwebclient/$(Build.SourceBranch)'
   containerRegistry: 'dzinnersoft.azurecr.io'
   dockerfilePath: '$(Build.SourcesDirectory)/Dockerfile'
   tag: '$(Build.BuildId)'
