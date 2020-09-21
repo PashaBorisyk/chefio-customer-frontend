@@ -12,7 +12,7 @@ export class CarouselMenuItemComponent implements OnInit {
   @Input() count = 0;
   @Input() positions = [];
   @Input() position = 0;
-  @Input() image = '../../../../../assets/img/food_image.jpg';
+  @Input() image = '../../../../../assets/img/download.png';
   @Input() item: PresentationCarouselItem;
   @Output() positionEvent = new EventEmitter<number>();
 
