@@ -1,5 +1,5 @@
 <div fxLayout="row" fxLayoutAlign.xs="center center" fxLayoutAlign="start center">
-  <div fxFlex.gt-sm="5">
+  <div fxFlex="5" fxFlex.gt-sm="5">
     <button *ngIf="isPagination" (click)="back()" mat-icon-button>
       <mat-icon class="white">keyboard_arrow_left</mat-icon>
     </button>
@@ -9,7 +9,7 @@
       <app-card-position [position]="position"></app-card-position>
     </div>
   </div>
-  <div fxFlex.gt-sm="5">
+  <div fxFlex="5" fxFlex.gt-sm="5">
     <button *ngIf="isPagination" (click)="next()" mat-icon-button>
       <mat-icon class="white">keyboard_arrow_right</mat-icon>
     </button>
