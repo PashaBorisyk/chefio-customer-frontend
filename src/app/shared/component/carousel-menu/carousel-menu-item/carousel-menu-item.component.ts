@@ -28,7 +28,8 @@ export class CarouselMenuItemComponent implements OnInit {
     }
     this.header = this.sanitizer.bypassSecurityTrustHtml(this.item.header);
     this.itemStyle = {
-      backgroundImage: `url(${this.image})`
+      backgroundImage: `url(${this.image})`,
+      height:'100px'
     };
   }
 

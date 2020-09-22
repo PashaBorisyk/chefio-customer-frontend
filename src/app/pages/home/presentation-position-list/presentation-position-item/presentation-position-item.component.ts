@@ -16,6 +16,7 @@ export class PresentationPositionItemComponent implements OnInit {
   constructor(private dialog: MatDialog) { }
 
   ngOnInit(): void {
+    this.position.categories = this.position.categories.filter((category)=> category.name !== "Стандартная порция")
     console.log(this.position);
   }
 
