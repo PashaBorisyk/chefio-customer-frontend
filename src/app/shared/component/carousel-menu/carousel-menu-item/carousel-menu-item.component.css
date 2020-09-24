@@ -6,6 +6,7 @@
   background-size: cover;
   padding: 10% 10% 2%;
   min-height: 600px;
+  position: relative;
 }
 
 .main-text {
@@ -22,16 +23,20 @@
   font-weight: normal;
   font-size: 24px;
   line-height: 100%;
-  color: white;
+  color: #ffffff;
+}
+
+.button-block {
+  /*max-height: 90px;*/
 }
 
 .button-header {
-  margin-top: 5%;
   max-width: 240px;
 }
 
 .slider {
-  margin-top: 10%;
+  position: absolute;
+  bottom: 5%;
 }
 
 @media only screen and (max-width: 600px) {

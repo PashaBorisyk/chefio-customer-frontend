@@ -1,14 +1,13 @@
 <div fxLayout="column" [ngStyle]="itemStyle" class="carousel">
   <div fxFlex="20" [innerHTML]="header" class="main-text header-one"></div>
-  <div fxFlex="20" class="description-header">
-    {{item.content}}
-  </div>
-  <div fxFlex="55">
-    <div  *ngIf="item.hasButton" class="button-header">
+  <div fxFlex="20" [innerHTML]="item.content" class="description-header"></div>
+  <div class="button-block" fxFlex="45">
+    <div *ngIf="item.hasButton" class="button-header">
       <app-button (click)="goToLink()" color="orange" [value]="item.valueButton"></app-button>
     </div>
   </div>
-  <div fxFlex="5" class="mt-4 slider" fxLayout="row" fxLayoutAlign="center center" fxLayoutGap="10px">
+  <div fxFlex="10"></div>
+  <div fxFlexAlign="center" fxFlex="5" class="slider" fxLayout="row" fxLayoutAlign="center center" fxLayoutGap="10px">
     <div class="pointer" (click)="go(value - 1)" *ngFor="let value of positions">
       <svg *ngIf="position == value - 1" width="28" height="5" viewBox="0 0 28 5" fill="none" xmlns="http://www.w3.org/2000/svg">
         <rect y="0.00012207" width="28" height="5" rx="2.5" fill="white"/>

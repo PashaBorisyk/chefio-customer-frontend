@@ -22,8 +22,7 @@ export class CarouselMenuItemComponent implements OnInit {
   constructor(private sanitizer: DomSanitizer) { }
 
   ngOnInit(): void {
-    console.log(this.positions);
-    if (this.position % 2 === 1) {
+    if (this.item.image == null) {
       this.image = '../../../../../assets/img/ex2.jpg';
     }
     this.header = this.sanitizer.bypassSecurityTrustHtml(this.item.header);
