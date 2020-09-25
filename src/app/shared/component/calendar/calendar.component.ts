@@ -58,7 +58,7 @@ export class CalendarComponent implements OnInit {
         if (result) {
           this.dates = result.dates;
           this.activeDates = result.activeDates;
-          this.setChoiceDate(result.activeDate);
+          this.setChoiceDateAndScrollTo(result.activeDate,null);
           if (this.authService.userValue) {
             this.orderService.orderDates(this.activeDates).subscribe(
               dates => {
@@ -70,10 +70,13 @@ export class CalendarComponent implements OnInit {
   }
 
 
-  setChoiceDate(date: Date): void {
+  setChoiceDateAndScrollTo(date: Date,el: HTMLElement): void {
     this.choiceDate = date;
     this.menuService.changeMenuDate(date);
     this.goToPositions();
+    if (el != null){
+      el.scrollIntoView({behavior: 'smooth'});
+    }
   }
 
   goToPositions(): void {
@@ -114,5 +117,9 @@ export class CalendarComponent implements OnInit {
     }
 
     return false;
+  }
+
+  scroll(el: HTMLElement) {
+    el.scrollIntoView({behavior: 'smooth'});
   }
 }

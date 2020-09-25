@@ -44,7 +44,7 @@
 
 .dates {
   overflow-x: scroll;
-  width: auto;
+  width: 100%;
   white-space: nowrap;
 }
 

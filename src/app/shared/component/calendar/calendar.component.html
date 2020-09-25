@@ -1,4 +1,4 @@
-<div fxLayout="row" fxLayoutAlign="start start">
+<div fxLayout="row" fxLayoutAlign="start start" #calendar>
   <div class="month mr-4">
     {{MONTH_NAME[choiceDate.getMonth()]}}
   </div>
@@ -10,7 +10,7 @@
              week">
         {{WEEK_NAME[date.getDay()]}}
       </div>
-      <div *ngIf="!inActiveDates(date); else active" class="mt-3 pointer day disable" style="width: 30%;">
+      <div *ngIf="!inActiveDates(date); else active" class="mt-3 pointer day disable" style="width: 30%;" (click)="scroll(calendar)">
         <div fxLayout="column" fxLayoutAlign="space-around center">
           <div class="day-value">
             {{date.getDate()}}
@@ -18,7 +18,7 @@
         </div>
       </div>
       <ng-template #active>
-        <div (click)="setChoiceDate(date)"
+        <div (click)="setChoiceDateAndScrollTo(date,calendar)"
              class="day pointer mt-3 white
          {{dateEquals(date, choiceDate) ? 'orange-bkg' : ''}}
          {{dateEquals(date, now) ? 'day-now' : ''}}" style="width: 30%;">
