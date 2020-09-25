@@ -2,7 +2,7 @@
   <div class="month mr-4">
     {{MONTH_NAME[choiceDate.getMonth()]}}
   </div>
-  <div fxLayout="row" fxLayoutAlign="space-between start" class="dates">
+  <div fxLayout="row" fxLayoutAlign="space-between start" class="style-2 dates">
     <div *ngFor="let date of dates" style="margin-right: 1%">
       <div class="
              {{inActiveDates(date) ? '' : 'disable'}}

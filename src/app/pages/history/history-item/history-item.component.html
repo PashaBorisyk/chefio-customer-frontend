@@ -36,11 +36,11 @@
         {{order.positions.length}} позиции
       </div>
       <div class="mt-2 line-description">
-        Доставил Иванов.А.С
+<!--        Доставил Иванов.А.С-->
 <!--        {{history.courier.username}}-->
       </div>
       <div class="line-description">
-        +375333905077
+<!--        +375333905077-->
 <!--        {{history.courier.phone}}-->
       </div>
     </div>
@@ -92,7 +92,7 @@
   </div>
   <div fxLayout="row" fxLayoutAlign="center center" fxFlex.xs="10" fxFlex="3" class="rectangle">
     <button (click)="showPosition = showPosition === false" mat-icon-button>
-      <mat-icon>{{ showPosition? 'keyboard_arrow_down': 'keyboard_arrow_up' }}</mat-icon>
+      <mat-icon>{{ !showPosition? 'keyboard_arrow_down': 'keyboard_arrow_up' }}</mat-icon>
     </button>
   </div>
 </div>

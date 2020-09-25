@@ -16,7 +16,6 @@ export class PaginationComponent implements OnInit {
   constructor() { }
 
   ngOnInit(): void {
-    console.log(this.pageNow);
     const size = Math.ceil(this.count / this.pageSize);
     this.pages = Array.from(Array(size), (_, i) => i + 1);
   }

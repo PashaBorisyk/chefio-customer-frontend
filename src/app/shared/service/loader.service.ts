@@ -7,6 +7,7 @@ import {Observable, Subject} from 'rxjs';
 export class LoaderService {
 
   private loaderState = new Subject<boolean> ();
+  private loaderMenuState = new Subject<boolean>();
 
   constructor() { }
 
@@ -16,5 +17,13 @@ export class LoaderService {
 
   changeLoaderState(data: boolean): void {
     this.loaderState.next(data);
+  }
+
+  subscribeOnMenuLoader(): Observable<boolean> {
+    return this.loaderMenuState.asObservable();
+  }
+
+  changeMenuLoaderState(data: boolean): void {
+    this.loaderMenuState.next(data);
   }
 }
