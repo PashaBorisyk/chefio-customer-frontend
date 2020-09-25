@@ -1,6 +1,6 @@
 <div fxLayout="column" fxLayoutGap="20px" fxLayoutGap.xs="10px" class="card">
   <div>
-    <img class="image" src="{{position.imageUrl != null ? position.imageUrl : 'assets/img/example.png'}}">
+    <img class="image" src="{{position.imageUrl != null ? position.imageUrl : 'assets/img/empty.png'}}">
     <mat-chip-list class="mb-1">
       <div *ngIf="false">
         <app-rating [value]="position.rate"></app-rating>

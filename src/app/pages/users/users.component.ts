@@ -28,7 +28,6 @@ export class UsersComponent implements OnInit {
       result => {
         this.customers = result.content;
         this.count = result.totalElements;
-        console.log(result);
         this.loadNumbers();
         this.isDataLoaded = true;
         this.loader.changeLoaderState(false);

@@ -38,7 +38,6 @@ export class AppComponent implements OnInit, AfterViewChecked {
 
     this.menuService.getMenuInDate(dates).subscribe(
       result => {
-        console.log(result);
         if (result && result.length > 0) {
           const activeDates = result.map(it => new Date(it));
           const activeDate = this.findDateActiveDate(activeDates);

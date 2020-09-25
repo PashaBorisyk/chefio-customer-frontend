@@ -5,6 +5,7 @@ import {LoaderService} from '../../service/loader.service';
 import {OrderService} from '../../service/order.service';
 import {DatePipe} from '@angular/common';
 import {AuthService} from '../../service/auth.service';
+import {Router} from '@angular/router';
 
 
 @Component({
@@ -48,6 +49,7 @@ export class CalendarComponent implements OnInit {
   constructor(private menuService: MenuService,
               private datePipe: DatePipe,
               private authService: AuthService,
+              private router: Router,
               private orderService: OrderService) { }
 
   ngOnInit(): void {
@@ -71,6 +73,11 @@ export class CalendarComponent implements OnInit {
   setChoiceDate(date: Date): void {
     this.choiceDate = date;
     this.menuService.changeMenuDate(date);
+    this.goToPositions();
+  }
+
+  goToPositions(): void {
+    this.router.navigateByUrl('/home#positions');
   }
 
   dateEquals(d1: Date, d2: Date): boolean {
