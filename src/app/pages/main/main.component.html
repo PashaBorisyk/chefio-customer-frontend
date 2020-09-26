@@ -3,13 +3,13 @@
   <div class="calendar">
     <app-calendar></app-calendar>
   </div>
-  <div *ngIf="hotOffers && hotOffers.length > 0" class="mb-5">
-    <div class="white hot-offer mb-2">Горящие предложения</div>
-    <app-card-position-carousel [positions]="positionFromHotOffers"></app-card-position-carousel>
-  </div>
-  <div class="mb-5" *ngFor="let value of menu">
-    <div class="white header-category mb-2 pl-4">{{value.positionGroup.name}}</div>
-    <app-card-position-carousel [positions]="value.positions"></app-card-position-carousel>
+  <div fxLayout="row">
+    <div class="category">
+      <app-category-list [categories]="categories"></app-category-list>
+    </div>
+    <div>
+      <app-card-position-new-list [positions]="activePositions"></app-card-position-new-list>
+    </div>
   </div>
   <div class="feedback">
     <app-feedback-button></app-feedback-button>

@@ -70,6 +70,7 @@ export class BasketComponent implements OnInit {
         finalize(() => this.loader.changeLoaderState(false)))
       .subscribe(
       result => {
+        console.log(result);
         this.contactInfo = result;
         if (!result.address) {
           this.contactInfo.address = new Address();

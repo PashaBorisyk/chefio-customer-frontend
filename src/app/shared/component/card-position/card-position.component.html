@@ -1,5 +1,5 @@
 <div class="card">
-  <img class="img-card" src="assets/img/food_3.png">
+  <img class="img-card" src="{{position.imageUrl != null ? position.imageUrl : 'assets/img/empty.png'}}">
   <mat-chip-list class="mt-2">
     <div *ngIf="false">
       <app-rating [value]="position.rate"></app-rating>

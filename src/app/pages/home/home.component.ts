@@ -7,6 +7,7 @@ import {Menu} from '../../core/model/menu';
 import {CategoryService} from '../../shared/service/category.service';
 import {DateService} from '../../shared/service/date.service';
 import {finalize, first} from 'rxjs/operators';
+import {Position} from '../../core/model/position';
 
 @Component({
   selector: 'app-home',

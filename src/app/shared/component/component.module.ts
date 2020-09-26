@@ -37,6 +37,7 @@ import {MatRippleModule} from '@angular/material/core';
 import { PaginationComponent } from './pagination/pagination.component';
 import { MobileInfoCardComponent } from './info-card/mobile-info-card/mobile-info-card.component';
 import { CardPositionDetailsDialogComponent } from './card-position/card-position-details-dialog/card-position-details-dialog.component';
+import { CardPositionNewListComponent } from './card-position-new-list/card-position-new-list.component';
 
 
 
@@ -66,7 +67,8 @@ import { CardPositionDetailsDialogComponent } from './card-position/card-positio
       CardPositionListComponent,
       PaginationComponent,
       MobileInfoCardComponent,
-      CardPositionDetailsDialogComponent
+      CardPositionDetailsDialogComponent,
+      CardPositionNewListComponent
     ],
     exports: [
         HeaderComponent,
@@ -83,7 +85,8 @@ import { CardPositionDetailsDialogComponent } from './card-position/card-positio
         CarouselMenuComponent,
         CardPositionListComponent,
         RatingFullComponent,
-        PaginationComponent
+        PaginationComponent,
+        CardPositionNewListComponent
     ],
   imports: [
     CommonModule,

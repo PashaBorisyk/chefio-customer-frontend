@@ -73,14 +73,9 @@ export class CalendarComponent implements OnInit {
   setChoiceDateAndScrollTo(date: Date,el: HTMLElement): void {
     this.choiceDate = date;
     this.menuService.changeMenuDate(date);
-    this.goToPositions();
     if (el != null){
       el.scrollIntoView({behavior: 'smooth'});
     }
-  }
-
-  goToPositions(): void {
-    this.router.navigateByUrl('/home#positions');
   }
 
   dateEquals(d1: Date, d2: Date): boolean {
