@@ -37,8 +37,9 @@ export class HomeComponent implements OnInit {
               this.categories.push(menu.positionGroup);
             }
           });
+          this.categories = this.categories.reverse()
           this.menu = result;
-          const activeMenu: Menu = result.length > 0 ? result[0] : null;
+          const activeMenu: Menu = result.length > 0 ? result[result.length - 1] : null;
           if (activeMenu) {
             this.activePositions = activeMenu.positions;
             this.categoryService.changeActiveCategory(activeMenu.positionGroup);

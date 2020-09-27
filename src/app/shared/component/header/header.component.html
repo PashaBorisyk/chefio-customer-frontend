@@ -10,9 +10,8 @@
   </div>
 
   <app-link class="link-item" link="/home#menu" *ngIf="!user" value="МЕНЮ"></app-link>
-  <app-link class="link-item" link="/home#about-us" *ngIf="!user" value="О КОМПАНИИ"></app-link>
   <app-link class="link-item" link="/home#tarifs" *ngIf="!user" value="ТАРИФЫ"></app-link>
-  <app-link class="link-item" link="/home#partners" *ngIf="!user" value="КЛИЕНТЫ"></app-link>
+  <app-link class="link-item" link="/home#partners" *ngIf="!user" value="FAQ"></app-link>
 
   <app-link class="link-item" routerLink="/" *ngIf="user" value="МЕНЮ"></app-link>
   <app-link class="link-item" routerLink="/users" *ngIf="user && isAdmin()" value="ПОЛЬЗОВАТЕЛИ"></app-link>
