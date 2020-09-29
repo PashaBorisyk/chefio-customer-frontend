@@ -6,7 +6,7 @@
       </div>
       <div class="mt-2 field">
         <mat-form-field color="accent" class="input-field">
-          <mat-label>ФИО</mat-label>
+          <mat-label>Имя и Фамилия</mat-label>
           <input [(ngModel)]="contactInfo.username" class="input-field" type="text" matInput required>
         </mat-form-field>
       </div>
@@ -55,7 +55,7 @@
         <div class="date-info mt-5 white">
           Ваш заказ на: {{date}}
         </div>
-        <app-choice-time (notifyActiveTime)="setActiveTime($event)"></app-choice-time>
+        <app-choice-time *ngIf="contactInfo.forHome" (notifyActiveTime)="setActiveTime($event)"></app-choice-time>
       </div>
     </div>
     <div fxFlex="25">

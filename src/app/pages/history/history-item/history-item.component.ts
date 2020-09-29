@@ -19,6 +19,12 @@ export class HistoryItemComponent implements OnInit {
   ngOnInit(): void {
   }
 
+  getPositionsCount(){
+    let count = 0
+    this.order.positions.forEach((value) => {count += value.totalProduced})
+    return count
+  }
+
 
   openDialog(): void {
     this.dialog.open(FeedbackDialog);
