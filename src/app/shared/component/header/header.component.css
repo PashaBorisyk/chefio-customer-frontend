@@ -13,6 +13,10 @@
   display: none;
 }
 
+.logo {
+  max-width: 170px;
+}
+
 .active-mob-menu {
   -webkit-animation: slide-in-left 0.5s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
   animation: slide-in-left 0.5s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
@@ -21,6 +25,10 @@
 @media only screen and (max-width: 600px) {
   .link-item {
     display: none;
+  }
+
+  .logo {
+    max-width: 140px;
   }
 
   .link-item-mob {

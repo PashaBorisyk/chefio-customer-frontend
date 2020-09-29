@@ -4,6 +4,10 @@
   max-width: 100%;
 }
 
+.logo {
+  max-width: 130px;
+}
+
 .accept-payment {
   font-family: Circe;
   font-style: normal;
@@ -74,6 +78,10 @@
 
 
 @media only screen and (max-width: 600px) {
+  .logo {
+    max-width: 90px;
+  }
+
   .main-icon {
     width: 100px;
     height: 12px;
