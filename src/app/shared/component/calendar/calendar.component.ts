@@ -57,7 +57,13 @@ export class CalendarComponent implements OnInit {
       result => {
         if (result) {
           this.dates = result.dates;
-          this.activeDates = result.activeDates;
+          // this.activeDates = result.activeDates;
+          const now = new Date();
+          result.activeDates.forEach(i => {
+            if (i > now) {
+              this.activeDates.push(i);
+            }
+          });
           this.setChoiceDateAndScrollTo(result.activeDate,null);
           if (this.authService.userValue) {
             this.orderService.orderDates(this.activeDates).subscribe(
