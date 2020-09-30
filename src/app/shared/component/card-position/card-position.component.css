@@ -89,8 +89,12 @@
     min-height: 0;
   }
 
+  .card {
+    max-width: 170px;
+  }
+
   .name {
-    font-size: 11px;
+    font-size: 15px;
   }
 
   .text {
@@ -98,15 +102,15 @@
   }
 
   .ingredients {
-    font-size: 9px;
+    font-size: 12px;
   }
 
   .weight {
-    font-size: 9px;
+    font-size: 10px;
   }
 
   .info {
-    font-size: 8px;
+    font-size: 11px;
   }
 
   .image {
@@ -115,15 +119,15 @@
   }
 
   .icon {
-    height: 9px;
+    height: 10px;
   }
 
   .info-block {
-    min-height: 30px;
+    height: 30px;
   }
 
   .rating {
-    padding: 12px;
+    padding: 7px;
   }
 
   .dv {
