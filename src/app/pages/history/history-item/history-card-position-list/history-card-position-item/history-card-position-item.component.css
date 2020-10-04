@@ -121,8 +121,9 @@
   }
 
   .image {
-    max-width: 170px;
-    height: 140px;
+    max-width:100%;
+    height: 200px;
+    object-fit: cover;
   }
 
   .icon {
