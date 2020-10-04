@@ -41,7 +41,7 @@ import { HistoryComponent } from './history/history.component';
 import { HistoryHeaderComponent } from './history/history-header/history-header.component';
 import { HistoryItemComponent } from './history/history-item/history-item.component';
 import { UsersComponent } from './users/users.component';
-import { ButtonReportComponent } from './users/button-report/button-report.component';
+import {ButtonReportComponent, CreateReportByUsersDialog} from './users/button-report/button-report.component';
 import {MatAutocompleteModule} from '@angular/material/autocomplete';
 import {MatRadioModule} from '@angular/material/radio';
 import { ChoiceTimeComponent } from './basket/choice-time/choice-time.component';
@@ -55,6 +55,8 @@ import { FeedbackHeaderComponent } from './feedback/feedback-header/feedback-hea
 import { NewUserComponent } from './users/new-user/new-user.component';
 import { EditUserComponent } from './users/edit-user/edit-user.component';
 import { ConfirmComponent } from './confirm/confirm.component';
+import {MatDatepickerModule} from "@angular/material/datepicker";
+import {MatNativeDateModule} from "@angular/material/core";
 
 
 @NgModule({
@@ -93,32 +95,35 @@ import { ConfirmComponent } from './confirm/confirm.component';
       UsersItemComponent,
       MenuActionComponent,
       DeleteUserDialog,
+      CreateReportByUsersDialog,
       FeedbackItemComponent,
       FeedbackHeaderComponent,
       NewUserComponent,
       EditUserComponent,
       ConfirmComponent
     ],
-    imports: [
-        CommonModule,
-        FlexLayoutModule,
-        ComponentModule,
-        RouterModule,
-        FormsModule,
-        ReactiveFormsModule,
-        MatChipsModule,
-        MatGridListModule,
-        MatTabsModule,
-        MatIconModule,
-        MatButtonModule,
-        MatFormFieldModule,
-        MatInputModule,
-        MatCheckboxModule,
-        MatSelectModule,
-        MatTooltipModule,
-        MatAutocompleteModule,
-        MatRadioModule,
-        MatMenuModule
-    ]
+  imports: [
+    CommonModule,
+    FlexLayoutModule,
+    ComponentModule,
+    RouterModule,
+    FormsModule,
+    ReactiveFormsModule,
+    MatChipsModule,
+    MatGridListModule,
+    MatTabsModule,
+    MatIconModule,
+    MatButtonModule,
+    MatFormFieldModule,
+    MatInputModule,
+    MatCheckboxModule,
+    MatSelectModule,
+    MatTooltipModule,
+    MatAutocompleteModule,
+    MatRadioModule,
+    MatMenuModule,
+    MatDatepickerModule,
+    MatNativeDateModule
+  ]
 })
 export class PagesModule { }

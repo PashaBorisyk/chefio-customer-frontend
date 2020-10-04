@@ -54,7 +54,7 @@
 }
 
 .img-card {
-  max-width: 110%;
+  max-width: 90%;
   height: 200px;
   object-fit: cover;
 }

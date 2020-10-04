@@ -7,6 +7,7 @@ export interface Position {
   price: number;
   categories: Category[];
   imageUrl: string;
+  imageUrlL:string;
   ingredients: string;
   positionGroup: PositionGroup;
   weight: number;

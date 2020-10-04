@@ -1,0 +1,22 @@
+<div class="header">
+   Скачайте отчет по именам и суммам заказов
+</div>
+<div class="mt-4" fxLayout="row" fxLayoutAlign="space-around right">
+  <form>
+    <mat-form-field appearance="fill" style="background: white">
+      <mat-label>Enter a date range</mat-label>
+      <mat-date-range-input [formGroup]="range" [rangePicker]="picker">
+        <input matStartDate formControlName="start" placeholder="Start date">
+        <input matEndDate formControlName="end" placeholder="End date">
+      </mat-date-range-input>
+      <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+      <mat-date-range-picker #picker></mat-date-range-picker>
+      <mat-error *ngIf="range.controls.start.hasError('matStartDateInvalid')">Invalid start date</mat-error>
+      <mat-error *ngIf="range.controls.end.hasError('matEndDateInvalid')">Invalid end date</mat-error>
+    </mat-form-field>
+  </form>
+</div>
+<div class="mt-4" fxLayout="row" fxLayoutAlign="space-around center">
+  <app-button color="red" (click)="download()" fxFlex="40" value="Отмена"></app-button>
+  <app-button (click)="download()" fxFlex="40" value="Скачать" style="margin-left: 10%;"></app-button>
+</div>
