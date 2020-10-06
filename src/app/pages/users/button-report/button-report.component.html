@@ -7,8 +7,11 @@
     </svg>
   </div>
   <div class="item-list" *ngIf="openMenuAction">
-    <div class="item pointer" (click)="createByUsers()">
+    <div class="item pointer" (click)="createReportByUsers()">
       Отчет по суммам заказов сотрудников Вашей организации
+    </div>
+    <div class="item pointer" (click)="createInvoiceHalfBelowLimitAndMinusLimitAboveLimitByDateBetweenAndCompanyName()">
+      Отчет по сумме к оплате компанией c учетом специфики компенсаци
     </div>
   </div>
 </div>

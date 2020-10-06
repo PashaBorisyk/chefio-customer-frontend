@@ -18,4 +18,9 @@ export class ReportsService {
     return this.http.get(link,{responseType:"blob"});
   }
 
+  createInvoiceHalfBelowLimitAndMinusLimitAboveLimitByDateBetweenAndCompanyName(dateFrom:Date,dateTo:Date): Observable<any> {
+    const link = `${this.url}reports/createInvoiceHalfBelowLimitAndMinusLimitAboveLimitByDateBetweenAndCompanyName?dateFrom=${dateFrom}&dateTo=${dateTo}`;
+    return this.http.get(link,{responseType:"blob"});
+  }
+
 }

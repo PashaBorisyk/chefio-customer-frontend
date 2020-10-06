@@ -41,7 +41,7 @@ import { HistoryComponent } from './history/history.component';
 import { HistoryHeaderComponent } from './history/history-header/history-header.component';
 import { HistoryItemComponent } from './history/history-item/history-item.component';
 import { UsersComponent } from './users/users.component';
-import {ButtonReportComponent, CreateReportByUsersDialog} from './users/button-report/button-report.component';
+import {ButtonReportComponent, CreateDateRangeDialog} from './users/button-report/button-report.component';
 import {MatAutocompleteModule} from '@angular/material/autocomplete';
 import {MatRadioModule} from '@angular/material/radio';
 import { ChoiceTimeComponent } from './basket/choice-time/choice-time.component';
@@ -95,7 +95,7 @@ import {MatNativeDateModule} from "@angular/material/core";
       UsersItemComponent,
       MenuActionComponent,
       DeleteUserDialog,
-      CreateReportByUsersDialog,
+      CreateDateRangeDialog,
       FeedbackItemComponent,
       FeedbackHeaderComponent,
       NewUserComponent,

@@ -1,5 +1,5 @@
-import {Component, OnInit} from '@angular/core';
-import {MatDialog, MatDialogRef} from "@angular/material/dialog";
+import {Component, Inject, OnInit} from '@angular/core';
+import {MAT_DIALOG_DATA, MatDialog, MatDialogRef} from "@angular/material/dialog";
 import {SubscribeService} from "../../../shared/service/subscribe.service";
 import {HttpClient} from "@angular/common/http";
 import {ReportsService} from "../../../shared/service/reports.service";
@@ -29,10 +29,10 @@ export class ButtonReportComponent implements OnInit {
     this.openMenuAction = !this.openMenuAction;
   }
 
-  createByUsers() {
+  createReportByUsers() {
     this
       .dialog
-      .open(CreateReportByUsersDialog)
+      .open(CreateDateRangeDialog,{data:{title:"Отчет по именам и сумме заказов"}})
       .afterClosed()
       .subscribe(result => {
         console.log(result)
@@ -44,14 +44,30 @@ export class ButtonReportComponent implements OnInit {
       });
   }
 
+  createInvoiceHalfBelowLimitAndMinusLimitAboveLimitByDateBetweenAndCompanyName(){
+    this
+      .dialog
+      .open(CreateDateRangeDialog,{data:{title:"отчет по сумме к оплате компанией c учетом специфики компенсаци"}})
+      .afterClosed()
+      .subscribe(result => {
+        console.log(result)
+        this.reportsService.createInvoiceHalfBelowLimitAndMinusLimitAboveLimitByDateBetweenAndCompanyName(result.dateFrom,result.dateTo).subscribe((response)=> {
+          let blob:any = new Blob([response], { type: 'text/json; charset=utf-8' });
+          const url = window.URL.createObjectURL(blob);
+          fileSaver.saveAs(blob, `отчет по сумме к оплате компанией c учетом специфики компенсации c ${result.dateFrom} по ${result.dateTo}.xlsx`);
+        })
+      });
+  }
+
 }
 
 @Component({
   templateUrl: './dialogs/create-report-by-users.html',
   styleUrls: ['./dialogs/create-report-by-users.css']
 })
-export class CreateReportByUsersDialog {
+export class CreateDateRangeDialog {
 
+  title:string;
   dateFrom: string;
   dateTo: string;
 
@@ -60,8 +76,9 @@ export class CreateReportByUsersDialog {
     end: new FormControl()
   });
 
-  constructor(
-    public dialogRef: MatDialogRef<CreateReportByUsersDialog>,private datePipe:DatePipe) {
+  constructor(@Inject(MAT_DIALOG_DATA) private data: any,
+    public dialogRef: MatDialogRef<CreateDateRangeDialog>, private datePipe:DatePipe) {
+    this.title = data.title;
   }
 
   download(): void {
