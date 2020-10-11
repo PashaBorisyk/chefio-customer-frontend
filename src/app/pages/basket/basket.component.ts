@@ -47,6 +47,8 @@ export class BasketComponent implements OnInit {
   activeTimes = this.forHomeDeliveryTime;
   companyAddress = new Address();
   user: User;
+  address = ''
+  street = '';
 
   constructor(private customerContactService: CustomerContactService,
               private loader: LoaderService,
@@ -184,6 +186,7 @@ export class BasketComponent implements OnInit {
   }
 
   get order(): Order {
+    console.log(this.address)
     const order = new Order();
     order.username = this.contactInfo.username;
     order.email = this.contactInfo.email;

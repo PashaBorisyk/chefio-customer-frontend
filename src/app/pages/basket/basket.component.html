@@ -16,28 +16,28 @@
           <input [(ngModel)]="contactInfo.phone" class="input-field" type="text" matInput required>
         </mat-form-field>
       </div>
-      <div class="field">
+      <div class="field" *ngIf="contactInfo.forHome">
         <mat-form-field color="accent" class="input-field">
           <mat-label>Адрес</mat-label>
-          <input [disabled]="!contactInfo.forHome" [(ngModel)]="contactInfo.forHome ? contactInfo.address.street : companyAddress.street" class="input-field" type="text" matInput required>
+          <input [disabled]="!contactInfo.forHome" [(ngModel)]="contactInfo.address.street" class="input-field" type="text" matInput required name="address">
         </mat-form-field>
       </div>
-      <div class="field">
+      <div class="field" *ngIf="contactInfo.forHome">
         <mat-form-field color="accent" class="input-field">
           <mat-label>Квартира/Номер комнаты</mat-label>
-          <input [disabled]="!contactInfo.forHome" [(ngModel)]="contactInfo.forHome ? contactInfo.address.room : companyAddress.room" class="input-field" type="text" matInput required>
+          <input [disabled]="!contactInfo.forHome" [(ngModel)]="contactInfo.address.room" class="input-field" type="text" matInput required>
         </mat-form-field>
       </div>
-      <div class="field">
+      <div class="field" *ngIf="contactInfo.forHome">
         <mat-form-field color="accent" class="input-field">
           <mat-label>Подъезд</mat-label>
-          <input [disabled]="!contactInfo.forHome" [(ngModel)]="contactInfo.forHome ? contactInfo.address.building : companyAddress.building" class="input-field" type="text" matInput>
+          <input [disabled]="!contactInfo.forHome" [(ngModel)]="contactInfo.address.building" class="input-field" type="text" matInput>
         </mat-form-field>
       </div>
     </div>
     <div fxFlex="25">
       <div class="white header-block">
-        Дата и время
+        Прочее
       </div>
       <div class="mt-2" fxLayout.xs="column" fxLayout="row" fxLayoutAlign="start start">
         <div class="mr-4">
@@ -47,7 +47,7 @@
         </div>
         <div>
           <mat-checkbox (change)="setActiveTimeRange()" [(ngModel)]="contactInfo.forHome">
-            На дом
+            Указать другой адрес
           </mat-checkbox>
         </div>
       </div>
