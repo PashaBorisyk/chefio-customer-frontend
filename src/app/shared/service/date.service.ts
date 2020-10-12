@@ -6,7 +6,7 @@ import {DatePipe} from '@angular/common';
 })
 export class DateService {
 
-  private format = 'MM/dd/yyyy';
+  private format = 'dd-MM-yyyy';
   private formatForBackend = 'yyyy-MM-dd';
 
   constructor(private datePipe: DatePipe) { }
