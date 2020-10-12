@@ -6,7 +6,7 @@ import {MenuService} from './shared/service/menu.service';
 import {MenuDate} from './core/model/menu-date';
 import {SubscribeService} from './shared/service/subscribe.service';
 
-const FROM_DATE_DAY = 10;
+const FROM_DATE_DAY = 0;
 const TO_DATE_DAY = 10;
 
 
