@@ -74,7 +74,7 @@ export class BasketComponent implements OnInit {
       result => {
         this.contactInfo = result;
         this.contactInfo.forHome = false;
-        if (!result.address) {
+        if (!this.contactInfo.address) {
           this.contactInfo.address = new Address();
         }
       }
@@ -192,8 +192,7 @@ export class BasketComponent implements OnInit {
     order.username = this.contactInfo.username;
     order.email = this.contactInfo.email;
     order.address = this.contactInfo.forHome ? this.contactInfo.address : this.companyAddress;
-    if (this.contactInfo.forHome)
-      order.address.id = null;
+    order.address.id = null;
     order.toDate = this.dateForBackend;
     order.contactless = this.contactInfo.contactless;
     order.forHome = this.contactInfo.forHome;
