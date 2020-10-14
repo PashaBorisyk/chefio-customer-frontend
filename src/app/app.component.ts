@@ -90,19 +90,20 @@ export class AppComponent implements OnInit, AfterViewChecked {
     //   return date;
     // }
 
-    let activeDate = null;
-
-    activeDates.forEach(value => {
-      if (value > now && !activeDate) {
-        activeDate = value;
-      }
-    });
-
-    if (activeDate) {
-      return activeDate;
-    }
-
-    return activeDates[activeDates.length - 1];
+    // let activeDate = null;
+    // console.log()
+    // activeDates.forEach(value => {
+    //   if (value > now && !activeDate) {
+    //     activeDate = value;
+    //   }
+    // });
+    //
+    // if (activeDate) {
+    //   return activeDate;
+    // }
+    //
+    // return activeDates[activeDates.length - 1];
+    return activeDates.sort().reverse()[0] || new Date()
   }
 
   dateEquals(d1: Date, d2: Date): boolean {

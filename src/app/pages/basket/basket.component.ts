@@ -131,6 +131,7 @@ export class BasketComponent implements OnInit {
   }
 
   createOrder(): void {
+    console.log("creating order")
     if (this.order.positions.length > 0) {
       this.loader.changeLoaderState(true);
       const order = this.order;
@@ -146,6 +147,7 @@ export class BasketComponent implements OnInit {
 
       this.orderService.save(order).subscribe(
           () => {
+            console.log("Order successfully created")
             this.alertService.success('Заказ успешно создан');
             this.loader.changeLoaderState(false);
             this.clearAllPosition();
@@ -186,11 +188,12 @@ export class BasketComponent implements OnInit {
   }
 
   get order(): Order {
-    console.log(this.address)
     const order = new Order();
     order.username = this.contactInfo.username;
     order.email = this.contactInfo.email;
     order.address = this.contactInfo.forHome ? this.contactInfo.address : this.companyAddress;
+    if (this.contactInfo.forHome)
+      order.address.id = null;
     order.toDate = this.dateForBackend;
     order.contactless = this.contactInfo.contactless;
     order.forHome = this.contactInfo.forHome;

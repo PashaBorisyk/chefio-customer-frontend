@@ -11,14 +11,14 @@ export class AlertService {
   success(data: string): void {
     this.snackBar.open(data, '✖', {
       duration: 7000,
-      verticalPosition: 'top',
+      verticalPosition: 'bottom',
     });
   }
 
   errorMessage(data: string): void {
     this.snackBar.open(data, '✖', {
       duration: 7000,
-      verticalPosition: 'top',
+      verticalPosition: 'bottom',
       panelClass: ['error-snackbar']
     });
   }

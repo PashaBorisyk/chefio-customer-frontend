@@ -61,8 +61,6 @@ export class CalendarComponent implements OnInit {
           const now = new Date();
           result.activeDates.forEach(i => {
             if (i > now) {
-              console.log("i: "+ i)
-              console.log("now " + now)
               this.activeDates.push(i);
             }
           });

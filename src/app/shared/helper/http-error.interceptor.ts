@@ -12,7 +12,7 @@ import {AlertService} from '../service/alert.service';
 @Injectable()
 export class HttpErrorInterceptor implements HttpInterceptor {
 
-  private DEFAULT_MESSAGE = 'Произошла ошибка, пожалуйста повторите попытку позже';
+  private DEFAULT_MESSAGE = 'Произошла ошибка, пожалуйста, повторите попытку позже';
 
   constructor(private alertService: AlertService) {}
 
