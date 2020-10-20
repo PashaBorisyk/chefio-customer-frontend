@@ -47,7 +47,7 @@
         </div>
         <div>
           <mat-checkbox (change)="setActiveTimeRange()" [(ngModel)]="contactInfo.forHome">
-            Указать другой адрес
+            Указать другой адрес / домой
           </mat-checkbox>
         </div>
       </div>
@@ -79,7 +79,7 @@
 
   <div class="my-4" fxLayout="row" fxLayoutGap="20px" fxLayoutAlign="start center">
     <div class="header white">
-      Ваш заказ
+      Ваш заказ будет доставлен <span *ngIf="contactInfo.forHome" class="green">на дом</span><span *ngIf="!contactInfo.forHome" class="blue">на офис</span>
     </div>
     <div (click)="clearAll()" class="clear pointer">
       Очистить все
