@@ -21,6 +21,6 @@ export class CardPriceComponent implements OnInit {
   }
 
   calculateSale(): string {
-    return (this.value - (this.value / 100 * this.user.sale)).toFixed(2);
+    return (this.value * this.user.sale).toFixed(2);
   }
 }
