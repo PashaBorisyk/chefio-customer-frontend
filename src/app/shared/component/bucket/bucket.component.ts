@@ -57,7 +57,7 @@ export class BucketComponent implements OnInit {
     if (this.user == null || this.user.sale == null) {
       return this.price.toFixed(2);
     } else {
-      return (this.price - (this.price / 100 * this.user.sale)).toFixed(2);
+      return (this.price * this.user.sale).toFixed(2);
     }
   }
 }

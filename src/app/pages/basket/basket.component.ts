@@ -164,7 +164,7 @@ export class BasketComponent implements OnInit {
 
   calculateSale(value: number): number {
     if (this.user != null && this.user.sale != null) {
-      return +(value - (value / 100 * this.user.sale)).toFixed(2);
+      return + (value * this.user.sale).toFixed(2);
     }
     return value;
   }
