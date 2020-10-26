@@ -73,7 +73,6 @@ export class BasketComponent implements OnInit {
       .subscribe(
       result => {
         this.contactInfo = result;
-        this.contactInfo.forHome = false;
         if (!this.contactInfo.address) {
           this.contactInfo.address = new Address();
         }
