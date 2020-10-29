@@ -4,7 +4,7 @@
     <div *ngIf="false">
       <app-rating [value]="position.rate"></app-rating>
     </div>
-    <div *ngIf="position.categories != null && position.categories.length > 0">
+    <div *ngIf="position.categories != null && position.categories.length > 1">
       <mat-chip *ngFor="let cat of position.categories" class="rating" >
         {{cat.name}}
       </mat-chip>
