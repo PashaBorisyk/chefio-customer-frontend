@@ -62,7 +62,7 @@ export class ButtonReportComponent implements OnInit {
   createInvoiceHalfBelowLimitAndMinusLimitAboveLimitByDateBetweenAndCompanyNameByDate(){
     this
       .dialog
-      .open(CreateDateRangeDialog,{data:{title:"отчет по сумме к оплате компанией c учетом специфики компенсаци"}})
+      .open(CreateDateRangeDialog,{data:{title:"отчет по сумме к оплате компанией по дате"}})
       .afterClosed()
       .subscribe(result => {
         console.log(result)
@@ -70,6 +70,21 @@ export class ButtonReportComponent implements OnInit {
           let blob:any = new Blob([response], { type: 'text/json; charset=utf-8' });
           const url = window.URL.createObjectURL(blob);
           fileSaver.saveAs(blob, `отчет по сумме к оплате компанией c учетом специфики компенсации c ${result.dateFrom} по ${result.dateTo} c группировкой по дате.xlsx`);
+        })
+      });
+  }
+
+  createReportForOrderCompliance(){
+    this
+      .dialog
+      .open(CreateDateRangeDialog,{data:{title:"отчет по сумме к оплате компанией c учетом специфики компенсаци"}})
+      .afterClosed()
+      .subscribe(result => {
+        console.log(result)
+        this.reportsService.createReportForOrderCompliance(result.dateFrom,result.dateTo).subscribe((response)=> {
+          let blob:any = new Blob([response], { type: 'text/json; charset=utf-8' });
+          const url = window.URL.createObjectURL(blob);
+          fileSaver.saveAs(blob, `отчет для сверки заказов c ${result.dateFrom} по ${result.dateTo} c группировкой по имени.xlsx`);
         })
       });
   }
