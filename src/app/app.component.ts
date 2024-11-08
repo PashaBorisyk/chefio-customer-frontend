@@ -103,8 +103,8 @@ export class AppComponent implements OnInit, AfterViewChecked {
     // }
     //
     // return activeDates[activeDates.length - 1];
-    let maxDate = new Date(Math.min.apply(null,activeDates));
-    return maxDate
+    const maxDate = new Date(Math.min.apply(null, activeDates));
+    return maxDate;
   }
 
   dateEquals(d1: Date, d2: Date): boolean {

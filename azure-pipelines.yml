@@ -12,18 +12,18 @@ resources:
 variables:
   # Container registry service connection established during pipeline creation
   dockerRegistryServiceConnection: 'a2b50b21-3745-47af-991c-33a0fe7f245e'
-  imageRepository: 'dzinnerwebclient/$(Build.SourceBranch)'
-  containerRegistry: 'dzinnersoft.azurecr.io'
+  imageRepository: 'chefiowebclient/$(Build.SourceBranch)'
+  containerRegistry: 'chefiosoft.azurecr.io'
   dockerfilePath: '$(Build.SourcesDirectory)/Dockerfile'
   tag: '$(Build.BuildId)'
-  
+
   # Agent VM image name
   vmImageName: 'ubuntu-latest'
 
 stages:
 - stage: Build
   displayName: Build and push stage
-  jobs:  
+  jobs:
   - job: Build
     displayName: Build
     pool:
