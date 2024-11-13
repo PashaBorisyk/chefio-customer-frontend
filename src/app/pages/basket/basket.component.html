@@ -2,42 +2,42 @@
   <div class="mt-4" fxLayout="row" fxLayoutAlign="space-between start">
     <div fxFlex="25">
       <div class="white header-block">
-        Контактные данные
+        Contacts
       </div>
       <div class="mt-2 field">
         <mat-form-field color="accent" class="input-field">
-          <mat-label>Имя и Фамилия</mat-label>
+          <mat-label>Name and Surname</mat-label>
           <input [(ngModel)]="contactInfo.username" class="input-field" type="text" matInput required>
         </mat-form-field>
       </div>
       <div class="field">
         <mat-form-field color="accent" class="input-field">
-          <mat-label>Телефон</mat-label>
+          <mat-label>Phone no.</mat-label>
           <input [(ngModel)]="contactInfo.phone" class="input-field" type="text" matInput required>
         </mat-form-field>
       </div>
       <div class="field" *ngIf="contactInfo.forHome">
         <mat-form-field color="accent" class="input-field">
-          <mat-label>Адрес</mat-label>
+          <mat-label>Address</mat-label>
           <input [disabled]="!contactInfo.forHome" [(ngModel)]="contactInfo.address.street" class="input-field" type="text" matInput required name="address">
         </mat-form-field>
       </div>
       <div class="field" *ngIf="contactInfo.forHome">
         <mat-form-field color="accent" class="input-field">
-          <mat-label>Квартира/Номер комнаты</mat-label>
+          <mat-label>Flat/ Room no.</mat-label>
           <input [disabled]="!contactInfo.forHome" [(ngModel)]="contactInfo.address.room" class="input-field" type="text" matInput required>
         </mat-form-field>
       </div>
       <div class="field" *ngIf="contactInfo.forHome">
         <mat-form-field color="accent" class="input-field">
-          <mat-label>Подъезд</mat-label>
+          <mat-label>Entry</mat-label>
           <input [disabled]="!contactInfo.forHome" [(ngModel)]="contactInfo.address.building" class="input-field" type="text" matInput>
         </mat-form-field>
       </div>
     </div>
     <div fxFlex="25">
       <div class="white header-block">
-        Прочее
+        Etc.
       </div>
       <div class="mt-2" fxLayout.xs="column" fxLayout="row" fxLayoutAlign="start start">
         <div class="mr-4">

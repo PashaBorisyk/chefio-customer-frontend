@@ -15,13 +15,13 @@
   <div fxLayout="row" fxLayoutAlign="center center" fxFlex="14" class="header-list-status" fxFlexAlign="stretch">
     <div [ngSwitch]="customer.status">
       <div class="green pointer" *ngSwitchCase="'ACTIVE'">
-        Активный
+        Active
       </div>
-      <div matTooltip="Почта не подтверждена" class="orange pointer" *ngSwitchCase="'IN_ACTIVE'">
-        Активный
+      <div *ngSwitchCase="'IN_ACTIVE'" class="orange pointer" matTooltip="Email is not confirmed">
+        Active
       </div>
       <div class="red pointer" *ngSwitchCase="'BLOCKED'">
-        Неактивный
+        Inactive
       </div>
     </div>
     <div class="pv">
@@ -30,10 +30,10 @@
       </button>
       <div class="item-status-list" *ngIf="openMenuStatus">
         <div (click)="updateStatus('BLOCKED')" *ngIf="this.customer.status == 'ACTIVE' || this.customer.status == 'IN_ACTIVE'" class="red item pointer">
-          Заблокировать
+          Block
         </div>
         <div (click)="updateStatus('ACTIVE')" *ngIf="this.customer.status == 'BLOCKED'" class="green item pointer">
-          Активировать
+          Activate
         </div>
       </div>
     </div>
@@ -44,10 +44,10 @@
     </button>
     <div class="item-list" *ngIf="openMenuAction">
       <div (click)="editCustomer = true" class="item pointer">
-        Редактировать
+        Edit user
       </div>
       <div (click)="deleteUser()" class="item pointer">
-        Удалить
+        Delete user
       </div>
     </div>
   </div>

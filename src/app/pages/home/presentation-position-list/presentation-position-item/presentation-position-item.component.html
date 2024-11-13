@@ -30,12 +30,12 @@
     </div>
   </div>
   <div fxLayout="row" fxLayoutAlign="start center" fxLayoutGap="10px">
-    <div class="weight">{{position.weight * 1000}} гр.</div>
+    <div class="weight">{{ position.weight * 1000 }} grams</div>
     <div fxLayout="row" fxLayoutAlign="space-between center" *ngIf="position.proteins != null">
       <svg class="icon" width="1" height="16" viewBox="0 0 1 16" fill="none" xmlns="http://www.w3.org/2000/svg">
         <rect width="1" height="16" fill="#808080"/>
       </svg>
-      <div class="info ml-2">{{position.proteins}} Б</div>
+      <div class="info ml-2">{{ position.proteins }} Protein</div>
     </div>
     <div fxLayout="row" fxLayoutAlign="space-between center" *ngIf="position.fat != null">
       <div>
@@ -43,13 +43,13 @@
           <rect width="1" height="16" fill="#808080"/>
         </svg>
       </div>
-      <div class="info ml-2">{{position.fat}} Ж</div>
+      <div class="info ml-2">{{ position.fat }} Fats</div>
     </div>
     <div fxLayout="row" fxLayoutAlign="space-between center" *ngIf="position.carbohydrate">
       <svg class="icon" width="1" height="16" viewBox="0 0 1 16" fill="none" xmlns="http://www.w3.org/2000/svg">
         <rect width="1" height="16" fill="#808080"/>
       </svg>
-      <div class="info ml-2">{{position.carbohydrate}} У</div>
+      <div class="info ml-2">{{ position.carbohydrate }} Carbs</div>
     </div>
   </div>
 </div>

@@ -3,14 +3,14 @@
 <div class="form">
   <form [formGroup]="registrationForm" (ngSubmit)="onSubmit()">
     <div class="mb-3 center header-form">
-      Регистрация в системе
+      Sign up
     </div>
     <div class="field">
       <mat-form-field color="accent" class="input-field">
         <mat-label>Email</mat-label>
         <input [minlength]="minLength" class="input-field" formControlName="username" type="email" matInput>
         <mat-error *ngIf="registrationForm.controls.username.hasError('required')">
-          Поле должно быть заполненым
+          Can not be empty
         </mat-error>
         <mat-error *ngIf="registrationForm.controls.username.hasError('minlength')">
           Поле должно быть больше {{minLength}} символов

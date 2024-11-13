@@ -25,7 +25,7 @@
       <app-card-price [value]="data.price"></app-card-price>
     </div>
     <div fxLayout="row" fxLayoutAlign="start center" fxLayoutGap="10px">
-      <div class="weight white">{{data.weight * 1000}} гр.</div>
+      <div class="weight white">{{ data.weight * 1000 }} grams</div>
       <div fxLayout="row" fxLayoutAlign="space-between center" *ngIf="data.proteins != null">
         <svg class="icon" width="1" height="16" viewBox="0 0 1 16" fill="none" xmlns="http://www.w3.org/2000/svg">
           <rect width="1" height="16" fill="#808080"/>

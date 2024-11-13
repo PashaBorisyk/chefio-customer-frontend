@@ -3,38 +3,38 @@
 <div class="form">
   <form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
     <div class="my-5 center header-form">
-      Авторизация
+      Log in
     </div>
     <div class="field">
       <mat-form-field color="accent" class="input-field">
         <mat-label>Email</mat-label>
         <input  class="input-field" formControlName="username" type="email" matInput>
         <mat-error *ngIf="loginForm.controls.username.hasError('required')">
-          Поле должно быть заполненым
+          Should not be empty
         </mat-error>
       </mat-form-field>
     </div>
     <div class="field">
       <mat-form-field color="accent" class="input-field">
-        <mat-label>Пароль</mat-label>
+        <mat-label>Password</mat-label>
         <input  class="input-field" formControlName="password" [type]="hidePassword ? 'password' : 'text'" matInput>
         <button mat-icon-button matSuffix (click)="hidePassword = !hidePassword" [attr.aria-label]="'Hide password'" [attr.aria-pressed]="hidePassword">
           <mat-icon class="hide">{{hidePassword ? 'visibility_off' : 'visibility'}}</mat-icon>
         </button>
         <mat-error *ngIf="loginForm.controls.password.hasError('required')">
-          Поле должно быть заполненым
+          Should not be empty
         </mat-error>
       </mat-form-field>
     </div>
     <div class="my-3 field">
-      <app-button color="orange" [disable]="loading" value="ВОЙТИ"></app-button>
+      <app-button [disable]="loading" color="orange" value="Log in"></app-button>
     </div>
     <div class="my-3 registration">
-      Если у вас еще нет аккаунта, <span class="reg-link" [routerLink]="['/registration']">зарегистрируйтесь</span>
+      If you still dont have account, <span [routerLink]="['/registration']" class="reg-link">Sing up</span>
     </div>
     <div fxLayout="row" fxLayoutAlign="center center">
       <div class="info">
-        Узнайте как начать работать с нами
+        How to work with us?
       </div>
     </div>
   </form>

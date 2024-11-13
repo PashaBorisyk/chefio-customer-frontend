@@ -1,10 +1,10 @@
 <div class="container">
   <div class="header">
-    ПОЛЬЗОВАТЕЛИ
+    Users
   </div>
   <div fxLayoutAlign.xs="start center" fxLayout="row" fxLayoutGap="10px" class="my-4">
     <div fxFlex="20">
-      <app-button (click)="newUser = true" color="orange" value="СОЗДАТЬ ПОЛЬЗОВАТЕЛЯ"></app-button>
+      <app-button (click)="newUser = true" color="orange" value="Create a user"></app-button>
     </div>
     <div fxFlex="20">
       <app-button-report></app-button-report>
@@ -13,8 +13,9 @@
 
     </div>
     <div fxFlex="35" fxLayout="row">
-      <input (keydown.enter)="onSearch()" [(ngModel)]="searchValue" placeholder="Поиск по базе" class="search" fxFlex="80" type="text">
-      <app-button (click)="onSearch()" color="blue" fxFlex="20" value="Поиск"></app-button>
+      <input (keydown.enter)="onSearch()" [(ngModel)]="searchValue" class="search" fxFlex="80"
+             placeholder="Data base search" type="text">
+      <app-button (click)="onSearch()" color="blue" fxFlex="20" value="Search"></app-button>
     </div>
   </div>
   <div fxLayout.xs="5px" class="header-line" fxLayout="row">
@@ -22,16 +23,16 @@
       №
     </div>
     <div fxFlex="21" class=" header-list">
-      Имя
+      Name
     </div>
     <div fxFlex="20" class=" header-list">
-      Электронная почта
+      Email
     </div>
     <div fxFlex.xs="20" fxFlex="15" class=" header-list">
-      Телефон
+      Phone number
     </div>
     <div fxFlex="15" class=" header-list">
-      Статус
+      Status
     </div>
   </div>
   <div *ngFor="let customer of customers">

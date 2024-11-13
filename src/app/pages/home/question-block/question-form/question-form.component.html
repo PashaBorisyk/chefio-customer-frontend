@@ -1,17 +1,17 @@
 <div fxLayout="row" fxLayoutAlign="center center">
   <div fxFlex="80">
     <div class="header">
-      Задайте нам вопрос и мы с радостью ответим на него
+      Ask a question and we will answer it as soon as possible
     </div>
     <div class="question" fxLayout="row" fxLayoutAlign="space-between center">
       <div fxFlex="50">
         <mat-form-field color="accent" class="input-field">
-          <mat-label>Ваш вопрос</mat-label>
+          <mat-label>YOur question</mat-label>
           <input [(ngModel)]="question.value" type="text" maxlength="120" matInput>
         </mat-form-field>
       </div>
       <div fxFlex="40">
-        <app-button (click)="save()" value="ОТПРАВИТЬ"></app-button>
+        <app-button (click)="save()" value="Send"></app-button>
       </div>
     </div>
   </div>

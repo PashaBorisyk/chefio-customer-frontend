@@ -1,5 +1,5 @@
 
 export const environment = {
   production: true,
-  url: 'https://chefio-solaris.azurewebsites.net/'
+  url: 'https://chefio-customer.backend.azurewebsites.net/'
 };

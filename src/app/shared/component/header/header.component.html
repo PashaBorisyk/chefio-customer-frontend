@@ -6,17 +6,17 @@
     <img class="logo" src="assets/img/logo3.png">
   </div>
 
-  <app-link class="link-item" link="/home#menu" *ngIf="!user" value="МЕНЮ"></app-link>
-  <app-link class="link-item" link="/home#tarifs" *ngIf="!user" value="ТАРИФЫ"></app-link>
+  <app-link *ngIf="!user" class="link-item" link="/home#menu" value="Menu"></app-link>
+  <app-link *ngIf="!user" class="link-item" link="/home#tarifs" value="Tariffs"></app-link>
   <app-link class="link-item" link="/home#partners" *ngIf="!user" value="FAQ"></app-link>
 
-  <app-link class="link-item" routerLink="/" *ngIf="user" value="МЕНЮ"></app-link>
-  <app-link class="link-item" routerLink="/users" *ngIf="user && isAdmin()" value="ПОЛЬЗОВАТЕЛИ"></app-link>
-  <app-link class="link-item" routerLink="/feedback" *ngIf="user" value="ОБРАТНАЯ СВЯЗЬ"></app-link>
-  <app-link class="link-item" routerLink="/history" *ngIf="user" value="ИСТОРИЯ ЗАКАЗОВ"></app-link>
+  <app-link *ngIf="user" class="link-item" routerLink="/" value="Menu"></app-link>
+  <app-link *ngIf="user && isAdmin()" class="link-item" routerLink="/users" value="Users"></app-link>
+  <app-link *ngIf="user" class="link-item" routerLink="/feedback" value="Feedback"></app-link>
+  <app-link *ngIf="user" class="link-item" routerLink="/history" value="Orders history"></app-link>
   <app-bucket class="link-item" routerLink="/order" *ngIf="user"></app-bucket>
 
-  <app-button class="link-item"  fxFlex="10" *ngIf="!user" value="ВОЙТИ" routerLink="login"></app-button>
+  <app-button *ngIf="!user" class="link-item" fxFlex="10" routerLink="login" value="Log in"></app-button>
   <app-button-icon  class="link-item" routerLink="/profile" fxFlex="15" *ngIf="user"></app-button-icon>
 
   <div class="link-item-mob" fxFlex.xs="35"></div>

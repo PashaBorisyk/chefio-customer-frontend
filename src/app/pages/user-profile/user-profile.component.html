@@ -1,16 +1,16 @@
 <div class="container">
   <div class="white header">
-    ЛИЧНЫЙ КАБИНЕТ
+    Profile
   </div>
   <div class="mt-4" fxLayout="row" fxLayoutAlign="space-between start">
     <div fxFlex="25">
       <div class="white header-block">
-        Контактные данные
+        Contacts
       </div>
       <div class="mt-2 field">
         <mat-form-field
           color="accent" class="input-field">
-          <mat-label>ФИО</mat-label>
+          <mat-label>Name and Surname</mat-label>
           <input [(ngModel)]="contactInfo.username" class="input-field" type="text" matInput required>
         </mat-form-field>
       </div>
@@ -22,7 +22,7 @@
       </div>
       <div class="field">
         <mat-form-field color="accent" class="input-field">
-          <mat-label>Телефон</mat-label>
+          <mat-label>Phone no</mat-label>
           <input [(ngModel)]="contactInfo.phone" class="input-field" type="text" matInput required>
         </mat-form-field>
       </div>

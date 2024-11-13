@@ -1,11 +1,11 @@
 <div class="form">
   <div class="form-header">
-    Cтать нашим клиентом
+    Join us as a customer
   </div>
 
   <form>
     <mat-form-field color="accent" class="input-field">
-      <mat-label>ФИО</mat-label>
+      <mat-label>Name and Surname</mat-label>
       <input [(ngModel)]="clientRequest.username" name="username" type="text" matInput required>
     </mat-form-field>
     <mat-form-field color="accent" class="input-field">
@@ -13,23 +13,23 @@
       <input [(ngModel)]="clientRequest.email" name="email" type="email" matInput required>
     </mat-form-field>
     <mat-form-field color="accent" class="input-field">
-      <mat-label>Название компании</mat-label>
+      <mat-label>Company name</mat-label>
       <input [(ngModel)]="clientRequest.companyName" name="companyName" type="text" matInput required>
     </mat-form-field>
     <mat-form-field color="accent" class="input-field">
-      <mat-label>Должность</mat-label>
+      <mat-label>Position</mat-label>
       <input [(ngModel)]="clientRequest.position" name="position" type="text" matInput required>
     </mat-form-field>
     <mat-form-field color="accent" class="input-field">
-      <mat-label>Количество человек в компании</mat-label>
+      <mat-label>Number of employees</mat-label>
       <input [(ngModel)]="clientRequest.companySize" name="companySize" (keypress)="numberOnly($event)" matInput>
     </mat-form-field>
     <mat-form-field color="accent" class="input-field">
-      <mat-label>Комментарий</mat-label>
+      <mat-label>Comments</mat-label>
       <input [(ngModel)]="clientRequest.comment" name="comment" type="text" matInput>
     </mat-form-field>
     <div>
-      <app-button (click)="save()" value="ОТПРАВИТЬ"></app-button>
+      <app-button (click)="save()" value="Send"></app-button>
     </div>
   </form>
 </div>
