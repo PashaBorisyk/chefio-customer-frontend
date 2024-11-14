@@ -7,7 +7,7 @@
   </div>
 
   <app-link *ngIf="!user" class="link-item" link="/home#menu" value="Menu"></app-link>
-  <app-link *ngIf="!user" class="link-item" link="/home#tarifs" value="Tariffs"></app-link>
+  <!--  <app-link *ngIf="!user" class="link-item" link="/home#tarifs" value="Tariffs"></app-link>-->
   <app-link class="link-item" link="/home#partners" *ngIf="!user" value="FAQ"></app-link>
 
   <app-link *ngIf="user" class="link-item" routerLink="/" value="Menu"></app-link>
@@ -50,7 +50,7 @@
 
   <app-link (click)="openMenu = false == openMenu" fxFlexAlign="center" class="link-item-mob" link="/home#menu" *ngIf="!user" value="МЕНЮ"></app-link>
   <app-link (click)="openMenu = false == openMenu" fxFlexAlign="center" class="link-item-mob" link="/home#about-us" *ngIf="!user" value="О НАС"></app-link>
-  <app-link (click)="openMenu = false == openMenu" fxFlexAlign="center" class="link-item-mob" link="/home#tarifs" *ngIf="!user" value="ТАРИФЫ"></app-link>
+  <!--  <app-link (click)="openMenu = false == openMenu" fxFlexAlign="center" class="link-item-mob" link="/home#tarifs" *ngIf="!user" value="ТАРИФЫ"></app-link>-->
   <app-link (click)="openMenu = false == openMenu" fxFlexAlign="center" class="link-item-mob" link="/home#partners" *ngIf="!user" value="КЛИЕНТЫ"></app-link>
   <app-link (click)="openMenu = false == openMenu" fxFlexAlign="center" class="link-item-mob" routerLink="/login" *ngIf="!user" value="ВОЙТИ"></app-link>
 
